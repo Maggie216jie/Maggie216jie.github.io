@@ -82,3 +82,29 @@ p{
 
 	border-bottom: 1px solid rgba(0,0,0,.12);
 }
+
+@media screen and (max-width: 500px) {
+	h2 {
+		
+		font-size: 22px;
+	}
+
+	h3 {
+		
+		font-size: 18px;
+	}
+
+	h4 {
+		
+		font-size: 15px;
+
+	}
+
+	p, a, button {
+		
+		font-size: 12px;
+
+	}
+
+
+}
