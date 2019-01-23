@@ -19,6 +19,7 @@
 .blog .w3-container{
 
 	padding: 0;
+	z-index: -1;
 }
 
 .blog .w3-card{
@@ -86,6 +87,32 @@ p{
 #demoAcc2{
 	display: none;
 }
+
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: white;
+}
+
+.codeedit{
+
+	 width: 80%;
+	
+}
+
+
 
 @media screen and (max-width: 500px) {
 	h2 {
