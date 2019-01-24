@@ -67,11 +67,127 @@
   </div>
 
   <div class="contentlevel0" >
-    <div class="contentlevel1" style="border-bottom: 0px;">
+    <div class="contentlevel1" style="border-bottom: 0px; ">
       <h3>React study</h3>
 
       <div class="contentlevel2" >
         <h4>JSX</h4>
+        <p></p>
+      </div>
+
+      <div class="contentlevel2" style = "padding-bottom: 20px;" >
+        <h4>lifecycle</h4>
+        <p>In the process of creating, runing and destory, there are many events been used, which called lifecycle.</p>
+
+          <table>
+            <tr>
+              <th>phrases</th>
+              <th>times</th>
+              <th>functions</th>
+            
+            
+            </tr>
+
+            <tr>
+              <td>creating</td>
+              <td>Only 1 time.</td>
+              <td> constructor() componentWillMount() <br> render() componentDidMount()<br></td>
+            
+            </tr>
+
+            <tr>
+              <td>running</td>
+              <td>Based on state and pros, 0 to many times.</td>
+               <td>componentWillReceiveProps()<br> shouldComponentUpdate()<br> componentWillUpdate()<br> render()<br> componentDidUpdate()<br> </td>
+            
+             
+            </tr>
+
+            <tr>
+              <td>destory</td>
+              <td>Only 1 time.</td>
+              <td>Unmount() <br>componentWillUnmount()<br></td>
+            
+           
+            </tr>
+
+          </table>
+
+           <p>The meaning and use of every functions:</p>
+
+            <table>
+            <tr>
+              <th>functions</th>
+              <th>meanings</th>
+            </tr>
+
+            <tr>
+              <td>constructor()</td>
+              <td>initial the state of compontents</td>
+             </tr>
+
+            <tr>
+              <td>componentWillMount()</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>render()</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>componentDidMount()</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>componentWillReceiveProps()</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>shouldComponentUpdate()</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>componentWillUpdate()</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>componentDidUpdate()</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Unmount()</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>componentWillUnmount()</td>
+              <td></td>
+            </tr>
+
+          </table>
+
+
+          <p style="padding-top: 20px;">The flow diagram of lifecycle:</p>
+
+          <a target="_blank" href="assets/img/lifecycle.png">
+            <img src="assets/img/lifecycle.png" alt="Snow" style="width:80%">
+          </a>
+
+
+
+
+
+      </div>
+
+      <div class="contentlevel2" >
+        <h4>router</h4>
         <p></p>
       </div>
     
