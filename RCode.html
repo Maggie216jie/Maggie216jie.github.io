@@ -213,6 +213,44 @@
     </div>
   </div>
 
+  <div class="contentlevel0" >
+    <div class="contentlevel1" style="border-bottom: 0px;">
+      <h3>Interview Questions</h3>
+
+      <p></p>
+      <button class="accordion">What is React?</button>
+      <div class="panel">
+        <p>
+          <ul>
+          <li>React is a front-end JavaScript library developed by Facebook in 2011.</li>
+          <li>It follows the component based approach which helps in building reusable UI components.</li>
+          <li>It is used for developing complex and interactive web and mobile UI.</li>
+          <li>Even though it was open-sourced only in 2015, it has one of the largest communities supporting it.</li>
+        </ul>
+        </p>
+      </div>
+
+      <button class="accordion">What are the features of React? </button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <button class="accordion">List some of the major advantages of React.</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <button class="accordion">What are the limitations of React?</button>
+      <div class="panel">
+        <p>Lorem ipsum dolor sit amet</p>
+      </div>
+
+
+      
+    
+    </div>
+  </div>
+
 
 
 
@@ -247,6 +285,24 @@ function myDropFunc() {
     x.previousElementSibling.className =
     x.previousElementSibling.className.replace(" w3-green", "");
   }
+}
+</script>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
 }
 </script>
 
