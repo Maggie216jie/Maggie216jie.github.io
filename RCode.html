@@ -274,6 +274,160 @@
         </p>
       </div>
 
+      <button class="accordion">Differentiate between Real DOM and Virtual DOM.</button>
+      <div class="panel">
+          <table >
+              <tr>
+                <th>Real DOM</th>
+                <th>Virtual DOM</th>
+              </tr>
+        
+              <tr>
+                <td>It updates slowly.</td>
+                <td>It updates faster.</td>  
+              </tr>
+        
+              <tr>
+                <td>Can directly update HTML.</td>
+                <td>Can't directly update HTML.</td>  
+              </tr>
+        
+              <tr>
+                <td>Creates a new DOM if element updates.</td>
+                <td>Updates the JSX if element updates.</td>  
+              </tr>
+        
+              <tr>
+                <td>DOM manipulation is very expensive.</td>
+                <td>DOM manipulation is very easy.</td>  
+              </tr>
+
+              <tr>
+                  <td>Too much of memory wastage.</td>
+                  <td>No memory wastage.</td>  
+                </tr>
+        
+            </table>
+      </div>
+
+
+      <button class="accordion">How is React different from Angular?</button>
+      <div class="panel">
+          <table >
+              <tr>
+                <th>TOPIC</th>
+                <th>REACT</th>
+                <th>ANGULAR</th>
+              </tr>
+        
+              <tr>
+                <td>ARCHITECTURE</td>
+                <td>Only the View of MVC</td> 
+                <td>Complete MVC</td>  
+              </tr>
+        
+              <tr>
+                  <td>RENDERING</td>
+                  <td>Server side rendering</td> 
+                  <td>Client side rendering</td> 
+              </tr>
+        
+              <tr>
+                  <td>DOM</td>
+                  <td>Uses virtual DOM</td> 
+                  <td>Uses real DOM</td>  
+              </tr>
+        
+              <tr>
+                  <td>DATA BINDING</td>
+                  <td>One-way data binding</td> 
+                  <td>Two-way data binding</td>  
+              </tr>
+
+              <tr>
+                  <td>DEBUGGING</td>
+                  <td>Compile time debugging</td> 
+                  <td>Run time debugging</td>  
+              </tr>
+
+              <tr>
+                  <td>AUTHOR</td>
+                  <td>Facebook</td> 
+                  <td>Google</td>  
+              </tr>
+            </table>
+      </div>
+
+      <button class="accordion">The purpose of render() in React.</button>
+      <div class="panel">
+        <p>
+            Each React component must have a render() compulsory. If more than one HTML elements needs to be rendered, then they must be grouped together inside one enclosing tag. It returns to the single react element which is the presentation of native DOM Component. This function must be kept pure i.e., it must return the same result each time it is invoked.
+        </p>
+      </div>
+
+      <button class="accordion">What is Props</button>
+      <div class="panel">
+        <p>
+            Props are shorthand for Properties in React. They are read-only components which must be kept pure i.e. immutable. They are always passed down from the parent to the child components throughout the application. A child component can never send a prop back to the parent component. This help in maintaining the unidirectional data flow and are generally used to render the dynamically generated data.
+        </p>
+      </div>
+
+      <button class="accordion">What is a state in React and how is it used?</button>
+      <div class="panel">
+        <p>
+            States are the heart of React components. States are the source of data and must be kept as simple as possible. Basically, states are the objects which determine components rendering and behavior. They are mutable unlike the props and create dynamic and interactive components. They are accessed via this.state().
+        </p>
+      </div>
+
+      <button class="accordion">Differentiate states and props.</button>
+      <div class="panel">
+        <p>
+            <table >
+                <tr>
+                  <th>Conditions</th>
+                  <th>State</th>
+                  <th>Props</th>
+                </tr>
+          
+                <tr>
+                  <td>Receive initial value from parent component?</td>
+                  <td>Yes</td> 
+                  <td>Yes</td>  
+                </tr>
+          
+                <tr>
+                    <td>Parent component can change value</td>
+                    <td>No</td> 
+                    <td>Yes</td> 
+                </tr>
+          
+                <tr>
+                    <td>Set default values inside component</td>
+                    <td>Yes</td> 
+                    <td>Yes</td>  
+                </tr>
+          
+                <tr>
+                    <td>Changes inside component</td>
+                    <td>Yes</td> 
+                    <td>No</td>  
+                </tr>
+  
+                <tr>
+                    <td>Set initial value for child components	</td>
+                    <td>Yes</td> 
+                    <td>Yes</td>  
+                </tr>
+  
+                <tr>
+                    <td>Changes inside child components</td>
+                    <td>No</td> 
+                    <td>Yes</td>  
+                </tr>
+              </table>
+        </p>
+      </div>
+
 
       
     
