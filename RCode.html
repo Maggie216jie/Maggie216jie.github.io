@@ -270,7 +270,7 @@
       <button class="accordion">What is JSX?</button>
       <div class="panel">
         <p>
-            JSX is a shorthand for JavaScript XML. This is a type of file used by React which utilizes the expressiveness of JavaScript along with HTML like template syntax. This makes the HTML file really easy to understand. This file makes applications robust and boosts its performance. Below is an example of JSX:
+            JSX is a shorthand for JavaScript XML. This is a type of file used by React which utilizes the expressiveness of JavaScript along with HTML like template syntax. This makes the HTML file really easy to understand. This file makes applications robust and boosts its performance.
         </p>
       </div>
 
@@ -365,7 +365,7 @@
         </p>
       </div>
 
-      <button class="accordion">What is Props</button>
+      <button class="accordion">What is Props？</button>
       <div class="panel">
         <p>
             Props are shorthand for Properties in React. They are read-only components which must be kept pure i.e. immutable. They are always passed down from the parent to the child components throughout the application. A child component can never send a prop back to the parent component. This help in maintaining the unidirectional data flow and are generally used to render the dynamically generated data.
@@ -387,6 +387,56 @@
                   <th>Conditions</th>
                   <th>State</th>
                   <th>Props</th>
+                </tr>
+          
+                <tr>
+                  <td>Receive initial value from parent component?</td>
+                  <td>Yes</td> 
+                  <td>Yes</td>  
+                </tr>
+          
+                <tr>
+                    <td>Parent component can change value</td>
+                    <td>No</td> 
+                    <td>Yes</td> 
+                </tr>
+          
+                <tr>
+                    <td>Set default values inside component</td>
+                    <td>Yes</td> 
+                    <td>Yes</td>  
+                </tr>
+          
+                <tr>
+                    <td>Changes inside component</td>
+                    <td>Yes</td> 
+                    <td>No</td>  
+                </tr>
+  
+                <tr>
+                    <td>Set initial value for child components	</td>
+                    <td>Yes</td> 
+                    <td>Yes</td>  
+                </tr>
+  
+                <tr>
+                    <td>Changes inside child components</td>
+                    <td>No</td> 
+                    <td>Yes</td>  
+                </tr>
+              </table>
+        </p>
+      </div>
+
+
+      <button class="accordion">Stateful vs Stateless Components React</button>
+      <div class="panel">
+        <p>
+            <table >
+                <tr>
+                  <th>Stateful Component</th>
+                  <th>State</th>
+            
                 </tr>
           
                 <tr>
