@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="assets/css/custom.css" rel="stylesheet">
+<link href="assets/css/prism.css" rel="stylesheet">
+
 <body class="blog">
 
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%;">
@@ -69,6 +71,8 @@
 
 </div>
 
+
+
 <div class="subheader" style="margin-left:20%;padding: 10px;">HTML</div>
 
 <div class="w3-container" style="margin-left:20%;top:50px; position: absolute;width:80%;">
@@ -78,6 +82,271 @@
 <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
 
   <h2>HTML</h2>
+  <p>HTML (Hypertext Markup Language) is not a programming language </p>
+  <p>it is a markup language used to tell your browser how to structure the web
+pages you visit</p>
+  <p>It can be as complicated or as simple as the web developer wishes it to be</p>
+  <p>HTML consists of a series of elements, which you use to enclose, wrap, or
+mark up different parts of the content to make it appear or act a certain way</p>
+  <p>The enclosing tags can make a bit of content into a hyperlink to link to another
+page on the web, italicize words, and so on</p>
+
+  <h3>Basic Html File</h3>
+
+
+<pre class="language-markup"><code><script type="text/plain" class="language-markup">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <img src="images/firefox-icon.png" alt="My test image">
+  </body>
+</html>
+</script>
+</code></pre>
+
+ 
+</div>
+</div>
+
+<div class="contentlevel0">
+<div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+
+  <h2>HTML elements</h2>
+  <p>HTML consists of a series of <b>elements</b>, which you use to enclose, or wrap, different parts of the content to make it appear a certain way, or act a certain way.  </p>
+
+  <div class="rowimage">
+  
+  <img src="assets/img/elements.png" alt="Snow" style="width:100%">
+    
+  </div>
+
+  <p>The main parts of our element are as follows:</p>
+  <p></p>
+  <p style="padding-left: 10px;">1. <strong>The opening tag:</strong> This consists of the name of the element (in this case, p), wrapped in opening and closing <b>angle brackets</b>. This states where the element begins or starts to take effect — in this case where the paragraph begins.</p>
+
+  <p>Elements can also have attributes that look like the following:</p>
+  <div class="rowimage">
+  
+  <img src="assets/img/attributes.png" alt="Snow" style="width:100%">
+    
+  </div>
+
+
+
+  <p style="padding-left: 10px;">2. <strong>The closing tag:</strong> This is the same as the opening tag, except that it includes a <i>forward slash</i> before the element name. This states where the element ends — in this case where the paragraph ends. Failing to add a closing tag is one of the standard beginner errors and can lead to strange results.</p>
+
+  <p style="padding-left: 10px;">3. <strong>The content:</strong> This is the content of the element, which in this case is just text.</p>
+
+  <p style="padding-left: 10px;">4. <strong>The element:</strong> The opening tag, the closing tag, and the content together comprise the element.</p>
+
+  <h3>Attributes</h3>
+
+  <p>An attribute should always have the following: </p>
+
+  <p style="padding-left: 10px;">1. A space between it and the element name (or the previous attribute, if the element already has one or more attributes).</p>
+  <p style="padding-left: 10px;">2. The attribute name, followed by an equals sign. </p>
+  <p style="padding-left: 10px;">3. The attribute value, wrapped by opening and closing quotation marks.</p>
+
+  <h3>Self-closing tag (tags without closing tag)</h3>
+
+  <pre class="language-markup"><code><script type="text/plain" class="language-markup">
+<area />
+<base />
+<br />
+<col />
+<embed />
+<hr />
+<img />
+<input />
+<link />
+<meta />
+<param />
+<source />
+<track />
+<wbr />
+</script>
+</code></pre>
+
+<p>HTML5: the slash is optional.
+HTML4: the slash is technically invalid. However, it's accepted by W3C's HTML validator.
+XHTML: The slash is REQUIRED.</p>
+
+
+<h3>Block vs inline elements</h3>
+
+<p>Block elements:</p>
+<p>
+p,
+h1, h2, h3, h4, h5, h6
+ol, ul,
+pre,
+address,
+blockquote,
+dl,
+div,
+fieldset,
+form,
+hr,
+noscript,
+table
+</p>
+
+<p>Inline elements:</p>
+<p>b, big, i, small, tt,
+abbr, acronym, cite, code, dfn, em, kbd, strong, samp, var,
+a, bdo, br, img, map, object, q, script, span, sub, sup,
+button, input, label, select, textarea</p>
+
+<h3>Special characters</h3>
+
+    <table >
+      <tr>
+        <th>result</th>
+        <th>Entity name</th>
+        <th>Entity number</th>
+      </tr>
+
+      <tr>
+        <td>&nbsp</td>
+        <td>&ampnbsp</td> 
+        <td>&amp#160</td> 
+      </tr>
+
+      <tr>
+        <td>&lt</td>
+        <td>&amplt</td> 
+        <td>&amp#60</td> 
+      </tr>
+
+      <tr>
+        <td>&gt</td>
+        <td>&ampgt</td> 
+        <td>&amp#62</td> 
+      </tr>
+
+       <tr>
+        <td>&percnt;</td>
+        <td>&amppercnt</td> 
+        <td>&amp#37</td> 
+      </tr>
+
+      <tr>
+        <td>&amp</td>
+        <td>&ampamp</td> 
+        <td>&amp#38</td> 
+      </tr>
+
+      <tr>
+        <td>&num;</td>
+        <td>&ampnum</td> 
+        <td>&amp#35</td> 
+      </tr>
+
+      <tr>
+        <td>&quot</td>
+        <td>&ampquot</td> 
+        <td>&amp#34</td> 
+      </tr>
+      <tr>
+        <td>&apos;</td>
+        <td>&ampapos</td> 
+        <td>&amp#39</td> 
+      </tr>
+
+      <tr>
+        <td>&copy</td>
+        <td>&ampcopy</td> 
+        <td>&amp#169</td> 
+      </tr>
+
+      <tr>
+        <td>&reg</td>
+        <td>&ampreg</td> 
+        <td>&amp#174</td> 
+      </tr>
+
+
+    </table>
+    <p><p>
+
+ <a href="https://dev.w3.org/html5/html-author/charref">More special characters.</a>
+
+
+ 
+</div>
+</div>
+
+
+<div class="contentlevel0">
+<div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+
+  <h2>HTML head</h2>
+  <p></p>
+
+  <p></p>
+
+  <div class="contentlevel2" >
+    <h3>&lttitle&gt</h3>
+    
+  </div>
+
+
+  <div class="contentlevel2" >
+    <h3>&ltlink&gt</h3>
+    
+  </div>
+
+  <div class="contentlevel2" >
+    <h3>&ltmeta&gt</h3>
+    
+  </div>
+
+  <div class="contentlevel2" style="border-bottom: 0px;">
+    <h3>Open Graph Data in &ltmeta&gt</h3>
+    
+  </div>
+ 
+</div>
+</div>
+
+
+<div class="contentlevel0">
+<div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+
+  <h2>HTML body</h2>
+
+  <p></p>
+  <p></p>
+
+  <div class="contentlevel2" >
+    <h3>Heading</h3>
+    
+  </div>
+
+
+  <div class="contentlevel2" >
+    <h3>Pharagraph</h3>
+  </div>
+
+  <div class="contentlevel2" >
+    <h3>a</h3>
+  </div>
+
+  <div class="contentlevel2" >
+    <h3>Table</h3>
+  </div>
+
+  <div class="contentlevel2" >
+    <h3>Form</h3>
+  </div>
+
+  <div class="contentlevel2" style="border-bottom: 0px;">
+    <h3>Media (Canvas and AVG)</h3>
+  </div>
  
 </div>
 </div>
@@ -88,7 +357,11 @@
 
 
 
+
+
 </div>
+
+
 
 
 <script>
@@ -120,6 +393,8 @@ function myDropFunc() {
   }
 }
 </script>
+
+<script src="assets/js/prism.js"></script>
 
 
 
