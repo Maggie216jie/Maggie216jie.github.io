@@ -338,15 +338,261 @@ button, input, label, select, textarea</p>
 
   <div class="contentlevel2" >
     <h3>Table</h3>
+    <p></p>
+
+    <!--  ***************************************************************************** -->
+
+    <table lang="en-US" class="with-currency">
+  <caption>Charge Summary</caption>
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Qty.</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ice crease</td>
+      <td data-quantity='1'>1</td>
+      <td data-price='13.00'>13.00</td>
+    </tr>
+    <tr>
+      <td>Rice Noodle</td>
+      <td data-quantity='2'>2</td>
+      <td data-price='13.00'>20.10</td>
+    </tr>
+    <tr>
+      <td>Tenders</td>
+      <td data-quantity='5'>5</td>
+      <td data-price='13.00'>6.45</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="2" rowspan="2" scope="row">Total:</th>
+      <td data-tax='0.00' >0.00</td>
+    </tr>
+    <tr>
+      <td data-price='13.00'>148.55</td>
+    </tr>
+  </tfoot>
+</table>
+
+
+
+
+
+
+
+
+
+    <!--  ***************************************************************************** -->
+
+
+
+    <pre class="language-markup"><code><script type="text/plain" class="language-markup">
+
+<table lang="en-US" class="with-currency">
+  <caption>Charge Summary</caption>
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Qty.</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ice crease</td>
+      <td data-quantity='1'>1</td>
+      <td data-price='13.00'>13.00</td>
+    </tr>
+    <tr>
+      <td>Rice Noodle</td>
+      <td data-quantity='2'>2</td>
+      <td data-price='13.00'>20.10</td>
+    </tr>
+    <tr>
+      <td>Tenders</td>
+      <td data-quantity='5'>5</td>
+      <td data-price='13.00'>6.45</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="2" rowspan="2" scope="row">Total:</th>
+      <td data-tax='0.00' >0.00</td>
+    </tr>
+    <tr>
+      <td data-price='13.00'>148.55</td>
+    </tr>
+  </tfoot>
+</table>
+
+
+</script>
+</code></pre>
+
+
+
+
+
+
   </div>
 
   <div class="contentlevel2" >
-    <h3>Form</h3>
+    <h3>Input</h3>
+    <p></p>
+
+    <p>Example:</p>
+<!--  ***************************************************************************** -->
+
+drop-down list: <br>
+<select name="charaters">
+  <option value="v">VVVV</option>
+  <option value="s">SSSS</option>
+  <option value="f">FFFF</option>
+  <option value="a">AAAA</option>
+</select>
+
+<hr>
+selected and size <br>
+<select name="charaters-2" size="2">
+  <option value="v">VVVV VVVV VVVV VVVV</option>
+  <option value="s">SSSS SSSS SSSS SSSS</option>
+  <option value="f">FFFF FFFF FFFF FFFF</option>
+  <option value="a" selected>AAAA AAAA AAAA AAAA</option>
+</select>
+
+<hr>
+multiple selection (ctrl or cmd) <br> 
+<select name="charaters-3" size="4" multiple>
+  <option value="v">VVVV VVVV VVVV VVVV</option>
+  <option value="s">SSSS SSSS SSSS SSSS</option>
+  <option value="f">FFFF FFFF FFFF FFFF</option>
+  <option value="a">AAAA AAAA AAAA AAAA</option>
+</select>
+
+<hr>
+
+<textarea name="message" rows="10" cols="30">
+Comments
+</textarea>
+
+<br>
+
+<button>Click me</button>
+
+<hr>
+fieldset and legend <br>
+<form>
+  <fieldset>
+    <legend>
+      Bio info
+    </legend>
+    <label>
+      First Name: <input type="text">
+    </label>
+    
+    <br>
+    
+    <label for='lastName'>
+      Last Name:
+    </label>
+    
+    <input id="lastName" type="text"><br>
+    
+    Date of birth: <input type="date">
+  </fieldset>
+</form>
+
+
+<!--  ***************************************************************************** -->
+
+
+    <pre class="language-markup"><code><script type="text/plain" class="language-markup">
+
+
+drop-down list: <br>
+<select name="charaters">
+  <option value="v">VVVV</option>
+  <option value="s">SSSS</option>
+  <option value="f">FFFF</option>
+  <option value="a">AAAA</option>
+</select>
+
+<hr>
+selected and size <br>
+<select name="charaters-2" size="2">
+  <option value="v">VVVV VVVV VVVV VVVV</option>
+  <option value="s">SSSS SSSS SSSS SSSS</option>
+  <option value="f">FFFF FFFF FFFF FFFF</option>
+  <option value="a" selected>AAAA AAAA AAAA AAAA</option>
+</select>
+
+<hr>
+multiple selection (ctrl or cmd) <br> 
+<select name="charaters-3" size="4" multiple>
+  <option value="v">VVVV VVVV VVVV VVVV</option>
+  <option value="s">SSSS SSSS SSSS SSSS</option>
+  <option value="f">FFFF FFFF FFFF FFFF</option>
+  <option value="a">AAAA AAAA AAAA AAAA</option>
+</select>
+
+<hr>
+
+<textarea name="message" rows="10" cols="30">
+Comments
+</textarea>
+
+<br>
+
+<button>Click me</button>
+
+<hr>
+fieldset and legend <br>
+<form>
+  <fieldset>
+    <legend>
+      Bio info
+    </legend>
+    <label>
+      First Name: <input type="text">
+    </label>
+    
+    <br>
+    
+    <label for='lastName'>
+      Last Name:
+    </label>
+    
+    <input id="lastName" type="text"><br>
+    
+    Date of birth: <input type="date">
+  </fieldset>
+</form>
+
+
+</script>
+</code></pre>
+
+
+
   </div>
 
   <div class="contentlevel2" style="border-bottom: 0px;">
-    <h3>Media (Canvas and AVG)</h3>
+    <h3>Media (Canvas and SVG)</h3>
   </div>
+ 
+</div>
+</div>
+
+
+
+<div class="contentlevel0" >
+<div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 15px;">
+  <h2>Interview questions</h2>
  
 </div>
 </div>
