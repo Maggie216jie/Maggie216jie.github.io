@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <title>HTML Learning</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -201,6 +202,18 @@ abbr, acronym, cite, code, dfn, em, kbd, strong, samp, var,
 a, bdo, br, img, map, object, q, script, span, sub, sup,
 button, input, label, select, textarea</p>
 
+<h3>HTML Language</h3>
+
+<p>Examplr:</p>
+
+<pre class="language-markup"><code><script type="text/plain" class="language-markup">
+<html lang=”en-US”>
+<p>Japanese example: <span lang="ja">ご飯が熱い。</span>.</p>
+</script></code></pre>
+
+<p>Common use: en-US, ja, zh, zh-Hans, zh-Hant, ko</p>
+
+
 <h3>Special characters</h3>
 
     <table >
@@ -211,62 +224,62 @@ button, input, label, select, textarea</p>
       </tr>
 
       <tr>
-        <td>&nbsp</td>
-        <td>&ampnbsp</td> 
-        <td>&amp#160</td> 
+        <td>&nbsp;</td>
+        <td>&ampnbsp;</td> 
+        <td>&amp#160;</td> 
       </tr>
 
       <tr>
-        <td>&lt</td>
-        <td>&amplt</td> 
-        <td>&amp#60</td> 
+        <td>&lt;</td>
+        <td>&amplt;</td> 
+        <td>&amp#60;</td> 
       </tr>
 
       <tr>
-        <td>&gt</td>
-        <td>&ampgt</td> 
-        <td>&amp#62</td> 
+        <td>&gt;</td>
+        <td>&ampgt;</td> 
+        <td>&amp#62;</td> 
       </tr>
 
        <tr>
         <td>&percnt;</td>
-        <td>&amppercnt</td> 
-        <td>&amp#37</td> 
+        <td>&amppercnt;</td> 
+        <td>&amp#37;</td> 
       </tr>
 
       <tr>
-        <td>&amp</td>
-        <td>&ampamp</td> 
-        <td>&amp#38</td> 
+        <td>&amp;</td>
+        <td>&ampamp;</td> 
+        <td>&amp#38;</td> 
       </tr>
 
       <tr>
         <td>&num;</td>
-        <td>&ampnum</td> 
-        <td>&amp#35</td> 
+        <td>&ampnum;</td> 
+        <td>&amp#35;</td> 
       </tr>
 
       <tr>
-        <td>&quot</td>
-        <td>&ampquot</td> 
-        <td>&amp#34</td> 
+        <td>&quot;</td>
+        <td>&ampquot;</td> 
+        <td>&amp#34;</td> 
       </tr>
       <tr>
         <td>&apos;</td>
-        <td>&ampapos</td> 
-        <td>&amp#39</td> 
+        <td>&ampapos;</td> 
+        <td>&amp#39;</td> 
       </tr>
 
       <tr>
-        <td>&copy</td>
-        <td>&ampcopy</td> 
-        <td>&amp#169</td> 
+        <td>&copy;</td>
+        <td>&ampcopy;</td> 
+        <td>&amp#169;</td> 
       </tr>
 
       <tr>
-        <td>&reg</td>
-        <td>&ampreg</td> 
-        <td>&amp#174</td> 
+        <td>&reg;</td>
+        <td>&ampreg;</td> 
+        <td>&amp#174;</td> 
       </tr>
 
 
@@ -285,28 +298,78 @@ button, input, label, select, textarea</p>
 <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
 
   <h2>HTML head</h2>
-  <p></p>
+  <p>1. The head of an HTML document is the part that is not displayed in the web browser when the page is loaded.</p>
 
-  <p></p>
+  <p>2. It contains information such as the page &lttitle&gt, CSS, javascripts, links to custom favicons, and other metadata (data about the HTML, such as the author, and important keywords that describe the document.)</p>
+
+  <p style="padding-bottom: 10px;">3. <b>Open Graph Data</b> is a metadata protocol that Facebook invented to provide richer metadata for websites</p>
 
   <div class="contentlevel2" >
-    <h3>&lttitle&gt</h3>
+    <h3>&lttitle&gt element</h3>
+
+    <p>The &lttitle&gt element is metadata that represents the title of the overall HTML page.</p>
+    <p>It will be shown as the tab name, it will also be the name if when you save the page into bookmark.</p>
     
   </div>
 
 
   <div class="contentlevel2" >
-    <h3>&ltlink&gt</h3>
+    <h3>&ltlink&gt element</h3>
+
+    <p>Add custom icons</p>
+
+     <pre class="language-markup"><code><script type="text/plain" class="language-markup">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    </script></code></pre>
+
+
+    <p>Add css</p>
+    <pre class="language-markup"><code><script type="text/plain" class="language-markup">
+<link href="my-css.css" rel="stylesheet">
+    </script></code></pre>
+
+    <p>Add javascript</p>
+    <pre class="language-markup"><code><script type="text/plain" class="language-markup">
+<link rel="javascript" href="jsFile.js" type="text/javascript">
+
+<script language="JavaScript" src="jsFile.js" ></script>
+    </script></code></pre>
+
+
+
     
   </div>
 
   <div class="contentlevel2" >
-    <h3>&ltmeta&gt</h3>
+    <h3>&ltmeta&gt element</h3>
+
+    <pre class="language-markup"><code><script type="text/plain" class="language-markup">
+<meta charset="utf-8">
+<meta name="author" content="Chris Mills">
+<meta name="description" content="intro and keywords about your website">
+<meta name="robots" content="index,follow">
+    </script></code></pre>
+    <p>"Utf-8" is a universal character set that includes pretty much any character from any human language, which means that your web page will be able to handle displaying any language</p>
+
+    <p>Specifying a description that includes keywords relating to the content of your page is useful as it has the potential to make your page appear higher in relevant searches performed in search engines</p>
+
     
   </div>
 
   <div class="contentlevel2" style="border-bottom: 0px;">
     <h3>Open Graph Data in &ltmeta&gt</h3>
+    <p>Open Graph Data is a metadata protocol that Facebook invented to provide richer metadata for websites.</p>
+    <pre class="language-markup"><code><script type="text/plain" class="language-markup">
+<meta property="og:image" content="some_image.png">
+<meta property="og:description" content="Web Site description"> 
+<meta property="og:title" content="the title you want to show">
+    </script></code></pre>
+
+    <p>Twitter also has its own similar proprietary metadata, which has a similar effect when the site's URL is displayed on twitter.com.</p>
+
+    <pre class="language-markup"><code><script type="text/plain" class="language-markup">
+<meta name="twitter:title" content="Mozilla Developer Network">
+    </script></code></pre>
     
   </div>
  
@@ -442,7 +505,7 @@ button, input, label, select, textarea</p>
   </div>
 
   <div class="contentlevel2" >
-    <h3>Input</h3>
+    <h3>Form</h3>
     <p></p>
 
     <p>Example:</p>
