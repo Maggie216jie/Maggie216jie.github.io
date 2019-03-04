@@ -356,7 +356,12 @@
       <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
 
         <h2>Values and units</h2>
-        <p>CSS is a language for specifying how documents (HTML) are presented (HTML will be presented by browsers) to users </p>
+        <p>Pixels(px): are referred to as absolute units because they will always be the same size regardless of any other related settings.</p>
+        <p>em: 1 em = 16px by default; NOTE: ems are the most common relative unit you'll use in web development.</p>
+        <p>rem: 1 rem = 16px called root em.</p>
+        <p>vw, vh: Respectively these are 1/100th of the width of the viewport, and 1/100th of the height of the viewport.</p>
+        <p>line-height: 1.5; // the times of font-size</p>
+        <p>width: 50%; // 1⁄2 width of its container</p>
 
       </div>
     </div>
@@ -365,7 +370,76 @@
       <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
 
         <h2>Functions</h2>
-        <p>CSS is a language for specifying how documents (HTML) are presented (HTML will be presented by browsers) to users </p>
+        <p>CSS functions are used as a value for various CSS properties.</p>
+
+
+        <table>
+
+          <tr>
+            <th>Function</th>
+            <th>Description</th>
+            <th>Examples<th>
+          </tr>
+
+
+          <tr>
+            <td>attr()</td>
+            <td>Returns the value of an attribute of the selected element</td>  
+            <td>a:after { content: " (" attr(href) ")"; }</td>
+          </tr>
+
+          <tr>
+            <td>calc()</td>
+            <td>Allows you to perform calculations to determine CSS property values</td>  
+            <td>width: calc(100% - 100px);</td>
+          </tr>
+
+
+          <tr>
+            <td>hsl()</td>
+            <td>Defines colors using the Hue-Saturation-Lightness model (HSL)</td>  
+            <td>background-color:hsl(120,100%,50%);</td>
+          </tr>
+
+
+          <tr>
+            <td>hsla()</td>
+            <td>Defines colors using the Hue-Saturation-Lightness-Alpha model (HSLA)</td>  
+            <td>background-color:hsla(120,100%,50%,0.3);</td>
+          </tr>
+
+          <tr>
+            <td>linear-gradient()</td>
+            <td>Sets a linear gradient as the background image. Define at least two colors (top to bottom)</td>  
+            <td>linear-gradient(red, yellow, blue);</td>
+          </tr>
+
+          <tr>
+            <td>rgb()</td>
+            <td>Defines colors using the Red-Green-Blue model (RGB)</td>  
+            <td> background-color:rgb(255,0,0);</td>
+          </tr>
+
+          <tr>
+            <td>rgba()</td>
+            <td>Defines colors using the Red-Green-Blue-Alpha model (RGBA)</td>  
+            <td> background-color:rgb(255,0,0, 0.3);</td>
+          </tr>
+
+          <tr>
+            <td>var()</td>
+            <td>Inserts the value of a custom property</td>  
+            <td> :root { --main-bg-color: coral; }<br> #div1 { background-color: var(--main-bg-color); }</td>
+          </tr>
+
+          <tr>
+            <td>url()</td>
+            <td>Defines resource path</td>  
+            <td> background-image:url(../asset/image1.png);</td>
+          </tr>
+
+
+        </table>
 
       </div>
     </div>
