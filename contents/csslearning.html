@@ -4,6 +4,7 @@
 
 <head>
 <title>CSS Learning</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,6 +138,11 @@
           </tr>
 
           <tr>
+            <td>"^="</td>
+            <td>Attribute begins with certain value</td>  
+          </tr>
+
+          <tr>
             <td>"$="</td>
             <td>Attribute ends with certain value</td>  
           </tr>
@@ -227,7 +233,7 @@
         </table>
 
         <p>Order: :link :visited :hover :active </p>
-        <p>For privacy reason, :visited attribute have </p>
+        <p>For privacy reasons, the styles that can be modified using this selector are very limited.</p>
         <p></p>
 
 
@@ -236,6 +242,66 @@
       <div class="contentlevel2">
         <h4>Pseudo-elements</h4>
         <p>Pseudo-elements are very much like pseudo-classes, but they have differences. They are keywords, this time preceded by two colons (::), that can be added to the end of selectors to select a certain part of an element.</p>
+
+
+        <table>
+
+          <tr>
+            <th>Symbol</th>
+            <th>trigger cases</th>
+        
+          </tr>
+
+
+          <tr>
+            <td>&colon;&colon;after</td>
+            <td>creates a pseudo-element that is the last child of the selected element. It is often used to add cosmetic content to an element with the content property. It is inline by default.</td>  
+           
+          </tr>
+
+          <tr>
+            <td>&colon;&colon;before</td>
+            <td>creates a pseudo-element that is the first child of the selected element. It is often used to add cosmetic content to an element with the content property.</td>  
+            
+          </tr>
+
+
+          <tr>
+            <td>&colon;&colon;first-letter</td>
+            <td>applies styles to the first letter of the first line of a block-level element, but only when not preceded by other content (such as images or inline tables).</td>  
+            
+          </tr>
+
+
+          <tr>
+            <td>&colon;&colon;first-line</td>
+            <td>applies styles to the first line of a block-level element. </td>  
+          
+          </tr>
+
+          <tr>
+            <td>&colon;&colon;selection</td>
+            <td>applies styles to the part of a document that has been highlighted by the user</td>  
+            
+          </tr>
+
+          <tr>
+            <td>&colon;&colon;backdrop</td>
+            <td>is a box the size of the viewport which is rendered immediately beneath any element being presented in full-screen mode. T</td>  
+        
+          </tr>
+
+
+        </table>
+
+        <P></P>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements">More pseudo-selector</a></p>
+        <p></p>
+      
+
+
+
+
         
       </div>
 
