@@ -1,0 +1,189 @@
+* {box-sizing: border-box; margin:0px; padding:0px;}
+html,body{ height:100%; margin:0; padding:0; border:0; }
+body{ font-family: serif; width: 100%; margin: 0px; font-size: 14px; display: flex; flex-direction: column; }
+
+nav{ position: fixed; top:50px; padding-left: 4%; font-size: 16px; padding-top:10px; 
+	background-color: white; width: 100%; z-index: 999;  
+}
+
+
+.heroimage{ width: 100%; }
+.maincontent{ position: relative; top:116px; margin-left: auto; margin-right: auto; width: 96%; }
+.description{ text-align: center; padding-top:20px; padding-bottom: 20px; font-family: cursive; font-size: 22px; font-weight: bold; }
+#banner{ position: fixed; top:0px; font-size: 16px; background-color: rgb(53, 54, 46); color: white;
+	width: 100%; padding-top:16px; padding-bottom: 16px; text-align: center; z-index: 999;
+}
+.back_to_top{ position: fixed; width: 40px; height: 40px; bottom:50px; right: 50px; border:1px solid #888; z-index: 1000;
+	background-color: rgb(53, 54, 46); color: white; text-decoration: none; border-radius: 50%; padding-top: 10px; text-align: center;
+}
+
+
+/*navigation*/
+
+ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; }
+li { float: left; margin: 0 14px; }
+li a { display: block; color: black; text-align: center; margin: 0 0px;  padding-top:  14px; text-decoration: none; padding-bottom: 24px; }
+
+.signin{ float: right; margin-right: 20px; }
+.icon{ float:left; width: 37px; height: 37px; }
+.search, .shopping{ margin-right: 10px; width: 37px; height: 37px; float: right; float: right; }
+.shopping{ margin-right: 5%; }
+.search, .shopping:hover{ cursor: pointer; }
+
+
+/*navigation dropdown */
+
+li:hover,
+li:focus-within { cursor: pointer; }
+li:focus-within a { outline: none; }
+
+
+ul li ul { background-image: url('../asset/dropdown_bg.jpg'); position: absolute; transition: all 0.5s ease; left: 2%; display: none; }
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus { visibility: visible; opacity: 1; display: flex; justify-content: center; }
+ul li ul:hover > a{ color: red; }
+
+
+ul li ul li { clear: both; width: 100%; }
+.dropdown{ width: 96%; padding: 20px 15px; }
+.dropdownimage{ padding-left: 15px; width: 24vw; height: 24vw; }
+.dropdown.accessories.dropdownimage{ padding-left: 15px; width: 24vw; height: 24vw; }
+.dropdownimage.left{ width: calc(24vw+34px); height: 24vw; }
+.dropdownimage.right{ margin-left: 20px; width: calc(24vw+34px); height: 24vw;}
+
+
+li:hover { background-repeat: repeat-x; background-image: url('../asset/line-clay-bg.svg'); background-position: 0 2em; }
+.links li:hover{ background-image:none; }
+.links li a{ text-align: left; }
+.links li a:hover{ text-decoration: underline;  }
+.links li a{ padding-bottom: 8px; }
+
+
+
+
+/*  imagegallery*/
+
+.topleft{ width: 63vw; position: relative; height: 36vw; float:left; margin-right: 1vw; overflow: hidden;}
+.topleft .seaimage{ width: 100%; position: relative; top: -13vw;}
+
+
+.topright{ width: 30vw; position: relative; height: 89.2vw; float:right;  margin-left: 2vw;}
+
+
+.centerleft{ width: 30vw; position: relative; height: 36vw; float:left; overflow: hidden; margin-right: 2vw; margin-top: 2vw; }
+.centerleft .gunimage{ width: 100%; position: relative; top:-50px;}
+
+
+.center{ width: 30vw; position: relative;  height: 53.2vw; float:right; overflow: hidden; margin-top: 2vw; margin-right: 1vw; margin-left:  1vw;}
+.center .dramaimage{ position: relative; width: 100%; }
+
+
+.righttop{ width: 30vw; position: relative; height: 53.2vw; float:right; overflow: hidden; margin-left: 2vw;}
+.righttop .carimage{position: relative; width: 100%; }
+
+
+.rightcenter{ width: 30vw; position: relative; height: 36vw; float:right; overflow: hidden; margin-top: 2vw; margin-left: 2vw;}
+.rightcenter .gameimage{ width: 100%; position: relative; top: -10vw; }
+
+
+.bottomleft{ width: 30vw; position: relative; height: 53.2vw; float:left; overflow: hidden; margin-top: 2vw;  margin-right: 2vw;}
+.bottomleft .tiffanyimage{ width: 100%;}
+
+
+.bottomright{ width: 63vw; position: relative; height: 36vw; float:right; overflow: hidden; margin-top: 2vw; margin-left: 1vw;}
+.bottomright .steakimage{ width: 100%; position: relative; top: -5vw;  }
+
+
+
+/*image hover*/
+
+.imageopacity{ width:94%; height:94%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.85;
+  background-color: white; display: none; }
+.hoverimage{ width: 100%;  }
+.boxbox{ width: 70%; height: 90%; position: absolute; top: 50%;left: 50%; transform: translate(-50%, -50%); 
+	text-align: center; font-family: cursive; font-size: 18px;
+}
+.origintohover:hover > .imageopacity{ display: block; }
+
+
+
+/* footer */
+
+.main{ flex: 1 0 auto; }
+.footer{ margin-top: 40px; padding-bottom: 16px; padding-top: 16px; position: relative; bottom: -117px; width: 100%;
+	background-color: rgb(53, 54, 46); color: white; text-align: center; font-size: 16px; 
+}
+.footer a{ text-decoration: underline; }
+.footer a:active{ text-decoration: none;}
+.footer a:hover{ cursor: pointer; }
+
+
+
+@media screen and (max-width: 1100px) {
+
+
+	nav{font-size: 14px; padding-top:8px; padding-bottom: 8px; }
+	li { margin: 0 8px; }
+    li a{ padding:  8px 0;}
+    .shopping{ margin-right: 2%; }
+    .icon{ float:left; width: 18px; height: 18px; }
+    .search, .shopping{ width: 18px; height: 18px; float: right; float: right;}
+    .maincontent{ position: relative; top:80px;}
+    .boxbox div{ font-size: 14px !important; }
+    .seaimageopacity{ width: 88%; }
+
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+
+	nav{font-size: 11px;padding-top:5px; padding-bottom: 5px;}
+	li { margin: 0 5px; }
+    li a{ padding:  5px 0;}
+    .shopping{ margin-right: 2%; }
+    .icon{ float:left; width: 17px; height: 17px; }
+    .maincontent{ position: relative; top:80px;}
+    .boxbox div{ font-size: 11px !important; }
+    .seaimageopacity{ width: 88%; }
+
+
+}
+
+
+@media screen and (max-width: 620px) {
+
+
+	nav{font-size: 8px;padding-top:4px; padding-bottom: 4px;}
+	li { margin: 0 4px; }
+    li a{ padding:  4px 0;}
+    .shopping{ margin-right: 2%; }
+    .icon{ float:left; width: 13px; height: 13px; }
+    .search, .shopping{ width: 13px; height: 13px; float: right; float: right; }
+    .maincontent{ position: relative; top:60px;}
+    .boxbox div{ font-size: 8px !important;}
+    .seaimageopacity{ width: 88%; }
+
+
+}
+
+@media screen and (max-width: 420px) {
+
+
+	nav{font-size: 7px;padding-top:2px; padding-bottom: 2px;}
+	li { margin: 0 1px; }
+    li a{padding:  1px 0;}
+    .shopping{ margin-right: 2%; }
+    .icon{ float:left; width: 10px; height: 10px; } 
+    .search, .shopping{ width: 10px; height: 10px; float: right; float: right; }
+    .maincontent{ position: relative; top:50px;}
+    .boxbox div{ font-size: 7px !important; }
+    .seaimageopacity{ width: 88%; }
+
+
+}
+
+
