@@ -186,6 +186,101 @@ tr:hover {background-color:#f5f5f5;}
   border-bottom: 1px solid white;
 }
 
+.practicetitle{
+
+	position: relative;
+	padding-top: 40px;
+}
+
+
+.section_title{
+
+
+	border-bottom: 1px solid rgba(0,0,0,.12);
+	text-align: center;
+
+	margin-left: 1vw;
+	margin-right: 1vw; 
+}
+
+.section_title::before{
+
+	position: absolute;
+	content: "";
+	height: 12px;
+	width: 12px;
+	background: #362cb1;
+	border-radius: 50%;
+	bottom: 0;
+	transform: translateY(50%);
+
+
+
+}
+
+
+.practicegallery{
+
+	display: flex;
+}
+
+
+.pratices{
+
+	position: relative;
+
+
+	width: 30vw;
+	height: 30vw;
+
+	
+	margin: 5vw 1vw;
+	box-shadow: 0 3px 7px rgba(0,0,0,.26);
+	 
+
+
+}
+
+.praticeshover{
+
+	display: none;
+}
+
+
+
+.pratices:hover .praticeshover{
+
+	display: flex;
+	position: absolute;
+
+
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	opacity: 0.7;
+
+	background-color: white;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.practicelink{
+
+	position: absolute;
+
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	text-decoration: none;
+
+
+
+}
+
+
 
 
 @media screen and (max-width: 500px) {
@@ -207,7 +302,7 @@ tr:hover {background-color:#f5f5f5;}
 
 	p, a, button,label,table {
 		
-		font-size: 12px;
+		font-size: 10px;
 
 	}
 
