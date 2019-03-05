@@ -18,13 +18,9 @@
 
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%;">
   <a href="../index.html" class="w3-bar-item w3-button">MW</a>
-
   <a href="htmllearning.html" class="w3-bar-item w3-button">HTML</a>
   <a href="csslearning.html" class="w3-bar-item w3-button">CSS</a>
   <a href="jslearning.html" class="w3-bar-item w3-button">JavaScript</a>
-
-
-
 
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('demoAcc')">
   React
@@ -34,9 +30,6 @@
     <a href="RCode.html" class="w3-bar-item w3-button">Code read</a>
     <a href="RTrouble.html" class="w3-bar-item w3-button">Trouble shooting</a>
   </div>
-
-
-
 
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('demoAcc5')">
   Back End
@@ -443,7 +436,20 @@
       <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
 
         <h2>Cascade and Specificity</h2>
-        <p>CSS is a language for specifying how documents (HTML) are presented (HTML will be presented by browsers) to users </p>
+        <p>What selectors win out in the cascade depends on three factors (these are listed in order of weight<br> -- earlier ones will overrider later ones </p>
+
+        <ol>
+
+          <li>Importance -- this will override everything -- color: red !important;</li>
+          <li>Specificity</li>
+          <li>Source order -- whichever comes later</li>
+          
+
+        </ol>
+
+        <p>Specificity is basically a measure of how specific a selector is — how many elements it could match.</p>
+        <p>Inline style &gt; Id &gt; Class == Attribute == pseudo-class &gt; simple element</p>
+        <p>1000 =&gt; 100 =&gt; 10 =&gt; 1</p>
 
       </div>
     </div>
@@ -452,7 +458,82 @@
       <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
 
         <h2>Inheritance</h2>
-        <p>CSS is a language for specifying how documents (HTML) are presented (HTML will be presented by browsers) to users </p>
+
+        <p>All elements could inherite:</p>
+        <button class = "itemlabel">visibility</button>
+        <button class = "itemlabel">cursor</button>
+
+        <p>Inline elements could inherite:</p>
+        <button class = "itemlabel">letter-spacing</button>
+        <button class = "itemlabel">word-spacing</button>
+        <button class = "itemlabel">white-space</button>
+        <button class = "itemlabel">line-height</button>
+        <button class = "itemlabel">color</button>
+        <button class = "itemlabel">font</button>
+        <button class = "itemlabel">font-family</button>
+        <button class = "itemlabel">font-size</button>
+        <button class = "itemlabel">font-style</button>
+        <button class = "itemlabel">font-variant</button>
+        <button class = "itemlabel">font-weight</button>
+        <button class = "itemlabel">text-decoration</button>
+        <button class = "itemlabel">text-transform</button>
+        <button class = "itemlabel">direction</button>
+
+        <p>Block elements could inherite:</p>
+        <button class = "itemlabel">text-indent</button>
+        <button class = "itemlabel">text-align</button>
+
+        <p>List elements could inherite:</p>
+        <button class = "itemlabel">list-style</button>
+        <button class = "itemlabel">list-style-type</button>
+        <button class = "itemlabel">list-style-position</button>
+        <button class = "itemlabel">list-style-image</button>
+
+
+        <p>Table elements could inherite:</p>
+        <button class = "itemlabel">border-collapse</button>
+
+
+
+        <p>Some css could not be inheritance from the element’s parent like:</p>
+        
+        <button class = "itemlabel">margin</button>
+        <button class = "itemlabel">padding</button>
+        <button class = "itemlabel">border</button>
+        <button class = "itemlabel">background</button>
+        <button class = "itemlabel">position</button>
+        <button class = "itemlabel">display</button>
+
+        <button class = "itemlabel">height</button>
+        <button class = "itemlabel">min-height</button>
+        <button class = "itemlabel">max-height</button>
+        <button class = "itemlabel">width</button>
+        <button class = "itemlabel">min-width</button>
+        <button class = "itemlabel">max-width</button>
+
+
+        <button class = "itemlabel">overflow</button>
+        <button class = "itemlabel">left</button>
+        <button class = "itemlabel">right</button>
+        <button class = "itemlabel">top</button>
+        <button class = "itemlabel">bottom</button>
+        <button class = "itemlabel">z-index</button>
+
+
+        <button class = "itemlabel">float</button>
+        <button class = "itemlabel">clear</button>
+        <button class = "itemlabel">table-layout</button>
+        <button class = "itemlabel">vertical-align</button>
+        <button class = "itemlabel">page-break-after</button>
+        <button class = "itemlabel">page-bread-before</button>
+
+        <button class = "itemlabel">unicode-bidi</button>
+
+        <p></p>
+
+
+        <a href="https://www.w3schools.com/cssref/default.asp">CSS Properties</a>
+
 
       </div>
     </div>
