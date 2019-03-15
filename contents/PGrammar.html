@@ -25,8 +25,6 @@
     <a href="RTrouble.html" class="w3-bar-item w3-button">Trouble shooting</a>
   </div>
 
-
-
   <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('demoAcc5')">
   Back End
   </button>
@@ -167,12 +165,12 @@ var falseValue = false;</code></pre>
 
     <div class="contentlevel2">
       <h3>Python</h3>
-      <p>mwmmwmwmwmwmmwmwmmwmwmwmmmwmwmmwmwmmw</p>
+      <p></p>
     </div>
 
     <div class="contentlevel2">
       <h3>Java</h3>
-      <p>mwmmwmwmwmwmmwmwmmwmwmwmmmwmwmmwmwmmw</p>
+      <p></p>
     </div>
 
     <div class="contentlevel2" style="border-bottom: 0px; ">
@@ -209,25 +207,53 @@ numbers.shift();</code></pre>
     <p>Delete or insrt elements in any index</p>
     <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//insert or delete in any places
 //the first number is the index will delete elements
-//the second number is the number of elements will be delete. 
+//the second number is the number of elements. 
 //0 represents add.
 numbers.splice(5,0,2,3,4);  
 numbers.splice(5,3,2,3,4);</code></pre>
 
     <p>Array functions</p>
-    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//insert or delete in any places
-//the first number is the index will delete elements
-//the second number is the number of elements will be delete. 
-//0 represents add.
-numbers.splice(5,0,2,3,4);  
-numbers.splice(5,3,2,3,4);</code></pre>
+    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//common use functions
+var addOne = function(x){
+  return x+1;
+};
+var isEven = function (x) {
+  return (x % 2 == 0) ? true : false;
+};
+
+var addTwo = function(x){
+  x=x+2;
+  console.log(x);
+}; 
+var numbers=[1,2,3,4,5,6];
+var number2=[7,8];
+
+// concat
+numbers.concat(number2);
+//result: [1,2,3,4,5,6,7,8]!!!but no change numbers and number2 
+
+// every
+numbers.every(addOne);
+//result: true if all true return true, else false
+
+// filter
+numbers.filter(isEven);
+//result:[2, 4, 6]
+
+//forEach
+numbers.forEach(addTwo);
+//results: output: 3 4 5 6 7 8 9 no return result
+
+
+
+</code></pre>
 
 
 
     </div>
 
   </div>
-  </div>
+   </div>
 
   <div class="contentlevel0">
   <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
