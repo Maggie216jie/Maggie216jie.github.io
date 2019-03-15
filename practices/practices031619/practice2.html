@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link rel= "stylesheet" href="style.css">
+    <script language="JavaScript" src="moment.js" ></script>
+    <script type="text/javascript" src="data1.json"></script>
+
+  </head>
+  <body>
+    
+    <div class="maincontent">
+      <div class="tab">
+        <div style="float:left; width:50px; height:50px;margin: 0px 0px;">
+            <img src="icon.png">
+        </div>
+        <button class="tablinks" onclick="openCity(event, 'Popularmovie'); showPopularMovies();" id="defaultOpen">Movie List</button>
+        <button class="tablinks like likehidden" onclick="openCity(event, 'Likedmovies'); likemoviesdisplay();" id="likelisttab">Like List</button><sup id="suplike" class="likehidden">2</sup>
+        <button class="tablinks block blockhidden" onclick="openCity(event, 'Blockmovies');showBlockMovies();">Block List</button><sup id="supblock" class="blockhidden">3</sup>
+        <button class="tablinks config" onclick="openCity(event, 'Config');dragInitial();clearparent(this);">CONFIG</button>
+      </div>
+      
+      <div id="Popularmovie" class="tabcontent">
+        <h3>The most popular movies</h3>
+      </div>
+
+      <div id="Likedmovies" class="tabcontent rotatetrans" style="display: none;">
+        <h3>Liked List</h3>
+        <div id="likemovie"> 
+        </div> 
+      </div>
+
+      <div id="Blockmovies" class="tabcontent " style="display: none;">
+
+        <p>Blocked List</p>
+        
+      </div>
+  
+      <div id="Config" class="tabcontent" style="display: none;">
+          <span onclick="finish();likemoviesdisplay();" class="topright"><img class="closeimg"  src="close.png"></im></span>
+          <ul id="drag">
+          </ul>
+      </div>
+    </div>
+    
+    <script>
+    
+    var mydata = JSON.parse(JSON.stringify(moviedata));
+    var movielist = mydata['results'];
+    var likemovies = [];
+    var draglist=[];
+    var blocklist=[];
+    
+    function showPopularMovies(){
+      
+      document.getElementsByClassName('config')[0].setAttribute("style","display:none;");
+      if(document.getElementsByClassName('moviesgallery').length!==0){
+        document.getElementsByClassName('moviesgallery')[0].remove();
+      }
+      
+      var htmltext = "";
+      for(var i=0;i<movielist.length;i++){
+        if(blocklist.indexOf(movielist[i].id)===-1){
+          var ss="https://image.tmdb.org/t/p/w500"+movielist[i].poster_path;
+          htmltext += "<div class = \"movieitem\" id=\"popularid"+movielist[i].id+"\"><img src="+ss+"><h4>"+movielist[i].title+"</h4><p>"+moment(movielist[i].release_date).format('LL')+"</p>";
+          htmltext += "<div class=\"likeblock\"><a class=\"likeit\" onclick=\"getLikelist(this);\" data-id="+movielist[i].id+">Like it!</a>"
+          htmltext += "<a class=\"blockit\" onclick=\"getBlocklist(this);\" data-id="+movielist[i].id+">Block it!</a></div></div>"
+        }
+        
+      }
+      
+      var div = document.createElement('div');
+      div.className = "moviesgallery";
+      div.innerHTML = htmltext;
+      document.getElementById('Popularmovie').appendChild(div);
+      if(likemovies.length!==0){
+
+        for(var i =0;i<likemovies.length;i++){
+
+          var likeitelement = document.querySelectorAll('a[data-id=\"'+likemovies[i]+'\"]');
+
+          for(var j=0;j<likeitelement.length;j++){
+
+            if(likeitelement[j].getAttribute("class")=="likeit"){
+
+              console.log("set color");
+
+              likeitelement[j].setAttribute("style","color:rgb(220,119,150);");
+
+
+            }
+          }
+
+        }
+
+
+      }
+
+
+    }
+    
+    function getLikelist(d){
+      
+      if(likemovies.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
+        alert("add already");
+        
+      }else{
+        likemovies.push(parseInt(d.getAttribute("data-id")));
+        console.log("color set");
+        d.setAttribute("style","color:rgb(220,119,150);");
+        if(likemovies.length === 1){
+          
+          var list, index;
+          list = document.getElementsByClassName("likehidden");
+          for (index = 0; index < list.length; ++index) {
+            list[index].setAttribute("style","display:inline-block;");
+          }
+        }
+        
+        document.getElementById("suplike").textContent=likemovies.length;
+        deleteBlock(d);
+      }
+    }
+    
+    function getBlocklist(d){
+      
+      if(blocklist.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
+        alert("block already");
+        
+      }else{
+        
+        blocklist.push(parseInt(d.getAttribute("data-id")));
+        d.setAttribute("style","color:rgb(220,119,150);");
+        
+        if(blocklist.length === 1){
+          
+          var list, index;
+          list = document.getElementsByClassName("blockhidden");
+          for (index = 0; index < list.length; ++index) {
+            list[index].setAttribute("style","display:inline-block;");
+            
+          }
+        }
+        document.getElementById("supblock").textContent=blocklist.length;
+        var idstring = "popularid"+d.getAttribute("data-id");
+        document.getElementById(idstring).setAttribute("style","display:none;");
+        if(draglist.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
+          draglist.splice(draglist.indexOf(parseInt(d.getAttribute("data-id"))),1);
+          
+        }
+        
+        if(likemovies.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
+          likemovies.splice(likemovies.indexOf(parseInt(d.getAttribute("data-id"))),1);
+        }
+        
+        document.getElementById("suplike").textContent=likemovies.length;
+
+        if(likemovies.length==0){
+
+          console.log("likelist length is 0");
+
+          var likeelement = document.getElementsByClassName('likehidden');
+          for (var index = 0; index < likeelement.length; ++index) {
+            likeelement[index].setAttribute("style","display:none;");
+          }
+        }
+      
+      }
+    }
+    
+    function likemoviesdisplay(){
+      document.getElementsByClassName("tabcontent")[0].setAttribute("style","display:none")
+      if(draglist.length<likemovies.length){
+        for(var m =0; m<likemovies.length;m++){
+          if(draglist.indexOf(likemovies[m])===-1){
+            draglist.push(likemovies[m]);
+          }
+        }
+      }
+      
+      document.getElementsByClassName('config')[0].setAttribute("style","display:inline-block;");
+      document.getElementById('likemovie').innerHTML = "";
+      for (var i=0; i< draglist.length; i++){
+        var likess="https://image.tmdb.org/t/p/w500"+  movielist.filter(x => x.id == draglist[i])[0].poster_path;
+        var div = document.createElement('div');
+        div.className = "likeitem";
+        div.innerHTML = "<img src="+likess+"><h4>"+movielist.filter(x => x.id== draglist[i])[0].title+"</h4><p>"+moment(movielist[i].release_date).format('LL')+"</p>";
+        document.getElementById('likemovie').appendChild(div);
+      }
+    }
+    
+    function showBlockMovies(){
+      document.getElementsByClassName('config')[0].setAttribute("style","display:none;");
+      if(document.getElementsByClassName('blockmoviesgallery').length!==0){
+        document.getElementsByClassName('blockmoviesgallery')[0].remove();
+        
+      }
+      var htmltext = "";
+      
+      for(var i=0;i<blocklist.length;i++){
+        var blockmovie = movielist.filter(x => x.id == blocklist[i])[0];
+        var ss="https://image.tmdb.org/t/p/w500"+blockmovie.poster_path;
+        htmltext += "<div class = \"movieitem\" id=\"blockid"+blockmovie.id+"\"><img src="+ss+"><h4>"+blockmovie.title+"</h4><p>"+moment(blockmovie.release_date).format('LL')+"</p>";
+        htmltext += "<div class=\"likeblock\"><a class=\"likeit\" onclick=\"getLikelist(this);\" data-id="+blockmovie.id+">Like it!</a>"
+        htmltext += "<a class=\"deleteblockit\" onclick=\"deleteBlock(this);\" data-id="+blockmovie.id+">Delete</a></div></div>"
+      }
+      
+      var div = document.createElement('div');
+      div.className = "blockmoviesgallery";
+      div.innerHTML = htmltext;
+      document.getElementById('Blockmovies').appendChild(div);
+    }
+    
+    function deleteBlock(d){
+      
+      if(blocklist.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
+        blocklist.splice(blocklist.indexOf(parseInt(d.getAttribute("data-id"))),1);
+        
+        var idstring = "blockid"+d.getAttribute("data-id");
+        document.getElementById(idstring).setAttribute("style","display:none;");
+        document.getElementById("supblock").textContent=blocklist.length;
+      }
+
+      if(blocklist.length==0){
+        console.log("blocklist length is 0");
+        var blockelement = document.getElementsByClassName('blockhidden');
+        for (var index = 0; index < blockelement.length; ++index) {
+          blockelement[index].setAttribute("style","display:none;");
+      }
+
+      //document.getElementById("likelisttab").click();
+
+
+      }
+    }
+      
+    function clearparent(el){
+      el.parentElement.style.display='none';
+    }
+    
+    function dragInitial(){
+      document.getElementById('drag').innerHTML = "";
+      for (var i=0; i< draglist.length; i++){
+        
+        var lielement = document.createElement('li');
+        lielement.setAttribute("draggable","true");
+        lielement.setAttribute("data-id",i);
+        lielement.innerHTML = movielist.filter(x => x.id === draglist[i])[0].title;
+        document.getElementById('drag').appendChild(lielement);
+      }
+    }
+    
+    function finish(){
+      
+      var list2;
+      list2 = document.getElementsByTagName("ul");
+      
+      var draglisttemp = list2[0].innerText.split("\n");
+      draglist=[];
+      for(var n=0; n<draglisttemp.length;n++){
+        draglist.push(movielist.filter(x => x.title == draglisttemp[n])[0].id);
+        
+      }
+      
+      var list1, index1;
+      list1 = document.getElementsByClassName("tab");
+      for (index1 = 0; index1 < list1.length; ++index1) {
+        list1[index1].setAttribute("style","display:block;");
+      }
+      
+      document.getElementById("likelisttab").click();
+    }
+    </script>
+
+    <!--tab -->
+    <script>
+    function openCity(evt, cityName) {
+
+      
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+      
+    }
+    
+    document.getElementById("defaultOpen").click();
+    </script>
+
+    <!--drag -->
+    <script>   
+    var drag = document.querySelector('#drag');
+    var ele;
+    drag.addEventListener('dragstart', function (e) {
+        ele = e.target;
+        ele.classList.add('draging');
+    })
+    drag.addEventListener('dragover', function (e) {
+        e.preventDefault(); 
+    })
+    drag.addEventListener('drop', function (e) {
+        ele.classList.remove('draging');
+        if (e.target.nodeName === 'LI') {
+            e.target.parentNode.insertBefore(ele, e.target); 
+
+            console.log("drop");
+            console.log(e.target);
+        }
+    })
+    drag.addEventListener('dragend', function (e) {
+
+        console.log("end----");
+    })
+    
+    </script>
+  </body>
+</html>

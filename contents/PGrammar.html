@@ -142,11 +142,18 @@ My name is Zara and weight is 21 kg!
     <div class="contentlevel2" style="border-bottom: 0px; ">
       <h3>JavaScript</h3>
       <p>Boolean</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var trueValue = true;
+var falseValue = false;</code></pre>
       <p>Null</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var trueValue = null;</code></pre>
       <p>Undefined</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var und;</code></pre>
       <p>Number</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var price = 1.5;</code></pre>
       <p>String</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var name = 'Packt';</code></pre>
       <p>Symbol (ES6)</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">const symbol = Symbol('description')</code></pre>
     </div>
 
   </div>
@@ -170,7 +177,53 @@ My name is Zara and weight is 21 kg!
 
     <div class="contentlevel2" style="border-bottom: 0px; ">
       <h3>JavaScript</h3>
-      <p>mwmmwmwmwmwmmwmwmmwmwmwmmmwmwmmwmwmmw</p>
+      <p>declare and assign array</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">// declared and assigned
+var daysOfWeek = new Array();
+var daysOfWeek = new Array(7);
+var daysOfWeek = new Array('Sunday', 'Monday', 'Tuesday', 
+'Wednesday', 'Thursday', 'Friday', 'Saturday');
+
+//better way 
+var daysOfWeek = [];
+var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
+ 'Thursday', 'Friday', 'Saturday'];</code></pre>
+
+    <p>Insert elements</p>
+    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//insert elements in the end
+var numbers = [0,1,2,3,4,5,6,7,8,9];
+numbers[numbers.length] = 10;
+numbers.push(11);
+numbers.push(12, 13);  //number 0 ~ 13
+
+//insert elements in the front
+numbers.unshift(-1);    //numbers -1 ~ 13</code></pre>
+
+    <p>Delete elements</p>
+    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//delete elements in the end
+numbers.pop();
+
+//delete elements in the front
+numbers.shift();</code></pre>
+
+    <p>Delete or insrt elements in any index</p>
+    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//insert or delete in any places
+//the first number is the index will delete elements
+//the second number is the number of elements will be delete. 
+//0 represents add.
+numbers.splice(5,0,2,3,4);  
+numbers.splice(5,3,2,3,4);</code></pre>
+
+    <p>Array functions</p>
+    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//insert or delete in any places
+//the first number is the index will delete elements
+//the second number is the number of elements will be delete. 
+//0 represents add.
+numbers.splice(5,0,2,3,4);  
+numbers.splice(5,3,2,3,4);</code></pre>
+
+
+
     </div>
 
   </div>
