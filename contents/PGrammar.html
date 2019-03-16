@@ -306,42 +306,63 @@ numbers.copyWithin(0, 3, 4);
 //copy to index 0 the element at index 3 to end
 
 //entries
-numbers.entries();
-//results:
+var a = ['a', 'b', 'c'];
+var iterator = a.entries();
+for (let e of iterator) {
+  console.log(e);
+}
+//results: [0, 'a'] [1, 'b'] [2, 'c']
 
 //includes
-numbers.includes();
-//results:
+numbers.includes(2);
+//results: true
 
 //find
-numbers.find(isEven);
-//results: false if all false return false, else true
+numbers.find(function(element) {
+  return element > 5;
+});
+//results: [6]
 
 //findIndex
-numbers.findIndex();
-//results:
+var array1 = [5, 12, 8, 130, 44];
+function isLargeNumber(element) {
+  return element > 13;
+}
+console.log(array1.findIndex(isLargeNumber));
+// expected output: 3
 
 //fill
-numbers.fill();
-//results:
+var array1 = [1, 2, 3, 4];
+// fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// expected output: [1, 2, 0, 0]
+// fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// expected output: [1, 5, 5, 5]
+console.log(array1.fill(6));
+// expected output: [6, 6, 6, 6]
 
 //from
-numbers.from(isEven);
-//results: false if all false return false, else true
+console.log(Array.from([1, 2, 3], x => x + x));
+// expected output: Array [2, 4, 6]
 
 //keys
-numbers.keys();
-//results:
+var iterator = numbers.keys();  
+for (let key of iterator) {
+  console.log(key); // expected output: 0 1 2
+}
+//results: 0, 1, 2, 3, 4, 5
 
 //of
-numbers.of();
-//results:
+Array.of(7); 
+//results: [7]
 
 //values
-numbers.values();
-//results:
-
-
+const iterator = numbers.values();
+for (const value of iterator) {
+  console.log(value); 
+}
+//results: 1, 2, 3, 4, 5, 6
 </code></pre>
 
 
