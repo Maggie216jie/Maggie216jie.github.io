@@ -6,27 +6,50 @@ body {font-family: serif;}
   border-bottom: 1px solid #ccc;
   width: 100%;
   display: flex;
- 
-  
+}
+
+.tab img{
+
+  height: 100%;
+}
+
+
+.nodisplay{
+  display: none !important;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
   background-color: inherit;
-
   border: none;
   outline: none;
   cursor: pointer;
   margin: 14px 0px;
-  
   transition: 0.3s;
   font-size: 17px;
   font-family: serif;
+  height: 30px;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
   background-color:white;
+}
+
+.rotaori{
+
+   transform: rotateY(90deg);
+
+}
+
+.rotateout{
+  transition: 1s;
+  transform: rotateY(90deg);
+}
+
+.rotatein{
+  transition: 1s;
+  transform: rotateY(0deg) !important;
 }
 
 /* Create an active/current tablink class */
@@ -35,29 +58,24 @@ body {font-family: serif;}
   font-size: 18px;
   background-color:white;
   border-bottom: 2px solid rgb(251,99,77);
+  height: 30px;
 }
 
 /* Style the tab content */
 .tabcontent {
   display: none;
   padding: 6px 12px;
-
   border-top: none;
-  
-
-  
 }
 
 .rotatetrans{
 
   animation: fadeEffect 1s;
-
-
 }
 
 @keyframes fadeEffect {
-  from {transform: rotateY(0);scale: 1;}
-  to {transform: rotateY(90deg);scale: 0.5}
+  from {transform: rotateY(0);}
+  to {transform: rotateY(90deg);}
 }
 
 
@@ -73,14 +91,11 @@ body {font-family: serif;}
 
 .maincontent{
 
-    width: 76%;
+    width: 88%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
-
-    max-width: 1024px;
-
-
+    max-width: 1078px;
 
 }
 
@@ -93,11 +108,12 @@ body {font-family: serif;}
 }
 .likeitem{
 
+  position: relative;
+  overflow: hidden;
+
   width: 20%;
   
 }
-
-
 
 img{
     
@@ -107,14 +123,9 @@ img{
 .moviesgallery{
 
     width: 100%;
-
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-
-    align-content:space-between;
-
-
-
+    justify-content:space-evenly;
     text-align: center;
     
 }
@@ -122,14 +133,10 @@ img{
 .movieitem{
 
     position:relative;
-    width: 19%;
+    width: 200px;
     float: left;
     margin: 5px 0.5%;
-
     overflow: hidden;
-
-
-
 }
 
 h3{
@@ -143,9 +150,8 @@ h4{
 
   width: 100%;
   height: 20px;
-
   font-size: 18px;
-
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; 
 }
@@ -159,10 +165,7 @@ h4,p{
 button.config{
 
   position: absolute;
-
-  right: 15%;
-
-
+  right: 25%;
   color: blue;
 
 }
@@ -178,12 +181,10 @@ ul {
 li {
   float:left;
   width: 90%;
- 
   background-color: rgb(192,192,192);
   border: 1px solid white;
   text-align: center;
   list-style:none;
-  
   line-height: 40px;
 
 }
@@ -198,26 +199,17 @@ li {
   height: 24px;
   width:100%;
   background-color: white;
-
   top:0px;
   left:0px;
   z-index: 999;
   text-align: left;
-
-
   transition: 1s;
-
-
   transform: translateX(-100%);
-
-
 }
 
 .likeit{
 
   float: left;
-
-
 }
 
 
@@ -225,17 +217,20 @@ li {
 
   float: right;
 
-
 }
 
 .movieitem:hover > .likeblock{
 
   display: block;
   transition: 1s;
-        
   transform: translateX(0%) !important;
+}
 
+.likeitem:hover > .likeblock{
 
+  display: block;
+  transition: 1s;
+  transform: translateX(0%) !important;
 }
 
 .movieitem:hover > .blockit{
@@ -258,28 +253,382 @@ li {
 
   width:10px;
   height:16px;
-
   background-color:rgb(251,99,77);
   padding: 2px;
+  text-align: center;
 
-  transition: 2s ease-in-out;
 }
-
-
 .closeimg{
 
   background-image: url(close.png);
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
+  float: right;
 
+   margin-top: 50px;
+    margin-right: 50px;
 
 }
-
 
 .blockhidden{
 
   display: none;
 }
+
+.catloading{
+
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+
+
+/*style of pagination*/
+
+.paginationbar{
+
+  width: 82%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+
+
+}
+
+.paginationbutton{
+
+  background-color: white;
+  border-radius: 8px;
+
+}
+
+
+
+div.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: white;
+  opacity: 0.7;
+}
+
+div.modal {
+  background-color: rgb(32,52,63);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  width: 80%;
+  height: 56%;
+  transform: translate(-50%, -50%);
+}
+
+section {
+  padding: 16px;
+  text-align: center;
+}
+
+.modallayer{
+
+  display: none;
+}
+
+
+div.modal.openCitylayer{
+
+
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-start;
+
+
+}
+
+.modalleft{
+
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 30px;
+  margin-left: 30px;
+  width: 300px;
+  height: 450px;
+}
+
+.modalright{
+
+   margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 30px;
+
+  width: 66%;
+  height: 450px;
+
+  color:white;
+  
+}
+
+.modalleftimg{
+
+  width: 100%;
+}
+
+.modalmovietitle{
+
+  font-size: 22px;
+  padding-bottom: 15px;
+
+
+}
+
+.modalmovieoverview{
+
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.movietype{
+
+  padding: 5px;
+  margin: 5px;
+  border-radius: 6px;
+ 
+}
+
+.modalmovietype{
+
+  display: flex;
+  flex-direction: row;
+   padding-bottom: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+.companyimage{
+
+  padding: 10px;
+     width: 6%;
+    max-height: 60px;
+}
+
+.companyname{
+
+  line-height: 60px;
+  padding-right: 30px;
+}
+
+
+.modalmoviecompany{
+
+
+  display: flex;
+  flex-direction: row;
+  background-color: grey;
+  flex-wrap: wrap;
+
+}
+
+
+.companyimage img{
+
+  width: 100%;
+  height: 80%;
+}
+
+
+@media screen and (max-width: 1380px){
+
+   .modalright{
+
+    width: 56%;
+
+   
+  }
+
+
+
+
+
+}
+
+
+
+@media screen and (max-width: 1200px){
+
+   .modalright{
+
+    width: 45%;
+
+   
+  }
+
+  .modalleft{
+
+    width: 250px;
+    height: 375px;
+
+
+
+  }
+
+  span{
+
+    font-size: 15px;
+  }
+
+
+
+
+
+}
+
+
+
+@media screen and (max-width: 780px){
+
+   .modalright{
+
+    width: 45%;
+
+   
+  }
+
+  .companyname{
+
+  line-height: 40px;
+  padding-right: 20px;
+
+  font-size: 12px;
+}
+
+
+  .modalleft{
+
+    width: 220px;
+    height: 330px;
+
+
+
+  }
+
+   span{
+
+    font-size: 15px;
+  }
+
+
+
+
+
+
+}
+
+
+@media screen and (max-width: 670px) {
+
+  .companyname{
+
+  line-height: 20px;
+  padding-right: 10px;
+  font-size: 10px;
+}
+
+
+  p{
+
+    font-size: 14px;
+  }
+
+  h3{
+
+    font-size: 20px;
+  }
+
+
+  div.modal.openCitylayer{
+
+    display: flex;
+    flex-direction: column;
+
+
+  }
+
+  .modalright{
+
+    width: 80%;
+
+     margin-right: auto;
+  margin-left: auto;
+  }
+
+  .modalleft{
+
+    width: 220px;
+    height: 330px;
+
+      margin-right: auto;
+  margin-left: auto;
+
+  margin-top: 30px;
+
+
+  }
+
+  div.modal{
+
+        background-color: rgb(32,52,63);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 80%;
+    height: 90%;
+
+    transform: translate(-50%, -50%);
+
+
+  }
+
+  span{
+
+    font-size: 10px;
+  }
+
+
+.closeimg{
+
+  width: 50px;
+  height: 50px;
+
+
+
+   margin-top: 10px;
+    margin-right: 10px;
+
+}
+
+
+
+
+}
+
+
+
+
 
 
 
