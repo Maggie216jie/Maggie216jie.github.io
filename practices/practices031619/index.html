@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link rel= "stylesheet" href="style.css">
+    <script language="JavaScript" src="moment.js" ></script>
+
+  </head>
+  <body>
+
+    <div id="loading"><img class="catloading" src="loading.gif"></div>
+    <div id="maincontent" class="maincontent nodisplay">
+      <div class="tab">
+        <div id="divcustomer1">
+        <img src="icon.png">
+        </div>
+        <button class="tablinks popular" id="defaultOpen">Movie List</button>
+        <button class="tablinks like likehidden" id="likelisttab">Like List</button><sup id="suplike" class="likehidden">2</sup>
+        <button class="tablinks block blockhidden" id="blocktab">Block List</button><sup id="supblock" class="blockhidden">3</sup>
+        <button class="tablinks config" id="configtab">CONFIG</button>
+      </div>
+      
+      <div id="Popularmovie" class="tabcontent" data-id=1>
+        <h3>The most popular movies</h3>
+        <div id="modalloading" class='overlay modallayer'>
+            <img class="catloading" src="loading.gif">
+        </div>
+
+        <div id ="modalload1" class='overlay modallayer nodisplay'>
+           <span id="closemodalspan" ><img class="closeimg"  src="close.png"></img></span>
+        </div>
+
+        <div id = "modalload2" class='modal modallayer nodisplay'>
+          <img class="modal backgraoudimg">
+          
+          <div class= "modal openCitylayer">
+            <div class = "modalleft"><img class ="modalleftimg"></div>
+            <div class = "modalright">
+
+              <div class="modalmovietitle"></div>
+              <div class="modalmovietype"></div>
+              <div class="modalmovieoverview"></div>
+              <div class="modalmoviecompany"></div>
+
+            </div>
+         </div>
+        </div>
+
+      </div>
+
+      <div id="Likedmovies" class=" tabcontent rotaori dnone" >
+        <h3>Liked List</h3>
+        <div id="likemovie"> 
+        </div> 
+      </div>
+
+      <div id="Blockmovies" class="tabcontent dnone" >
+        <p>Blocked List</p>
+      </div>
+  
+      <div id="Config" class="tabcontent dnone">
+          <span id="configfinish" class="topright"><img class="closeimg"  src="close.png"></span>
+          <ul class="drag-sort-enable"></ul>
+      </div>
+    </div>
+
+    <script language="JavaScript" src="custom.js" ></script>
+
+
+  </body>
+</html>

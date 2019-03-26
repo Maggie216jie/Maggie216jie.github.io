@@ -1,162 +1,86 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>My test page</title>
-    <link rel= "stylesheet" href="style.css">
-    <script language="JavaScript" src="moment.js" ></script>
-    <script type="text/javascript" src="data1.json"></script>
 
-  </head>
-  <body>
+function requestHandler (config){
 
-    <div id="loading"><img class="catloading" src="loading.gif"></div>
-    <div id="maincontent" class="maincontent nodisplay">
-      <div class="tab">
-        <div style="float:left; width:50px; height:50px;margin: 0px 0px;">
-        <img src="icon.png">
-        </div>
-        <button class="tablinks popular" id="defaultOpen">Movie List</button>
-        <button class="tablinks like likehidden" onclick="tabchange();" id="likelisttab">Like List</button><sup id="suplike" class="likehidden">2</sup>
-        <button class="tablinks block blockhidden" onclick="openCity('blocktab', 'Blockmovies');showBlockMovies();" id="blocktab">Block List</button><sup id="supblock" class="blockhidden">3</sup>
-        <button class="tablinks config" onclick="openCity('configtab', 'Config');dragInitial();clearparent(this);enableDragSort('drag-sort-enable')" id="configtab">CONFIG</button>
-      </div>
-      
-      <div id="Popularmovie" class="tabcontent" data-id=1>
-        <h3>The most popular movies</h3>
+  return new Promise( function(resolve, reject){
 
-        <div id="modalloading" class='overlay modallayer'>
+    var xhrRequest = new XMLHttpRequest();
+    xhrRequest.open(config.method, config.url);
+    xhrRequest.onload = function(e) {
 
-            <img class="catloading" src="loading2.jpg" style="opacity: 1">
-         
-        </div>
+      resolve(e.target.response);
+
+    }
 
 
-        <div id ="modalload1" class='overlay modallayer nodisplay'>
-           <span onclick="closeModal();"><img class="closeimg"  src="close.png"></img></span>
-        </div>
+    xhrRequest.onreadystatechange = function() {
+      if (xhrRequest.readyState == 4 && xhrRequest.status == 200) {
 
-        <div id = "modalload2" class='modal modallayer nodisplay'>
-          <img class="modal backgraoudimg" style="width: 100%;height: 100%;">
-          
-          <div class= "modal openCitylayer">
-            <div class = "modalleft"><img class ="modalleftimg"></div>
-            <div class = "modalright">
+        if(config.num===1){
 
-              <div class="modalmovietitle"></div>
-              <div class="modalmovietype"></div>
-              <div class="modalmovieoverview"></div>
-              <div class="modalmoviecompany"></div>
+          console.log("config",config.num);
 
-            </div>
-         </div>
-        </div>
+          document.getElementById('loading').classList.add('nodisplay');
+          document.getElementById('maincontent').classList.remove('nodisplay');
+
+        }
 
 
+        if(config.num===2){
 
-      </div>
+          console.log("config",config.num);
 
-      <div id="Likedmovies" class="tabcontent rotaori" style="display: none;">
-        <h3>Liked List</h3>
-        <div id="likemovie"> 
-        </div> 
-      </div>
+          document.getElementById('modalloading').classList.add('nodisplay');
+          document.getElementById('modalload1').classList.remove('nodisplay');
+          document.getElementById('modalload2').classList.remove('nodisplay');
 
-      <div id="Blockmovies" class="tabcontent " style="display: none;">
-        <p>Blocked List</p>
-      </div>
-  
-      <div id="Config" class="tabcontent" style="display: none;">
-          <span onclick="finish();" class="topright"><img class="closeimg"  src="close.png"></span>
-          <ul class="drag-sort-enable"></ul>
-      </div>
-    </div>
-    <script type="text/javascript">
-      function requestHandler (config){
-
-        return new Promise( function(resolve, reject){
-
-          var xhrRequest = new XMLHttpRequest();
-          xhrRequest.open(config.method, config.url);
-          xhrRequest.onload = function(e) {
-            
-            resolve(e.target.response);
-            
-          }
-
-
-          xhrRequest.onreadystatechange = function() {
-            if (xhrRequest.readyState == 4 && xhrRequest.status == 200) {
-
-              if(config.num===1){
-
-                console.log("config",config.num);
-
-              document.getElementById('loading').classList.add('nodisplay');
-              document.getElementById('maincontent').classList.remove('nodisplay');
-
-            }
-
-
-            if(config.num===2){
-
-                console.log("config",config.num);
-
-              document.getElementById('modalloading').classList.add('nodisplay');
-              document.getElementById('modalload1').classList.remove('nodisplay');
-              document.getElementById('modalload2').classList.remove('nodisplay');
-
-            }
+        }
 
 
         
 
 
 
-            
-            }
 
-          };
-
-
-
-          xhrRequest.onerror = function () {
-
-            reject(new Error('Something is wrong!'));
-          }
-
-          var body = config.method === 'POST' ? config.body :undefined;
-          xhrRequest.send(body);
-        })
       }
 
-    </script>
+    };
 
-    
-    <script>
 
-    var likemovies = [];
-    var likemoviesInfo = [];
-    var draglist=[];
-    var blocklist=[];
-    var blockmovieInfo = [];
+
+    xhrRequest.onerror = function () {
+
+      reject(new Error('Something is wrong!'));
+    }
+
+    var body = config.method === 'POST' ? config.body :undefined;
+    xhrRequest.send(body);
+  })
+}
+
+
+
+var likemovies = [];
+var likemoviesInfo = [];
+var draglist=[];
+var blocklist=[];
+var blockmovieInfo = [];
 
    // window.onload = function(){
 
    // }
 
-    function tabchange(){
+   function tabchange(){
 
-      var currenttab =  document.getElementsByClassName('active')[0].getAttribute("id");
+    var currenttab =  document.getElementsByClassName('active')[0].getAttribute("id");
 
-      if(currenttab=="defaultOpen"){
+    if(currenttab=="defaultOpen"){
 
       document.getElementById('Popularmovie').classList.add('rotateout');
       setTimeout(function(b){
-         openCity('likelisttab', 'Likedmovies');
-         likemoviesdisplay();
-     
-      },1000);
+       openCity('likelisttab', 'Likedmovies');
+       likemoviesdisplay();
+
+     },1000);
 
     }else{
 
@@ -173,33 +97,33 @@
 
 
 
+  }
+
+
+  function closeModal(){
+
+
+
+
+    var elementsmodal = document.getElementsByClassName('modallayer');
+
+
+    for(var index=0; index<elementsmodal.length;index++){
+
+      elementsmodal[index].setAttribute("style","dispaly:none");
+
     }
 
-
-    function closeModal(){
-
-
-
-
-      var elementsmodal = document.getElementsByClassName('modallayer');
-
-
-      for(var index=0; index<elementsmodal.length;index++){
-
-        elementsmodal[index].setAttribute("style","dispaly:none");
-
-      }
-
-      document.getElementById('modalloading').classList.remove('nodisplay');
-      document.getElementById('modalload1').classList.add('nodisplay');
-      document.getElementById('modalload2').classList.add('nodisplay');
-    }
+    document.getElementById('modalloading').classList.remove('nodisplay');
+    document.getElementById('modalload1').classList.add('nodisplay');
+    document.getElementById('modalload2').classList.add('nodisplay');
+  }
 
     //begin of dispaly popular movies
 
     function requestPopularMovies(pagenum){
 
- 
+
 
 
       var configPopular = {
@@ -209,18 +133,18 @@
         url: 'https://api.themoviedb.org/3/movie/popular?api_key=4bef8838c2fd078bd13d7127d8dedcd4&language=en-US&page='+pagenum
       }
       requestHandler(configPopular)
-          .then(function(response){
-            var firstrequest = JSON.parse(response);
+      .then(function(response){
+        var firstrequest = JSON.parse(response);
             //var moviedatalist = firstrequest['results'];
           //  document.getElementById('loading').classList.add('nodisplay');
         //      document.getElementById('maincontent').classList.remove('nodisplay');
-            showPopularMovies(firstrequest);
+        showPopularMovies(firstrequest);
 
 
-          })
-          .catch(function(e){
-            console.error(e);
-          })
+      })
+      .catch(function(e){
+        console.error(e);
+      })
 
 
     }
@@ -240,12 +164,12 @@
       }
 
       requestHandler(configDetail)
-          .then(function(response){
+      .then(function(response){
 
 
 
 
-            var modalmovieinfo = JSON.parse(response);
+        var modalmovieinfo = JSON.parse(response);
             //console.log(modalmovieinfo.id);
 
             var firstlayerimg = document.getElementsByClassName('backgraoudimg')[0];
@@ -294,9 +218,9 @@
 
           })
 
-          .catch(function(e){
-            console.error(e);
-          })
+      .catch(function(e){
+        console.error(e);
+      })
     }
 
 
@@ -306,94 +230,136 @@
       openCity('defaultOpen', 'Popularmovie');
       var numpage = document.getElementById('Popularmovie').getAttribute("data-id");
       requestPopularMovies(numpage);
-     
+
     });
-    
+
+
+    var elementOpenlike = document.getElementById("likelisttab");
+    elementOpenlike.addEventListener("click", function(){
+
+      tabchange();
+      
+    });
+
+    var elementOpenblock = document.getElementById("blocktab");
+    elementOpenblock.addEventListener("click", function(){
+
+      openCity('blocktab', 'Blockmovies');
+      showBlockMovies();
+      
+    });
+
+    var elementOpenfinish = document.getElementById("configfinish");
+    elementOpenfinish.addEventListener("click", function(){
+
+      finish();
+
+      
+    });
+
+
+    var elementOpenclose = document.getElementById("closemodalspan");
+    elementOpenclose.addEventListener("click", function(){
+
+      closeModal();
+
+      
+    });
+
+    var elementOpencofig = document.getElementById("configtab");
+    elementOpencofig.addEventListener("click", function(event){
+
+      openCity('configtab', 'Config');
+      dragInitial();clearparent(event.target);
+      enableDragSort('drag-sort-enable')
+
+      
+    });
 
 
     function showPopularMovies(movielist1){
 
       console.log("begin showPopularMovies ---------------------------");
 
-       document.getElementById('Popularmovie').classList.remove('rotaori');
-        document.getElementById('Likedmovies').classList.add('rotatein');
+      document.getElementById('Popularmovie').classList.remove('rotaori');
+      document.getElementById('Likedmovies').classList.add('rotatein');
 
-  
+
      // console.log(movielist1);
-      var movielist = movielist1['results'];
-      document.getElementById('Popularmovie').classList.remove('rotateout');
-      document.getElementsByClassName('config')[0].setAttribute("style","display:none;");
-      if(document.getElementsByClassName('moviesgallery').length!==0){
-        document.getElementsByClassName('moviesgallery')[0].remove();
-      }
+     var movielist = movielist1['results'];
+     document.getElementById('Popularmovie').classList.remove('rotateout');
+     document.getElementsByClassName('config')[0].setAttribute("style","display:none;");
+     if(document.getElementsByClassName('moviesgallery').length!==0){
+      document.getElementsByClassName('moviesgallery')[0].remove();
+    }
 
 
-      
-      var htmltext = "";
 
-      htmltext = "<div class = \"paginationbar\"><button class = \"paginationbutton\" id = \"previouspage\">no more</button><p id = \"resultsummary\"></p><button class =\"paginationbutton\" id= \"nextpage\">next</button></div>";
+    var htmltext = "";
 
-  
-      for(var i=0;i<movielist.length;i++){
-        if(blocklist.indexOf(movielist[i].id)===-1){
-          var ss="https://image.tmdb.org/t/p/w500"+movielist[i].poster_path;
-          var release = moment(movielist[i].release_date).format('LL');
-          var titlelist = movielist[i].title.split(" ");
-
-          htmltext += "<div class = \"movieitem\" id=\"popularid-"+movielist[i].id+"\"><img class=\"clickimage\" src="+ss+"><h4>"+movielist[i].title+"</h4><p>"+release+"</p>";
-          htmltext += "<div class=\"likeblock\"><a class=\"likeit\" onclick=\"getLikelist(this);\" data-id="+movielist[i].id+" data-img="+ss+" data-release="+movielist[i].release_date+" data-title="+titlelist.join("-")+">Like it!</a>"
-          htmltext += "<a class=\"blockit\" onclick=\"getBlocklist(this);\" data-id="+movielist[i].id+" data-img="+ss+" data-release="+movielist[i].release_date+" data-title="+titlelist.join("-")+">Block it!</a></div></div>"
-
-         
-        }
-
-        
-      }
-      
-      var div = document.createElement('div');
-      div.className = "moviesgallery";
-      div.innerHTML = htmltext;
-      document.getElementById('Popularmovie').appendChild(div);
+    htmltext = "<div class = \"paginationbar\"><button class = \"paginationbutton\" id = \"previouspage\">no more</button><p id = \"resultsummary\"></p><button class =\"paginationbutton\" id= \"nextpage\">next</button></div>";
 
 
-      document.getElementById('resultsummary').innerText= "Page "+movielist1['page']+" / Total "+movielist1['total_pages']+" of "+movielist1['total_results']+" results";
+    for(var i=0;i<movielist.length;i++){
+      if(blocklist.indexOf(movielist[i].id)===-1){
+        var ss="https://image.tmdb.org/t/p/w500"+movielist[i].poster_path;
+        var release = moment(movielist[i].release_date).format('LL');
+        var titlelist = movielist[i].title.split(" ");
 
-      if(movielist1['page']!==1){
+        htmltext += "<div class = \"movieitem\" id=\"popularid-"+movielist[i].id+"\"><img class=\"clickimage\" src="+ss+"><h4>"+movielist[i].title+"</h4><p>"+release+"</p>";
+        htmltext += "<div class=\"likeblock\"><a class=\"likeit\" onclick=\"getLikelist(this);\" data-id="+movielist[i].id+" data-img="+ss+" data-release="+movielist[i].release_date+" data-title="+titlelist.join("-")+">Like it!</a>"
+        htmltext += "<a class=\"blockit\" onclick=\"getBlocklist(this);\" data-id="+movielist[i].id+" data-img="+ss+" data-release="+movielist[i].release_date+" data-title="+titlelist.join("-")+">Block it!</a></div></div>"
 
-        document.getElementById('previouspage').innerText = "prev";
-        document.getElementById('previouspage').addEventListener("click", function previouspage (){
-          var pagenumber = movielist1['page']-1;
-          requestPopularMovies(pagenumber);
-
-          document.getElementById('Popularmovie').setAttribute("data-id",pagenumber);
-
-        });
 
       }
 
 
+    }
 
-      document.getElementById('nextpage').addEventListener("click", function nextpage(){
+    var div = document.createElement('div');
+    div.className = "moviesgallery";
+    div.innerHTML = htmltext;
+    document.getElementById('Popularmovie').appendChild(div);
 
-        var pagenumber = movielist1['page']+1;
-          console.log("next",pagenumber);
-          requestPopularMovies(pagenumber);
 
-          document.getElementById('Popularmovie').setAttribute("data-id",pagenumber);
+    document.getElementById('resultsummary').innerText= "Page "+movielist1['page']+" / Total "+movielist1['total_pages']+" of "+movielist1['total_results']+" results";
+
+    if(movielist1['page']!==1){
+
+      document.getElementById('previouspage').innerText = "prev";
+      document.getElementById('previouspage').addEventListener("click", function previouspage (){
+        var pagenumber = movielist1['page']-1;
+        requestPopularMovies(pagenumber);
+
+        document.getElementById('Popularmovie').setAttribute("data-id",pagenumber);
 
       });
 
-     
-      function showModalMovieDetail (event) {
+    }
 
-        var modalelements = document.getElementsByClassName("modallayer");
-        for(var i=0;i<modalelements.length;i++){
-          modalelements[i].setAttribute("style","display:block")
-        }
 
-        var parentelement = event.target.parentElement;
 
-        var modalidnum = parentelement.getAttribute('id').split("-")[1];
+    document.getElementById('nextpage').addEventListener("click", function nextpage(){
+
+      var pagenumber = movielist1['page']+1;
+      console.log("next",pagenumber);
+      requestPopularMovies(pagenumber);
+
+      document.getElementById('Popularmovie').setAttribute("data-id",pagenumber);
+
+    });
+
+
+    function showModalMovieDetail (event) {
+
+      var modalelements = document.getElementsByClassName("modallayer");
+      for(var i=0;i<modalelements.length;i++){
+        modalelements[i].setAttribute("style","display:block")
+      }
+
+      var parentelement = event.target.parentElement;
+
+      var modalidnum = parentelement.getAttribute('id').split("-")[1];
 
         //console.log(modalidnum);
 
@@ -413,7 +379,7 @@
           var likeitelement = document.querySelectorAll('a[data-id=\"'+likemovies[i]+'\"]');
           for(var j=0;j<likeitelement.length;j++){
             if(likeitelement[j].getAttribute("class")=="likeit"){
-  
+
               likeitelement[j].setAttribute("style","color:rgb(220,119,150);");
 
 
@@ -453,7 +419,7 @@
 
         d.setAttribute("style","color:rgb(220,119,150);");
         if(likemovies.length === 1){
-          
+
           var list, index;
           list = document.getElementsByClassName("likehidden");
           for (index = 0; index < list.length; ++index) {
@@ -474,7 +440,7 @@
         alert("block already");
         
       }else{
-        
+
         blocklist.push(parseInt(d.getAttribute("data-id")));
 
         var objblockmovie = {
@@ -493,7 +459,7 @@
         d.setAttribute("style","color:rgb(220,119,150);");
         
         if(blocklist.length === 1){
-          
+
           var list, index;
           list = document.getElementsByClassName("blockhidden");
           for (index = 0; index < list.length; ++index) {
@@ -514,7 +480,7 @@
         if(likemovies.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
           likemovies.splice(likemovies.indexOf(parseInt(d.getAttribute("data-id"))),1);
 
-   
+
 
           if(document.getElementById("likeid-"+parseInt(d.getAttribute("data-id")))!=null){
 
@@ -541,15 +507,15 @@
             likeelement[index].setAttribute("style","display:none;");
           }
         }
-      
+
       }
     }
-        
+
     function likemoviesdisplay(){
 
       console.log("begin likemovie display ---------------------------");
       document.getElementsByClassName("tabcontent")[0].setAttribute("style","display:none");
-   
+
       if(draglist.length<likemovies.length){
         for(var m =0; m<likemovies.length;m++){
           if(draglist.indexOf(likemovies[m])===-1){
@@ -566,14 +532,14 @@
         var likemoviedetail = likemoviesInfo.filter(x => x.id == draglist[i])[0];
         var titlelist= likemoviedetail.title.split(" ")
 
-            var div = document.createElement('div');
-            div.className = "likeitem";
-            div.id="likeid-"+likemoviedetail.id;
-            div.innerHTML = "<img src="+likemoviedetail.img+"><h4 class=\"likemovieid\" data-id="+likemoviedetail.id+">"+likemoviedetail.title+"</h4><p>"+moment(likemoviedetail.release).format('LL')+"</p>"+"<div class=\"likeblock\"><a class=\"likeit\" onclick=\"getBlocklist(this);\" data-id="+likemoviedetail.id+" data-img="+likemoviedetail.img+" data-release="+likemoviedetail.release+" data-title="+titlelist.join("-")+">Block it!</a><a class=\"deleteblockit\" onclick=\"deleteLike(this);\" data-id="+likemoviedetail.id+">Delete</a></div>";
-            document.getElementById('likemovie').appendChild(div);
+        var div = document.createElement('div');
+        div.className = "likeitem";
+        div.id="likeid-"+likemoviedetail.id;
+        div.innerHTML = "<img src="+likemoviedetail.img+"><h4 class=\"likemovieid\" data-id="+likemoviedetail.id+">"+likemoviedetail.title+"</h4><p>"+moment(likemoviedetail.release).format('LL')+"</p>"+"<div class=\"likeblock\"><a class=\"likeit\" onclick=\"getBlocklist(this);\" data-id="+likemoviedetail.id+" data-img="+likemoviedetail.img+" data-release="+likemoviedetail.release+" data-title="+titlelist.join("-")+">Block it!</a><a class=\"deleteblockit\" onclick=\"deleteLike(this);\" data-id="+likemoviedetail.id+">Delete</a></div>";
+        document.getElementById('likemovie').appendChild(div);
       }
 
-        
+
     }
     
     function showBlockMovies(){
@@ -587,7 +553,7 @@
       for(var i=0;i<blocklist.length;i++){
         var blockmovie = blockmovieInfo.filter(x => x.id == blocklist[i])[0];
         var titlelist = blockmovie.title.split(" ");
-    
+
         htmltext += "<div class = \"movieitem\" id=\"blockid"+blockmovie.id+"\"><img src="+blockmovie.img+"><h4>"+blockmovie.title+"</h4><p>"+moment(blockmovie.release).format('LL')+"</p>";
         htmltext += "<div class=\"likeblock\"><a class=\"likeit\" onclick=\"getLikelist(this);\" data-id="+blockmovie.id+" data-img="+blockmovie.img+" data-release="+blockmovie.release+" data-title="+titlelist.join("-")+">Like it!</a>"
         htmltext += "<a class=\"deleteblockit\" onclick=\"deleteBlock(this);\" data-id="+blockmovie.id+">Delete</a></div></div>"
@@ -606,65 +572,65 @@
 
       if(draglist.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
 
-         draglist.splice(draglist.indexOf(parseInt(d.getAttribute("data-id"))),1);
-      }
-      
-      if(likemovies.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
-        likemovies.splice(likemovies.indexOf(parseInt(d.getAttribute("data-id"))),1);       
-        var idstring = "likeid-"+d.getAttribute("data-id");
-        document.getElementById(idstring).setAttribute("style","display:none;");
-        document.getElementById("suplike").textContent=likemovies.length;
-      }
+       draglist.splice(draglist.indexOf(parseInt(d.getAttribute("data-id"))),1);
+     }
 
-      if(likemovies.length==0){
-        console.log("likemovies length is 0");
-        var likelement = document.getElementsByClassName('likehidden');
-        for (var index = 0; index < likelement.length; ++index) {
-          likelement[index].setAttribute("style","display:none;");
-        }
-
-      //document.getElementById("likelisttab").click();
-
-      }
+     if(likemovies.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
+      likemovies.splice(likemovies.indexOf(parseInt(d.getAttribute("data-id"))),1);       
+      var idstring = "likeid-"+d.getAttribute("data-id");
+      document.getElementById(idstring).setAttribute("style","display:none;");
+      document.getElementById("suplike").textContent=likemovies.length;
     }
 
-    
-    function deleteBlock(d){
-
-      console.log("begin deleteblock---------------------------");
-      
-      if(blocklist.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
-        blocklist.splice(blocklist.indexOf(parseInt(d.getAttribute("data-id"))),1);
-        
-        var idstring = "blockid"+d.getAttribute("data-id");
-        document.getElementById(idstring).setAttribute("style","display:none;");
-        document.getElementById("supblock").textContent=blocklist.length;
-      }
-
-      if(blocklist.length==0){
-        console.log("blocklist length is 0");
-        var blockelement = document.getElementsByClassName('blockhidden');
-        for (var index = 0; index < blockelement.length; ++index) {
-          blockelement[index].setAttribute("style","display:none;");
+    if(likemovies.length==0){
+      console.log("likemovies length is 0");
+      var likelement = document.getElementsByClassName('likehidden');
+      for (var index = 0; index < likelement.length; ++index) {
+        likelement[index].setAttribute("style","display:none;");
       }
 
       //document.getElementById("likelisttab").click();
 
+    }
+  }
+
+
+  function deleteBlock(d){
+
+    console.log("begin deleteblock---------------------------");
+
+    if(blocklist.indexOf(parseInt(d.getAttribute("data-id")))!==-1){
+      blocklist.splice(blocklist.indexOf(parseInt(d.getAttribute("data-id"))),1);
+
+      var idstring = "blockid"+d.getAttribute("data-id");
+      document.getElementById(idstring).setAttribute("style","display:none;");
+      document.getElementById("supblock").textContent=blocklist.length;
+    }
+
+    if(blocklist.length==0){
+      console.log("blocklist length is 0");
+      var blockelement = document.getElementsByClassName('blockhidden');
+      for (var index = 0; index < blockelement.length; ++index) {
+        blockelement[index].setAttribute("style","display:none;");
       }
+
+      //document.getElementById("likelisttab").click();
+
     }
-      
-    function clearparent(el){
-      el.parentElement.style.display='none';
-    }
+  }
 
-    
-    var dragidtitle ={};
-    
-    function dragInitial(){
+  function clearparent(el){
+    el.parentElement.style.display='none';
+  }
 
-      document.getElementsByClassName('drag-sort-enable')[0].innerHTML = "";
 
-      var likemovielement = document.getElementsByClassName('likemovieid');
+  var dragidtitle ={};
+
+  function dragInitial(){
+
+    document.getElementsByClassName('drag-sort-enable')[0].innerHTML = "";
+
+    var likemovielement = document.getElementsByClassName('likemovieid');
 
       /*for(var i =0; i<likemovielement.length;i++){
         var lielement = document.createElement('li');
@@ -678,11 +644,13 @@
 
       for(var i =0; i<draglist.length;i++){
 
+
+
         var likemoviedetail = likemoviesInfo.filter(x => x.id == draglist[i])[0];
-          var lielement = document.createElement('li');
+        var lielement = document.createElement('li');
 
         lielement.innerHTML = likemoviedetail.title;
-         console.log(lielement.innerHTML);
+        console.log(lielement.innerHTML);
         dragidtitle[likemoviedetail.title] =  parseInt(likemoviedetail.id);
 
         document.getElementsByClassName('drag-sort-enable')[0].appendChild(lielement);
@@ -692,7 +660,7 @@
       }
 
 
-    
+
     }
     
     function finish(){
@@ -733,13 +701,11 @@
       }
       return color;
     }
-    </script>
+    
 
-    <!--tab -->
-    <script>
     function openCity(idname, cityName) {
 
-      
+
       var i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName("tabcontent");
       
@@ -760,10 +726,6 @@
     
     document.getElementById("defaultOpen").click();
 
-    </script>
-
-
-    <script>   
 
     function enableDragSort(listClass) {
       const sortableLists = document.getElementsByClassName(listClass);
@@ -798,8 +760,3 @@
       item.target.classList.remove('drag-sort-active');
     }
 
-
-    </script>
-
-  </body>
-</html>
