@@ -1,0 +1,864 @@
+      <!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <title>Hello, world!</title>
+
+  <style type="text/css">
+  .nav-pills .nav-link{
+    background-color: rgb(247,249,251);
+  }
+
+  .form-control.is-invalid{
+    background-image: none;
+  }
+
+  .form-control.is-valid{
+    background-image: none;
+  }
+
+  @media (min-width: 576px) and (max-width: 768px){
+    .container {
+      max-width: 767px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="container largescreen">
+    <table class="table table-hover">
+
+
+      <thead>
+        <tr>
+          <th scope="col" style="width:48.5%;">Product</th>
+          <th scope="col" style="width:10%" >Discount</th>
+          <th scope="col" style="width:15.5%">Quantity</th>
+          <th scope="col" style="width:14%">Price</th>
+          <th scope="col" style="width:12%">Action</th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+        <tr id="product1">
+          <td scope="row"  class="align-middle">
+            <div class="media">
+              <img src="https://fakeimg.pl/100/"  class="mr-5 pr-2" alt="...">
+              <div class="media-body ml-4 pl-1">
+                <h4>Product 1</h4>
+                <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum</p>
+              </div>
+            </div>
+          </td>
+          <td class="align-middle text-center discount"> 35</td>
+          <td class="align-middle">
+            <select class="form-control quantity" id="exampleFormControlSelect1" style="width: 45%;">
+            </select>
+          </td>
+          <td class="align-middle price">$1.99</td>
+          <td class="align-middle">
+            <button id="popover1" type="button" class="btn btn-info px-2 py-1" data-container="body" data-toggle="popover" data-placement="left" title="In Stock" data-content="2 items remaining">
+              <i class="fas fa-sync-alt fa-sm"></i>
+            </button>
+            <button  id="product1delete" type="button" class="btn btn-danger px-2 py-1">
+              <i class="fas fa-trash fa-sm"></i>
+            </button>
+          </td>
+        </tr>
+
+
+
+        <tr id="product2">
+          <td scope="row"  class="align-middle">
+            <div class="media">
+              <img src="https://fakeimg.pl/100/"  class="mr-5 pr-2" alt="...">
+              <div class="media-body ml-4 pl-1">
+                <h4>Product 2</h4>
+                <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum</p>
+              </div>
+            </div>
+          </td>
+
+          <td class="align-middle text-center discount"> N/A</td>
+          <td class="align-middle">
+            <select class="form-control quantity" id="exampleFormControlSelect2" style="width: 45%;">
+
+            </select>
+          </td>
+          <td class="align-middle price">$100.99</td>
+
+          <td class="align-middle">
+
+            <button id="popover2" type="button" class="btn btn-info px-2 py-1" data-container="body" data-toggle="popover" data-placement="left" title="Popover title" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              <i class="fas fa-sync-alt fa-sm"></i>
+            </button>
+            <button  id="product2delete" type="button" class="btn btn-danger px-2 py-1">
+              <i class="fas fa-trash fa-sm"></i>
+            </button>
+
+          </td>
+        </tr>
+
+
+        <tr id="product3">
+          <td scope="row"  class="align-middle">
+            <div class="media">
+              <img src="https://fakeimg.pl/100/"  class="mr-5 pr-2" alt="...">
+              <div class="media-body ml-4 pl-1">
+                <h4>Product 3</h4>
+                <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum</p>
+              </div>
+            </div>
+          </td>
+
+          <td class="align-middle text-center discount"> 15%</td>
+          <td class="align-middle">
+            <select class="form-control quantity" id="exampleFormControlSelect3" style="width: 45%;">
+
+            </select>
+          </td>
+          <td class="align-middle price">$91.99</td>
+
+          <td class="align-middle">
+
+            <button id="popover3" type="button" class="btn btn-info px-2 py-1" data-container="body" data-toggle="popover" data-placement="left" title="Popover title" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              <i class="fas fa-sync-alt fa-sm"></i>
+            </button>
+            <button  id="product3delete" type="button" class="btn btn-danger px-2 py-1">
+              <i class="fas fa-trash fa-sm"></i>
+            </button>
+
+
+          </td>
+        </tr>
+
+
+
+        <tr id="product4">
+          <td scope="row"  class="align-middle">
+            <div class="media">
+              <img src="https://fakeimg.pl/100/"  class="mr-5 pr-2" alt="...">
+              <div class="media-body ml-4 pl-1">
+                <h4>Product 4</h4>
+                <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum</p>
+              </div>
+            </div>
+          </td>
+
+          <td class="align-middle text-center discount"> 20%</td>
+          <td class="align-middle">
+            <select class="form-control quantity" id="exampleFormControlSelect4" style="width: 45%;">
+              <!--
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            -->
+            </select>
+          </td>
+          <td class="align-middle price">$991.99</td>
+
+          <td class="align-middle">
+            <button id="popover4" type="button" class="btn btn-info px-2 py-1" data-container="body" data-toggle="popover" data-placement="left" title="Popover title" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              <i class="fas fa-sync-alt fa-sm"></i>
+            </button>
+            <button  id="product4delete" type="button" class="btn btn-danger px-2 py-1">
+              <i class="fas fa-trash fa-sm"></i>
+            </button>
+
+
+          </td>
+        </tr>
+
+
+
+
+        <tr id="product5">
+          <td scope="row"  class="align-middle">
+            <div class="media">
+              <img src="https://fakeimg.pl/100/"  class="mr-5 pr-2" alt="...">
+              <div class="media-body ml-4 pl-1">
+                <h4>Product 5</h4>
+                <p> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum</p>
+              </div>
+            </div>
+          </td>
+
+          <td class="align-middle text-center discount"> 12%</td>
+          <td class="align-middle">
+            <select class="form-control quantity" id="exampleFormControlSelect5" style="width: 45%;">
+
+            </select>
+          </td>
+          <td class="align-middle price">$871.99</td>
+
+          <td class="align-middle">
+            <button id="popover5" type="button" class="btn btn-info px-2 py-1" data-container="body" data-toggle="popover" data-placement="left" title="Popover title" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+              <i class="fas fa-sync-alt fa-sm"></i>
+            </button>
+            <button id="product5delete" type="button" class="btn btn-danger px-2 py-1">
+              <i class="fas fa-trash fa-sm"></i>
+            </button>
+
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td></td>
+          <th scope="row" colspan="2" class="text-right pr-5 mr-5 total">Total $</th>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td><button type="button" class="btn btn-warning"><i class="fas fa-angle-left"></i> Continue Shopping</button></td>
+          <td></td>
+          <td></td>
+          <td colspan="2" class="text-right">
+
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Checkout <i class="fas fa-angle-right"></i></button>
+
+          
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+
+  <div class="container moblie d-md-none">
+
+    <div  id="continueshopping" class="row">
+        <div class="col mx-3 py-3 border-bottom  border-top border-muted w-100">
+          <h6 class="w-100 text-center total"><strong>Total $1741.42 </strong></h6>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col mx-3 py-3 my-3 border-bottom  border-top border-muted ">
+        <button  type="button" class="btn btn-warning align-middle w-100"><i class="fas fa-angle-left"></i> Continue Shopping</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mx-3 py-3 my-3 border-bottom  border-top border-muted ">
+         <button type="button" class="btn btn-success align-middle w-100" data-toggle="modal" data-target="#exampleModal">Checkout <i class="fas fa-angle-right"></i></button>
+      </div>
+    </div>
+
+  </div>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="card my-3 mx-3">
+                    <div class="card-body py-4 px-4">
+                      <div class="modal-body">
+
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                          <li class="nav-item w-50 text-center">
+                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-credit-card"></i> Credit Card</a>
+                          </li>
+                          <li class="nav-item w-50 text-center">
+                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false" ><i class="fab fa-paypal"></i> Paypal</a>
+                          </li>
+                          <li class="nav-item w-100 text-center">
+                            <a class="nav-link getcardnum" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fas fa-university"></i> Bank Transfer</a>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                            <form class="text-left">
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Full name (on the card)</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" >
+                                <small id="emailHelp" class="form-text text-danger d-none">Please enter the full name</small>
+                              </div>
+                              <div class="form-group">
+
+                                <label for="exampleInputEmail2">Card number</label>
+                                <label class="sr-only" for="inlineFormInputGroup">Username</label>
+
+                                <div class="input-group">
+                                  <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+                                  <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                      <i class="fab fa-cc-visa mr-1"></i>
+                                      <i class="fab fa-cc-amex mr-1"></i>
+                                      <i class="fab fa-cc-mastercard mr-1"></i>
+
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                                <small id="cardnumberHelp" class="form-text text-danger d-none">Please enter your credit card number</small>
+                              </div>
+
+                              <div class="form-row">
+                                <div class="col-md-8 mb-3 ">
+                                  <label for="validationDefault03">Expiration</label>
+                                  <div class="input-group">
+                                    <input type="text" class="form-control w-50" id="validationDefault03" placeholder="MM">
+                                    <input type="text" class="form-control w-50" id="validationDefault04" placeholder="YY">
+                                    <small id="dateHelp" class="form-text text-danger d-none">Please enter your card expiration info</small>
+
+                                  </div>
+                                </div>   
+                                <div class="col-md-4 mb-3 pl-4">
+                                  <label for="validationDefault05">CSV <i class="fa fa-question-circle" ></i></label>
+                                  <input type="text" class="form-control" id="validationDefault05" placeholder="">
+                                </div>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" >
+                                <label class="form-check-label" for="exampleCheck1">Agree to terms and conditions</label>
+                                <small id="agreeHelp" class="form-text text-danger d-none">You must agree before submitting</small>
+                              </div>
+                              <button id="confirm" type="submit" class="btn btn-primary w-100 mt-3">Confirm</button>
+                            </form>
+                          </div>
+                          <div class="tab-pane fade text-left" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <p>Paypal is easiest way to pay online</p>
+                            <button type="button" class="btn btn-primary mb-3"><i class="fab fa-paypal"></i> Log in my Paypal</button>
+                            <p><strong>Note:</strong>Lorem ipsum dolor sit amet, Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</p>
+                          </div>
+
+
+                          <div class="tab-pane fade text-left" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <p>Bank account details</p>
+                            <p></p>
+                            <p><strong>BANK:</strong><br>THE WORLD BANK</p>
+                            <p class="setcardnum"><strong>Account number:</strong><br>12345678912345</p>
+                            <p><strong>IBAN:</strong><br>123456789</p>
+                            <p><strong>Note:</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, Cras sit amet nibh libero, in gravida nulla</p>
+
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  <script type="text/javascript">
+
+    if($(window).width()<768){
+      console.log("mw");
+      $('.container.largescreen').addClass("d-none");
+    }else{
+      console.log("mw2");
+      $('.container.largescreen').removeClass("d-none");
+    }
+
+    var product=[
+    {
+
+      "img": "https://fakeimg.pl/100/",
+      "productname": "Product1",
+      "desprition": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum",
+      "discount": 35,
+      "quanity": 2,
+      "price":1.99
+
+    },
+    {
+
+      "img": "https://fakeimg.pl/100/",
+      "productname": "Product2",
+      "desprition": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum",
+      "discount": "N/A",
+      "quanity": 5,
+      "price":100.99
+    },
+    {
+      "img": "https://fakeimg.pl/100/",
+      "productname": "Product3",
+      "desprition": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum",
+      "discount": 15,
+      "quanity": 6,
+      "price":91.99
+    },
+    {
+
+      "img": "https://fakeimg.pl/100/",
+      "productname": "Product4",
+      "desprition": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum",
+      "discount": 20,
+      "quanity": 8,
+      "price":991.99
+    },
+    {
+
+      "img": "https://fakeimg.pl/100/",
+      "productname": "Product5",
+      "desprition": "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum",
+      "discount": 12,
+      "quanity": 9,
+      "price":871.99
+    }
+
+
+
+    ];
+
+
+    var htmltext="";
+
+    for(var m=0; m<product.length; m++){
+
+      var quanitypop = product[m].quanity+" items remaining";
+
+      var optionhtml = "";
+       for(var j=1; j<=product[m].quanity; j++){
+
+          optionhtml+="<option>"+j+"</option>"
+        }
+     
+
+      htmltext+=  '<div class="row">'+
+                    '<div class="col-md bg-dark mx-3 pt-3 text-white">'+
+                      '<h6><strong>Product</strong></h6>'+
+                      '<img src='+product[m].img+' class="mr-5 pr-2" alt="...">'+
+                      '<h4>'+product[m].productname+'</h4>'+
+                      '<p> '+product[m].desprition+'</p>'+
+                    '</div>'+
+                    '<div class="col-md mx-3 pt-3 text-center border-bottom border-muted">'+
+                      '<h6><strong>Discount</strong>   '+product[m].discount+'%</h6>'+
+                    '</div>'+
+                    '<div class="col-md mx-3 py-2 text-center border-bottom border-muted">'+
+                      '<h6 class="text-left "><strong>Quantity</strong></h6>'+
+                      '<select class="form-control quantity w-100" id="exampleFormControlquanity'+(m+1)+'">'+
+                      optionhtml+
+                      '</select>'+
+                    '</div>'+
+                    '<div class="col-md mx-3 pt-3 text-center border-bottom border-muted">'+
+                      '<h6><strong>Original Price</strong>    $'+product[m].price+'</h6>'+
+                    '</div>'+
+                    '<div class="col-md mx-3 py-4 text-center">'+
+                    '<button id="popover5" type="button" class="btn btn-info float-left" data-container="body" data-toggle="popover" data-placement="left" title="In Stock" data-content="'+quanitypop+'" style="width: 40%;">'+
+                      '<i class="fas fa-sync-alt fa-sm"></i>'+
+                    '</button>'+
+                    '<button id="product'+(m+1)+'remove" type="button" class="btn btn-danger float-right removeitems" style="width: 40%;">'+
+                      '<i class="fas fa-trash fa-sm"></i>'+
+                    '</button>'+
+                    '</div>'+
+                  '</div>';
+
+
+                  
+
+    }
+
+
+    $( htmltext).insertBefore( "#continueshopping" );
+
+   // $('.container.moblie').append(htmltext);
+
+   $('.removeitems').on('click',function () {
+          $(this).parents('.row').first().remove()
+
+
+      });
+
+
+
+
+
+
+
+    $('[data-toggle="popover"]').popover();
+
+    $(document).ready( function () {
+      var selectedText =[1,1,1,1,1];
+
+      var getTotal = function($selectedText) { 
+        var pricearr = $(".price").text().split("$");
+        var discountarr = $(".discount").text().split(" ");
+    
+
+        var total =0;
+
+        for(var i=1; i<pricearr.length; i++){
+
+          if(discountarr[i]!= "N/A"){
+            var dis = 1-parseFloat(discountarr[i])/100;
+         
+            if(selectedText[i]==undefined){
+              selectedText[i]=1;
+            }
+
+            total+= parseFloat(pricearr[i])*dis*selectedText[i];
+
+          }else{
+
+            total+= parseFloat(pricearr[i])*selectedText[i];
+
+          }
+
+        }
+
+        $(".total").text("Total $"+total.toFixed(2)+"");
+
+      };
+      getTotal(selectedText);
+
+      $('.quantity').change(function () {
+
+
+          var indexele = $('.quantity').index(this)+1 ;
+          selectedText[indexele] = $(this).find("option:selected").text();
+          getTotal(selectedText);
+
+
+      });
+
+
+      var stocknum =[2,2,5,6,8,9];
+
+      $('#popover1').attr("data-content", stocknum[1]+" items remaining");
+      $('#popover2').attr("data-content", stocknum[2]+" items remaining");
+      $('#popover3').attr("data-content", stocknum[3]+" items remaining");
+      $('#popover4').attr("data-content", stocknum[4]+" items remaining");
+      $('#popover5').attr("data-content", stocknum[5]+" items remaining");
+
+      
+      for(var i=1; i<stocknum.length; i++){
+        var htmltext ="";
+
+        for(var m=1; m<=stocknum[i]; m++){
+
+          htmltext+="<option>"+m+"</option>"
+        }
+
+        var selectori= '#exampleFormControlSelect'+i;
+        $(selectori).append(htmltext);
+
+      }
+
+
+      $( "#exampleInputEmail1" ).keyup(function() {
+
+
+        if($('#exampleInputEmail1').val() == "" ){
+
+          $('#exampleInputEmail1').addClass( "is-invalid" );
+          $('#exampleInputEmail1').removeClass( "is-valid" );
+          $('#emailHelp').removeClass( "d-none" );
+
+
+        }else{
+
+          $('#exampleInputEmail1').removeClass( "is-invalid" );
+          $('#exampleInputEmail1').addClass( "is-valid" );
+          $('#emailHelp').addClass( "d-none" );
+
+
+        }
+        
+        
+
+      });
+
+      var cardnum ="";
+
+      $( "#inlineFormInputGroup" ).keyup(function() {
+
+        if($('#inlineFormInputGroup').val() == "" ){
+
+          $('#inlineFormInputGroup').addClass( "is-invalid" );
+          $('#inlineFormInputGroup').removeClass( "is-valid" );
+          $('#cardnumberHelp').removeClass( "d-none" );
+
+
+        }else{
+
+          $('#inlineFormInputGroup').removeClass( "is-invalid" );
+          $('#inlineFormInputGroup').addClass( "is-valid" );
+          $('#cardnumberHelp').addClass( "d-none" );
+
+          cardnum = $('#inlineFormInputGroup').val();
+
+          if($('#inlineFormInputGroup').val().length===16){
+
+
+            $('#inlineFormInputGroup').val(cardnum.substring(0,4)+" "+cardnum.substring(4,8)+" "+cardnum.substring(8,12)+" "+cardnum.substring(12,16));
+
+
+          }
+
+
+        }
+
+
+      });
+
+
+      $( "#validationDefault03" ).keyup(function() {
+
+        if($('#validationDefault03').val() == "" ){
+
+
+
+          $('#validationDefault03').addClass( "is-invalid" );
+          $('#validationDefault03').removeClass( "is-valid" );
+          $('#dateHelp').removeClass( "d-none" );
+    
+
+
+        }else{
+
+          $('#validationDefault03').removeClass( "is-invalid" );
+          $('#validationDefault03').addClass( "is-valid" );
+     
+
+
+        }
+
+        if( $('#validationDefault05').hasClass( "is-valid" )&& $('#validationDefault04').hasClass( "is-valid" ) && $('#validationDefault03').hasClass( "is-valid" )){
+          $('#dateHelp').addClass( "d-none" );
+        }
+       
+
+      });
+
+      $( "#validationDefault04" ).keyup(function() {
+
+
+        if($('#validationDefault04').val() == "" ){
+
+
+
+          $('#validationDefault04').addClass( "is-invalid" );
+          $('#validationDefault04').removeClass( "is-valid" );
+          $('#dateHelp').removeClass( "d-none" );
+    
+
+
+        }else{
+
+          $('#validationDefault04').removeClass( "is-invalid" );
+          $('#validationDefault04').addClass( "is-valid" );
+     
+        }
+
+
+        if( $('#validationDefault05').hasClass( "is-valid" )&& $('#validationDefault04').hasClass( "is-valid" ) && $('#validationDefault03').hasClass( "is-valid" )){
+          $('#dateHelp').addClass( "d-none" );
+        }
+       
+
+      });
+
+      $( "#validationDefault05" ).keyup(function() {
+
+        if($('#validationDefault05').val() == "" ){
+
+          $('#validationDefault05').addClass( "is-invalid" );
+          $('#validationDefault05').removeClass( "is-valid" );
+          $('#dateHelp').removeClass( "d-none" );
+
+        }else{
+
+          $('#validationDefault05').removeClass( "is-invalid" );
+          $('#validationDefault05').addClass( "is-valid" );
+
+        }
+
+        if( $('#validationDefault05').hasClass( "is-valid" )&& $('#validationDefault04').hasClass( "is-valid" ) && $('#validationDefault03').hasClass( "is-valid" )){
+          $('#dateHelp').addClass( "d-none" );
+        }
+       
+
+      });
+
+
+      $('#exampleCheck1').on('change', function () {
+
+        if(!$('#exampleCheck1').is(":checked") ){
+
+          $('#exampleCheck1').addClass( "is-invalid" );
+          $('#agreeHelp').removeClass("d-none");
+
+        }else{
+
+          $('#exampleCheck1').removeClass( "is-invalid" );
+          $('#agreeHelp').addClass("d-none");
+
+
+        }
+
+
+
+      });
+
+
+      $('#confirm').on('click',function(event){
+       
+
+        if($('#exampleInputEmail1').val() == "" ){
+          $('#exampleInputEmail1').addClass( "is-invalid" );
+          $('#emailHelp').removeClass("d-none");
+          event.preventDefault();
+        }
+
+        if($('#inlineFormInputGroup').val() == "" ){
+
+          $('#inlineFormInputGroup').addClass( "is-invalid" );
+          $('#cardnumberHelp').removeClass("d-none");
+          event.preventDefault();
+
+        }
+
+        if($('#validationDefault03').val() == "" ){
+
+          $('#validationDefault03').addClass( "is-invalid" );
+          $('#dateHelp').removeClass("d-none");
+          event.preventDefault();
+   
+        }
+
+        if($('#validationDefault04').val() == "" ){
+
+
+          $('#validationDefault04').addClass( "is-invalid" );
+          $('#dateHelp').removeClass("d-none");
+          event.preventDefault();
+      
+
+        }
+
+        if($('#validationDefault05').val() == "" ){
+
+          $('#validationDefault05').addClass( "is-invalid" );
+          $('#dateHelp').removeClass("d-none");
+           event.preventDefault();
+  
+
+        }
+
+        if(!$('#exampleCheck1').is(":checked") ){
+
+          $('#exampleCheck1').addClass( "is-invalid" );
+          $('#agreeHelp').removeClass("d-none");
+           event.preventDefault();
+  
+
+        }
+
+
+
+      });
+
+      $('.getcardnum').on('click',function(){
+
+        $('.setcardnum').html("<strong>Account number:</strong><br>"+cardnum);
+      });
+
+      $('#product1delete').click(function(){
+        $(this).parents('tr').first().remove()
+
+        getTotal(selectedText);
+      });
+
+      $('#product2delete').click(function(){
+        $(this).parents('tr').first().remove()
+
+        getTotal(selectedText);
+      });
+
+      $('#product3delete').click(function(){
+        $(this).parents('tr').first().remove()
+
+        getTotal(selectedText);
+      });
+
+      $('#product4delete').click(function(){
+        $(this).parents('tr').first().remove()
+
+        getTotal(selectedText);
+      });
+
+      $('#product5delete').click(function(){
+        $(this).parents('tr').first().remove()
+
+        getTotal(selectedText);
+      });
+
+      
+
+
+      $(window).resize(function() {
+
+
+        if($(window).width()<768){
+
+        console.log("mw");
+        $('.container.largescreen').addClass("d-none");
+
+
+      }else{
+
+         console.log("mw2");
+        $('.container.largescreen').removeClass("d-none");
+
+
+
+
+      }
+
+
+
+
+      });
+
+
+      
+
+
+    });
+
+  </script>
+</body>
+</html>
