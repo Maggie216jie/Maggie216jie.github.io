@@ -320,8 +320,8 @@
                                 <div class="col-md-8 mb-3 ">
                                   <label for="validationDefault03">Expiration</label>
                                   <div class="input-group">
-                                    <input type="text" class="form-control w-50" id="validationDefault03" placeholder="MM">
-                                    <input type="text" class="form-control w-50" id="validationDefault04" placeholder="YY">
+                                    <input type="number" class="form-control w-50" id="validationDefault03" placeholder="MM">
+                                    <input type="number" class="form-control w-50" id="validationDefault04" placeholder="YY">
                                     <small id="dateHelp" class="form-text text-danger d-none">Please enter your card expiration info</small>
 
                                   </div>
@@ -453,7 +453,7 @@
       var optionhtml = "";
        for(var j=1; j<=product[m].quanity; j++){
 
-          optionhtml+="<option>"+j+"</option>"
+          optionhtml+="<option value="+j+">"+j+"</option>"
         }
      
 
@@ -469,7 +469,7 @@
                     '</div>'+
                     '<div class="col-md mx-3 py-2 text-center border-bottom border-muted">'+
                       '<h6 class="text-left "><strong>Quantity</strong></h6>'+
-                      '<select class="form-control quantity w-100" id="exampleFormControlquanity'+(m+1)+'">'+
+                      '<select class="form-control quantity w-100" id="optioncontrol'+(m+1)+'">'+
                       optionhtml+
                       '</select>'+
                     '</div>'+
@@ -477,7 +477,7 @@
                       '<h6><strong>Original Price</strong>    $'+product[m].price+'</h6>'+
                     '</div>'+
                     '<div class="col-md mx-3 py-4 text-center">'+
-                    '<button id="popover5" type="button" class="btn btn-info float-left" data-container="body" data-toggle="popover" data-placement="left" title="In Stock" data-content="'+quanitypop+'" style="width: 40%;">'+
+                    '<button id="popover5" type="button" class="btn btn-info float-left" data-container="body" data-toggle="popover" data-placement="top" title="In Stock" data-content="'+quanitypop+'" style="width: 40%;">'+
                       '<i class="fas fa-sync-alt fa-sm"></i>'+
                     '</button>'+
                     '<button id="product'+(m+1)+'remove" type="button" class="btn btn-danger float-right removeitems" style="width: 40%;">'+
@@ -495,12 +495,6 @@
     $( htmltext).insertBefore( "#continueshopping" );
 
    // $('.container.moblie').append(htmltext);
-
-   $('.removeitems').on('click',function () {
-          $(this).parents('.row').first().remove()
-
-
-      });
 
 
 
@@ -548,8 +542,23 @@
 
 
           var indexele = $('.quantity').index(this)+1 ;
+
+
+          if(indexele >5){
+
+            indexele=indexele-5;
+
+
+          }
+
           selectedText[indexele] = $(this).find("option:selected").text();
+
+          console.log(selectedText);
           getTotal(selectedText);
+
+
+          $("#optioncontrol"+indexele+" option[value="+selectedText[indexele]+"]").attr("selected", true);
+          $("#exampleFormControlSelect"+indexele+" option[value="+selectedText[indexele]+"]").attr("selected", true);
 
 
       });
@@ -569,7 +578,7 @@
 
         for(var m=1; m<=stocknum[i]; m++){
 
-          htmltext+="<option>"+m+"</option>"
+          htmltext+="<option value="+m+">"+m+"</option>"
         }
 
         var selectori= '#exampleFormControlSelect'+i;
@@ -797,34 +806,64 @@
       });
 
       $('#product1delete').click(function(){
-        $(this).parents('tr').first().remove()
+        $(this).parents('tr').first().css('display','none');
+        $('#product1remove').parents('.row').first().css('display','none');
+        selectedText[1]=0;
 
         getTotal(selectedText);
       });
 
       $('#product2delete').click(function(){
-        $(this).parents('tr').first().remove()
+        $(this).parents('tr').first().css('display','none');
+        $('#product2remove').parents('.row').first().css('display','none');
+        selectedText[2]=0;
 
         getTotal(selectedText);
       });
 
       $('#product3delete').click(function(){
-        $(this).parents('tr').first().remove()
+        $(this).parents('tr').first().css('display','none');
+        $('#product3remove').parents('.row').first().css('display','none');
+        selectedText[3]=0;
 
         getTotal(selectedText);
       });
 
       $('#product4delete').click(function(){
-        $(this).parents('tr').first().remove()
+        $(this).parents('tr').first().css('display','none');
+        $('#product4remove').parents('.row').first().css('display','none');
+        selectedText[4]=0;
 
         getTotal(selectedText);
       });
 
       $('#product5delete').click(function(){
-        $(this).parents('tr').first().remove()
+        $(this).parents('tr').first().css('display','none');
+        $('#product5remove').parents('.row').first().css('display','none');
+        selectedText[5]=0;
 
         getTotal(selectedText);
       });
+
+
+
+   $('.removeitems').on('click',function () {
+
+      var indexele = $('.removeitems').index(this)+1;
+      $('#product'+indexele+'delete').parents('tr').first().css('display','none');
+
+      $(this).parents('.row').first().css('display','none');
+
+      
+
+      selectedText[indexele]=0;
+
+      getTotal(selectedText);
+
+
+
+    });
+
 
       
 
