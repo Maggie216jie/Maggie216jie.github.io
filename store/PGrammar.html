@@ -1,0 +1,715 @@
+
+<!DOCTYPE html>
+<html>
+<title>Grammar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="../assets/css/custom.css" rel="stylesheet">
+<link href="../assets/css/prism.css" rel="stylesheet">
+<link rel="icon" type="image/ico" href="../assets/img/chrome192.png" />
+
+<body class="blog">
+
+  <a href="PGrammar.html#topid" class="back_to_top">MENU</a>
+
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%;">
+  <a href="../index.html" class="w3-bar-item w3-button">MW</a>
+
+
+  <a href="Practice.html" class="w3-bar-item w3-button">Portfolio</a>
+  <a href="htmllearning.html" class="w3-bar-item w3-button">HTML</a>
+  <a href="csslearning.html" class="w3-bar-item w3-button">CSS</a>
+  <a href="jslearning.html" class="w3-bar-item w3-button">JavaScript</a>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('demoAcc')">
+  React
+  </button>
+  <div id="demoAcc" class="w3-hide w3-white w3-card">
+    <a href="RProject.html" class="w3-bar-item w3-button">Project</a>
+    <a href="RCode.html" class="w3-bar-item w3-button">Code read</a>
+    <a href="RTrouble.html" class="w3-bar-item w3-button">Trouble shooting</a>
+  </div>
+
+  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc('demoAcc5')">
+  Back End
+  </button>
+  <div id="demoAcc5" class="w3-hide w3-white w3-card">
+
+    <a href="BSQL.html" class="w3-bar-item w3-button">SQL</a>
+    <a href="BNoSQL.html" class="w3-bar-item w3-button">NoSQL</a>
+    <a href="BFlask.html" class="w3-bar-item w3-button">Flask</a>
+    <a href="BDjango.html" class="w3-bar-item w3-button">Django</a>
+    <a href="BSpring.html" class="w3-bar-item w3-button">Spring</a>
+    <a href="BNode.html" class="w3-bar-item w3-button">Node.js</a>
+    <a href="BRESTful.html" class="w3-bar-item w3-button">RESTful API</a>
+
+  </div>
+
+  <a href="Environment.html" class="w3-bar-item w3-button">Environment</a>
+  <a href="leetcode.html" class="w3-bar-item w3-button">Leetcode2</a>
+
+  <!--
+  <a href="Photoshop.html" class="w3-bar-item w3-button">Photoshop</a>
+  <a href="Distributedsys.html" class="w3-bar-item w3-button">Distributed System</a>
+  <a href="Micro.html" class="w3-bar-item w3-button">Microservice</a>
+-->
+
+   <a href="leetcode.html" class="w3-bar-item w3-button">Leetcode</a>
+
+
+
+
+
+</div>
+
+<div class="subheader" style="margin-left:20%;padding: 10px;">Leetcode > Grammar</div>
+
+<div class="w3-container" id="topid" style="margin-left:20%;top:50px; position: absolute;border-bottom: 1px solid rgba(0,0,0,.12); width:80%;">
+
+
+  <div class="contentlevel0">
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 10px;">
+    <h2>Goal</h2>
+    <p>Knowing the basic grammar of programming language will lead to effective development. So,I will write down the basic data structure by using Java, Python and JavaScript.</p>
+
+  </div>
+
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 40px; ">
+
+    <h2>Menu</h2>
+    <div style="width: 100%; display: flex; justify-content: space-between;">
+
+      <div class="w3-card-2" >
+        <h4 class="menupart h4">Grammer</h4>
+        <ul class="menupart ul">
+          <li><a href="#variables">Variables</a></li>
+          <li><a href="#array">Array</a></li>
+          <li><a href="#string">String</a></li>
+          <li><a href="#linkedlist">Linked List</a></li>
+          <li><a href="#stack">Stack</a></li>
+          <li><a href="#queue">Queue</a></li>
+          <li><a href="#heap">Heap</a></li>
+          <li><a href="#hashmap">HashMap</a></li>
+          <li><a href="#tree">Tree</a></li>
+        </ul>
+      </div>
+
+      <div class="w3-card-2" >
+        <h4 class="menupart h4">Algorithm</h4>
+        <ul class="menupart ul">
+          <li><a href="#binarysearch">Binary Search</a></li>
+          <li><a href="#sort">Sort</a></li>
+          <li><a href="#twopointers">Two Pointers</a></li>
+          <li><a href="#dynamicprogramming">Dynamic Programming</a></li>
+          <li><a href="#greedy">Greedy</a></li>
+          <li><a href="#dfs">DFS</a></li>
+          <li><a href="#bfs">BFS</a></li>
+          <li><a href="#divideconquer">Divide and Conquer</a></li>
+          <li><a href="#backtracking">Backtracking</a></li>          
+          <li><a href="#recursion">Recursion</a></li>          
+          <li><a href="#binarysearchtree">Binary Search Tree</a></li>
+          <li><a href="#trie">Trie</a></li>
+          <li><a href="#unionfind">Union Find</a></li>
+          <li><a href="#bitmanipulation">Bit Manipulation</a></li>
+
+
+        </ul>
+      </div>
+
+      <div class="w3-card-2" >
+        <h4 class="menupart h4">Question</h4>
+        <ul class="menupart ul">
+          <li><a href="#variables">Code</a></li>
+          <li><a href="#array">Blog</a></li>
+          <li><a href="#string">Video</a></li>
+        </ul>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <div id="variables" style="height: 50px"></div>
+
+  </div>
+
+  <div class="contentlevel0">
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+
+    <h2>Variables</h2>
+
+    <div class="contentlevel2">
+      <h3>Python</h3>
+      <p>Number</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-python"># define
+count =100
+
+# use
+print (count) 
+      </code></pre>
+
+      <p>String</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-python"># define
+var1 = 'Hello World!'
+var2 = "Python Programming"
+        
+# use
+var1 = 'Hello World!'
+var2 = "Python Programming"
+
+print ("var1[0]: ", var1[0])
+print ("var2[1:5]: ", var2[1:5])
+
+#result
+var1[0]:  H
+var2[1:5]:  ytho ( [1,5) )
+
+#operating signal
++, *, [], [ : ], in, not in, % 
+
+#String Formatting Operator
+%c, %s, %i, %d
+
+print ("My name is %s and weight is %d kg!" % ('Zara', 21)) 
+
+My name is Zara and weight is 21 kg!
+
+#functions
+
+      </code></pre>
+      <p>List</p>
+      <p>Tuple</p>
+      <p>Set</p>
+      <p>Dictionary</p>
+    </div>
+
+    <div class="contentlevel2">
+      <h3>Java</h3>
+      <p>byte</p>
+      <p>short</p>
+      <p>int</p>
+      <p>long</p>
+      <p>float</p>
+      <p>double</p>
+      <p>boolean</p>
+      <p>char</p>
+    </div>
+
+    <div class="contentlevel2" style="border-bottom: 0px; ">
+      <h3>JavaScript</h3>
+      <p>Boolean</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var trueValue = true;
+var falseValue = false;</code></pre>
+      <p>Null</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var trueValue = null;</code></pre>
+      <p>Undefined</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var und;</code></pre>
+      <p>Number</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var price = 1.5;</code></pre>
+      <p>String</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var name = 'Packt';</code></pre>
+      <p>Symbol (ES6)</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">const symbol = Symbol('description')</code></pre>
+    </div>
+
+  </div>
+
+  <div id="array" style="height: 50px"></div>
+  </div>
+
+
+  <div class="contentlevel0">
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+    <h2>Array</h2>
+    <div class="contentlevel2">
+      <h3>Python</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2">
+      <h3>Java</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2" style="border-bottom: 0px; ">
+      <h3>JavaScript</h3>
+      <p>declare and assign array</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">// declared and assigned
+var daysOfWeek = new Array();
+var daysOfWeek = new Array(7);
+var daysOfWeek = new Array('Sunday', 'Monday', 'Tuesday', 
+'Wednesday', 'Thursday', 'Friday', 'Saturday');
+
+//better way 
+var daysOfWeek = [];
+var daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',
+ 'Thursday', 'Friday', 'Saturday'];</code></pre>
+
+    <p>Insert elements</p>
+    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//insert elements in the end
+var numbers = [0,1,2,3,4,5,6,7,8,9];
+numbers[numbers.length] = 10;
+numbers.push(11);
+numbers.push(12, 13);  //number 0 ~ 13
+
+//insert elements in the front
+numbers.unshift(-1);    //numbers -1 ~ 13</code></pre>
+
+    <p>Delete elements</p>
+    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//delete elements in the end
+numbers.pop();
+
+//delete elements in the front
+numbers.shift();</code></pre>
+
+    <p>Delete or insrt elements in any index</p>
+    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//insert or delete in any places
+//the first number is the index will delete elements
+//the second number is the number of elements. 
+//0 represents add.
+numbers.splice(5,0,2,3,4);
+//results: [0, 1, 2, 3, 4, 2, 3, 4, 5, 6, 7, 8, 9]  
+numbers.splice(5,3,2,3,4);</code></pre>
+
+    <p>Array functions</p>
+    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//common use functions
+var addOne = function(x){
+  return x+1;
+};
+var isEven = function (x) {
+  return (x % 2 == 0) ? true : false;
+};
+
+var addTwo = function(x){
+  x=x+2;
+  console.log(x);
+}; 
+var numbers=[1,2,3,4,5,6];
+var number2=[7,8];
+
+// concat
+numbers.concat(number2);
+//result: [1,2,3,4,5,6,7,8]!!!but no change numbers and number2 
+
+// every
+numbers.every(addOne);
+//result: true if all true return true, else false
+
+// filter
+numbers.filter(isEven);
+//result:[2, 4, 6]
+
+//forEach
+numbers.forEach(addTwo);
+//results: output: 3 4 5 6 7 8 9 no return result
+
+//join
+numbers.join('-')
+//results: "1-2-3-4-5-6"
+
+//indexOf
+numbers.indexOf(1);
+//results: 0 first index ,if not return -1
+
+//lastIndexOf
+numbers.lastIndexOf(1);
+//results:0 largest index ,if not return -1
+
+//map
+numbers.map(addOne);
+//results: [2, 3, 4, 5, 6, 7]
+
+//reverse
+numbers.reverse();
+//results: [6, 5, 4, 3, 2, 1] numbers changed
+
+//slice
+numbers.slice(1,3);
+//results: contains lower index, do not contains higher index
+
+//some
+numbers.some(isEven);
+//results: false if all false return false, else true
+
+//sort
+numbers.sort();
+//results: array change !!!zimuxun
+
+//toString
+numbers.toString();
+//results: "1,2,3,4,5,6"
+
+</code></pre>
+<p>ES6 new functions</p>
+<pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//ES6 new functions
+//@@iterator
+//three iterate methods
+numbers.forEach(x => {
+  console.log((x % 2 == 0));
+});
+for (let n of numbers) {
+  console.log((n % 2 == 0) ? 'even' : 'odd');
+}
+let iterator = numbers[Symbol.iterator]();
+console.log(iterator.next().value); // 1
+console.log(iterator.next().value); // 2
+console.log(iterator.next().value); // 3
+console.log(iterator.next().value); // 4
+console.log(iterator.next().value); // 5
+//results: 
+
+//copyWithin
+numbers.copyWithin(0, 3, 4);
+//results:  [4, 2, 3, 4, 5, 6] 
+//copy to index 0 the element at index 3 to 4
+//numbers.copyWithin(0, 3);
+//copy to index 0 the element at index 3 to end
+
+//entries
+var a = ['a', 'b', 'c'];
+var iterator = a.entries();
+for (let e of iterator) {
+  console.log(e);
+}
+//results: [0, 'a'] [1, 'b'] [2, 'c']
+
+//includes
+numbers.includes(2);
+//results: true
+
+//find
+numbers.find(function(element) {
+  return element > 5;
+});
+//results: [6]
+
+//findIndex
+var array1 = [5, 12, 8, 130, 44];
+function isLargeNumber(element) {
+  return element > 13;
+}
+console.log(array1.findIndex(isLargeNumber));
+// expected output: 3
+
+//fill
+var array1 = [1, 2, 3, 4];
+// fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// expected output: [1, 2, 0, 0]
+// fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// expected output: [1, 5, 5, 5]
+console.log(array1.fill(6));
+// expected output: [6, 6, 6, 6]
+
+//from
+console.log(Array.from([1, 2, 3], x => x + x));
+// expected output: Array [2, 4, 6]
+
+//keys
+var iterator = numbers.keys();  
+for (let key of iterator) {
+  console.log(key); // expected output: 0 1 2
+}
+//results: 0, 1, 2, 3, 4, 5
+
+//of
+Array.of(7); 
+//results: [7]
+
+//values
+const iterator = numbers.values();
+for (const value of iterator) {
+  console.log(value); 
+}
+//results: 1, 2, 3, 4, 5, 6
+</code></pre>
+
+
+
+
+
+    </div>
+
+  </div>
+
+  <div id="string" style="height: 50px"></div>
+
+
+
+</div>
+
+
+  <div class="contentlevel0">
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+
+    <h2>String</h2>
+
+    <div class="contentlevel2">
+      <h3>Python</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2">
+      <h3>Java</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2" style="border-bottom: 0px; ">
+      <h3>JavaScript</h3>
+      <p>String length</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng length
+var str = 'Life, the universe and everything. Answer:';
+//str.length
+console.log(str.length);
+// expected output:  42</code></pre>
+
+      <p>nth character</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng charAt()
+var sentence = 'The quick brown fox jumps over the lazy dog.';
+//str.charAt()
+var index = 4;
+console.log(sentence.charAt(index));
+// expected output:  q</code></pre>
+
+      <p>contact string</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng concat()
+var str1 = 'Hello';
+var str2 = 'World';
+//str1.concat(' ', str2)
+console.log(str1.concat(' ', str2));
+// expected output: "Hello World"
+
+console.log(str2.concat(', ', str1));
+// expected output: "World, Hello"</code></pre>
+
+      <p>search end of string</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng endsWith()
+const str1 = 'Cats are the best!';
+//str.endsWith(searchString[, length])
+console.log(str1.endsWith('best', 17));
+// expected output: true
+
+const str2 = 'Is this a question';
+console.log(str2.endsWith('?'));
+// expected output: false</code></pre>
+
+
+      <p>in the string</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng includes()
+var sentence = 'The quick brown fox jumps over the lazy dog.';
+var word = 'fox';
+//str.includes(searchString[, position])
+//The position is begin searching (defaults to 0).
+console.log(sentence.includes(word));
+// expected output: true</code></pre>
+
+
+    </div>
+
+  </div>
+
+  <div id="linkedlist" style="height: 50px"></div>
+  </div>
+
+
+
+
+
+  <div class="contentlevel0">
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+
+    <h2>Linked List</h2>
+
+    <div class="contentlevel2">
+      <h3>Python</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2">
+      <h3>Java</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2" style="border-bottom: 0px; ">
+      <h3>JavaScript</h3>
+      <p></p>
+    </div>
+
+  </div>
+
+  <div id="stack" style="height: 50px"></div>
+  </div>
+
+  <div class="contentlevel0">
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+
+    <h2>Stack</h2>
+
+    <div class="contentlevel2">
+      <h3>Python</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2">
+      <h3>Java</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2" style="border-bottom: 0px; ">
+      <h3>JavaScript</h3>
+      <p></p>
+    </div>
+
+  </div>
+  <div id="queue" style="height: 50px"></div>
+  </div>
+
+
+  <div class="contentlevel0">
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+
+    <h2>Queue</h2>
+
+    <div class="contentlevel2">
+      <h3>Python</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2">
+      <h3>Java</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2" style="border-bottom: 0px; ">
+      <h3>JavaScript</h3>
+      <p></p>
+    </div>
+
+  </div>
+  <div id="heap" style="height: 50px"></div>
+  </div>
+
+
+  <div class="contentlevel0">
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+
+    <h2>Heap</h2>
+
+    <div class="contentlevel2">
+      <h3>Python</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2">
+      <h3>Java</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2" style="border-bottom: 0px; ">
+      <h3>JavaScript</h3>
+      <p></p>
+    </div>
+
+  </div>
+  <div id="hashmap" style="height: 50px"></div>
+  </div>
+
+
+
+
+  <div class="contentlevel0">
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+
+    <h2>HashMap</h2>
+
+    <div class="contentlevel2">
+      <h3>Python</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2">
+      <h3>Java</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2" style="border-bottom: 0px; ">
+      <h3>JavaScript</h3>
+      <p></p>
+    </div>
+
+  </div>
+  <div id="tree" style="height: 50px"></div>
+  </div>
+
+  <div class="contentlevel0">
+  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+
+    <h2>Tree</h2>
+
+    <div class="contentlevel2">
+      <h3>Python</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2">
+      <h3>Java</h3>
+      <p></p>
+    </div>
+
+    <div class="contentlevel2" style="border-bottom: 0px; ">
+      <h3>JavaScript</h3>
+      <p></p>
+    </div>
+
+  </div>
+  </div>
+
+
+
+
+</div>
+
+<script>
+function myAccFunc(stry) {
+
+  var ss = stry;
+  console.log(ss);
+
+  var x = document.getElementById(ss);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myDropFunc() {
+  var x = document.getElementById("demoDrop");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+</script>
+
+<script src="../assets/js/prism.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>
