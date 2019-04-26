@@ -363,10 +363,15 @@ a{
 
 
 .w3-card-2{
-	width: 32%;
+	width: 245px;
 	padding-top: 0px;
 	padding: 10px; 
 	padding-left: 40px;
+	font-size: 15px;
+	margin-left: 2px;
+	margin-right: 2px;
+
+	margin-top: 30px;
 
 }
 
@@ -379,6 +384,14 @@ a{
 .menupart.ul{
 
 	margin-top: 0px;
+}
+
+.menudisplay{
+
+	width: 100%; 
+	display: flex; 
+	justify-content: space-around; 
+	flex-wrap: wrap;
 }
 
 
