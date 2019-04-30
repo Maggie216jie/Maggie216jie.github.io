@@ -93,15 +93,31 @@
               <li><a href="#store">Store</a></li>
               <li><a href="#action">Action</a></li>
               <li><a href="#reducer">Reducer</a></li>
+              <li><a href="#connect">Use in react connect</a></li>
+              <li><a href="#asyncactions">Async Actions</a></li>
+              <li><a href="#asyncactions">Redux Middleware</a></li>
             </ul>
           </div>
 
           <div class="w3-card-2" >
-            <h4 class="menupart h4">Project</h4>
+            <h4 class="menupart h4">Router</h4>
             <ul class="menupart ul">
-              <li><a href="#sort">Todo list</a></li>
-              <li><a href="#binarysearch">Dazhongdianping</a></li>
-              <li><a href="#twopointers">Split bills</a></li>
+              <li><a href="#sort">&lt;BrowserRouter&gt;</a></li>
+              <li><a href="#binarysearch">&lt;HashRouter&gt;</a></li>
+              <li><a href="#twopointers">&lt;Link&gt;</a></li>
+              <li><a href="#sort">&lt;NavLink&gt;</a></li>
+              <li><a href="#binarysearch">&lt;Prompt&gt;</a></li>
+              <li><a href="#twopointers">&lt;MemoryRouter&gt;</a></li>
+              <li><a href="#sort">&lt;Redirect&gt;</a></li>
+              <li><a href="#binarysearch">&lt;Route&gt;</a></li>
+              <li><a href="#twopointers">&lt;Router&gt;</a></li>
+              <li><a href="#binarysearch">&lt;StaticRouter&gt;</a></li>
+              <li><a href="#twopointers">&lt;Switch&gt;</a></li>
+              <li><a href="#twopointers">history</a></li>
+              <li><a href="#twopointers">location</a></li>
+              <li><a href="#twopointers">match</a></li>
+              <li><a href="#twopointers">matchPath</a></li>
+              <li><a href="#twopointers">withRouter</a></li>
             </ul>
           </div>
 
@@ -319,13 +335,22 @@ const store = createStore(reducer)
 
         <div class="contentlevel2" style="border-bottom: 0px;">
 
-          <p></p>
+          <p>actions</p>
           <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-js">//action describe operations
 {
   type: ADD_TODO,
   text: 'build my first redux app.'
 }
           </code></pre>
+
+          <p>bind action creators</p>
+          <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-js">//action and dispatch
+const boundAddTodo = text => dispatch(addTodo(text))
+const boundCompleteTodo = index => dispatch(completeTodo(index))
+          </code></pre>
+
+
+
         </div>
 
 
@@ -340,12 +365,137 @@ const store = createStore(reducer)
         <h2>Reducer</h2>
 
         <div class="contentlevel2">
-          <h3></h3>
-          <p></p>
+          <p>Code example of reducer</p>
+          <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-js">//trigger store refresh
+function todoApp(state = initialState, action){
+  switch (action.type) {
+    case ADD_TODO:
+      return Object.assign({}, state,{
+      todos: [
+        ...state.todos,
+        {
+          text: action.text,
+          completed: false
+        }
+      ]
+    })
+    default:
+      return state
+   }
+}
+          </code></pre>
+
+        </div>
+
+
+
+        <div class="contentlevel2" style="border-bottom: 0px;">
+          <p>combineReducer</p>
+          <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-js">//trigger store refresh
+import { combineReducers } from 'redux'
+import todos from './todos'
+import counter from './counter'
+
+export default combineReducers({
+  todos,
+  counter
+})
+          </code></pre>
+
+        </div>
+
+      </div>
+
+      <div id="connect" style="height: 50px"></div>
+
+    </div>
+
+
+    <div class="contentlevel0">
+      <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+        <h2>Use in React connect</h2>
+
+        <div class="contentlevel2" style="border-bottom: 0px;">
+
+          <p>connect</p>
+          <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-js">
+import { connect } from 'react-redux';
+
+class SidePanel extends Component {
+  // ...
+}
+
+function mapStateToProps(state) {
+  return {
+    nextgen: state.nextgen,
+    router: state.router
+  };
+}
+
+function mapDispatchToProps(dispatch){
+  return {
+    actions: bindActionCreator({ ...actions }, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SidePanel);
+          </code></pre>
+
+
+
         </div>
 
 
       </div>
+
+      <div id="asyncactions" style="height: 50px"></div>
+
+
+    </div>
+
+    <div class="contentlevel0">
+      <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+        <h2>Async Actions</h2>
+
+        <div class="contentlevel2" style="border-bottom: 0px;">
+
+          <p></p>
+          <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-js">
+
+          </code></pre>
+
+
+
+        </div>
+
+
+      </div>
+
+      <div id="reduxmiddleware" style="height: 50px"></div>
+
+
+    </div>
+
+    <div class="contentlevel0">
+      <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+        <h2>Redux Middleware</h2>
+
+        <div class="contentlevel2" style="border-bottom: 0px;">
+
+          <p>1. capture action</p>
+          <p>2. send action</p>
+          <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-js">
+
+
+          </code></pre>
+
+
+
+        </div>
+
+
+      </div>
+
     </div>
 
 
