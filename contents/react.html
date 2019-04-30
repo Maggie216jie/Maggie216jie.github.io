@@ -6,11 +6,42 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="../assets/css/custom.css" rel="stylesheet">
+<link href="../assets/css/prism.css" rel="stylesheet">
 <link rel="icon" type="image/ico" href="../assets/img/chrome192.png" />
+<script src="../assets/js/prism.js"></script>
+<script type="text/javascript">
 
-<body class="blog">
+  function drag_start(event) {
+    var style = window.getComputedStyle(event.target, null);
+    event.dataTransfer.setData("text/plain", (parseInt(style.getPropertyValue("left"), 10) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top"), 10) - event.clientY) + ',' + event.target.getAttribute('data-item'));
+  }
 
-   <a href="react.html#topidreact" class="back_to_top">MENU</a>
+  function drag_over(event) {
+    event.preventDefault();
+    return false;
+
+  }
+
+  function drop(event) {
+    var offset = event.dataTransfer.getData("text/plain").split(',');
+    var dm = document.getElementsByClassName('back_to_top');
+    dm[parseInt(offset[2])].style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
+    dm[parseInt(offset[2])].style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
+    event.preventDefault();
+    return false;
+  }
+  var dm = document.getElementsByClassName('back_to_top');
+  for (var i = 0; i < dm.length; i++) {
+    dm[i].addEventListener('dragstart', drag_start, false);
+    document.body.addEventListener('dragover', drag_over, false);
+    document.body.addEventListener('drop', drop, false);
+  }
+
+</script>
+
+<body class="blog" ondragover="drag_over(event)" ondrop="drop(event)">
+
+   <a href="react.html#topidreact" data-item="0" class="back_to_top" draggable="true" ondragstart="drag_start(event)">MENU</a>
 
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%;">
   <a href="../index.html" class="w3-bar-item w3-button">MW</a>
@@ -43,7 +74,7 @@
         <h2>Menu</h2>
         <div  class="menudisplay" >
           <div class="w3-card-2" >
-            <h4 class="menupart h4">Main Concept</h4>
+            <h4 class="menupart h4">React</h4>
             <ul class="menupart ul">
               <li><a href="#jsx">JSX</a></li>
               <li><a href="#component">Component</a></li>
@@ -51,6 +82,17 @@
               <li><a href="#pros">Pros</a></li>
               <li><a href="#state">State</a></li>
               <li><a href="#virtualdom">Virtual DOM</a></li>
+              <li><a href="#highorder">High Order Component</a></li>
+              <li><a href="#contextapi">Context API</a></li>
+            </ul>
+          </div>
+
+          <div class="w3-card-2" >
+            <h4 class="menupart h4">Redux</h4>
+            <ul class="menupart ul">
+              <li><a href="#store">Store</a></li>
+              <li><a href="#action">Action</a></li>
+              <li><a href="#reducer">Reducer</a></li>
             </ul>
           </div>
 
@@ -63,14 +105,7 @@
             </ul>
           </div>
 
-          <div class="w3-card-2" >
-            <h4 class="menupart h4">Others</h4>
-            <ul class="menupart ul">
-              <li><a href="#variables">Code Snippet</a></li>
-              <li><a href="#array">Blog</a></li>
-              <li><a href="#string">Video</a></li>
-            </ul>
-          </div>
+
         </div>
       </div>
 
@@ -197,7 +232,129 @@
 
       </div>
 
+       <div id="highorder" style="height: 50px"></div>
+
     </div>
+
+
+    <div class="contentlevel0">
+      <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+        <h2>High order component</h2>
+
+        <div class="contentlevel2">
+          <h3></h3>
+          <p></p>
+        </div>
+
+
+      </div>
+
+
+      <div id="contextapi" style="height: 50px"></div>
+
+    </div>
+
+
+    <div class="contentlevel0">
+      <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+        <h2>Context API</h2>
+
+        <div class="contentlevel2">
+          <h3></h3>
+          <p></p>
+        </div>
+
+
+      </div>
+
+      <div id="store" style="height: 50px"></div>
+
+    </div>
+
+
+    <div class="contentlevel0">
+      <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+        <h2>Store</h2>
+
+        <div class="contentlevel2" style="border-bottom: 0px;">
+          <p>Create Store</p>
+          <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-js">//create store
+const store = createStore(reducer)
+          </code></pre>
+
+          <table >
+            <tr>
+              <th>function</th>
+              <th>result</th>
+            </tr>
+
+            <tr>
+              <td>getState()</td>
+              <td>get current data</td>  
+            </tr>
+
+            <tr>
+              <td>dispatch(action)</td>
+              <td>dispatch action from UI to reducer</td>  
+            </tr>
+
+            <tr>
+              <td>subscribe(listener)</td>
+              <td>listen the change of store and call listener</td>  
+            </tr>
+          </table>
+
+        </div>
+
+
+      </div>
+
+      <div id="action" style="height: 50px"></div>
+
+    </div>
+
+    <div class="contentlevel0">
+      <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+        <h2>Action</h2>
+
+        <div class="contentlevel2">
+
+          <p></p>
+          <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-js">//action describe operations
+{
+  type: ADD_TODO,
+  text: 'build my first redux app.'
+}
+          </code></pre>
+        </div>
+
+
+      </div>
+
+      <div id="reducer" style="height: 50px"></div>
+
+    </div>
+
+    <div class="contentlevel0">
+      <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+        <h2>Reducer</h2>
+
+        <div class="contentlevel2">
+          <h3></h3>
+          <p></p>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -232,6 +389,7 @@ function myDropFunc() {
   }
 }
 </script>
+
 
 
 
