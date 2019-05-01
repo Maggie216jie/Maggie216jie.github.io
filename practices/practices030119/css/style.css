@@ -8,7 +8,7 @@ nav{ position: fixed; top:50px; padding-left: 4%; font-size: 16px; padding-top:1
 
 
 .heroimage{ width: 100%; }
-.maincontent{ position: relative; top:116px; margin-left: auto; margin-right: auto; width: 96%; }
+.maincontent{ position: relative; top:116px; margin-left: auto; margin-right: auto; width: 96vw; }
 .description{ text-align: center; padding-top:20px; padding-bottom: 20px; font-family: cursive; font-size: 22px; font-weight: bold; }
 #banner{ position: fixed; top:0px; font-size: 16px; background-color: rgb(53, 54, 46); color: white;
 	width: 100%; padding-top:16px; padding-bottom: 16px; text-align: center; z-index: 999;
@@ -110,7 +110,7 @@ li:hover { background-repeat: repeat-x; background-image: url('../asset/line-cla
 .rightcenter .gameimage{ width: 100%; position: relative; top: -10vw; }
 
 
-.bottomleft{ width: 30vw; position: relative; height: 53.2vw; float:left; overflow: hidden; margin-top: 2vw;  margin-right: 2vw;}
+.bottomleft{ width: 30vw; position: relative; height: 53.2vw; float:left; overflow: hidden; margin-top: 2vw;  margin-right: 1vw;}
 .bottomleft .tiffanyimage{ width: 100%;}
 
 
