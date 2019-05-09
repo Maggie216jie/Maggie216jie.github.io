@@ -8,10 +8,11 @@
 <link href="../assets/css/custom.css" rel="stylesheet">
 <link href="../assets/css/prism.css" rel="stylesheet">
 <link rel="icon" type="image/ico" href="../assets/img/chrome192.png" />
+<script src="../assets/js/drag.js"></script>
 
-<body class="blog">
+<body class="blog" ondragover="drag_over(event)" ondrop="drop(event)">
 
-  <a href="leetcode.html#topid" class="back_to_top">MENU</a>
+  <a href="leetcode.html#topid" data-item="0" class="back_to_top" draggable="true" ondragstart="drag_start(event)">MENU</a>
 
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%;">
   <a href="../index.html" class="w3-bar-item w3-button">MW</a>
@@ -448,14 +449,14 @@ for (const value of iterator) {
 
     <div class="contentlevel2" style="border-bottom: 0px; ">
       <h3>JavaScript</h3>
-      <p>String length</p>
+      <p>length: String length</p>
       <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng length
 var str = 'Life, the universe and everything. Answer:';
 //str.length
 console.log(str.length);
 // expected output:  42</code></pre>
 
-      <p>nth character</p>
+      <p>charAt: character at specified offset</p>
       <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng charAt()
 var sentence = 'The quick brown fox jumps over the lazy dog.';
 //str.charAt()
@@ -463,7 +464,7 @@ var index = 4;
 console.log(sentence.charAt(index));
 // expected output:  q</code></pre>
 
-      <p>contact string</p>
+      <p>concat: contact string</p>
       <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng concat()
 var str1 = 'Hello';
 var str2 = 'World';
@@ -474,7 +475,7 @@ console.log(str1.concat(' ', str2));
 console.log(str2.concat(', ', str1));
 // expected output: "World, Hello"</code></pre>
 
-      <p>search end of string</p>
+      <p>endsWith: search end of string</p>
       <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng endsWith()
 const str1 = 'Cats are the best!';
 //str.endsWith(searchString[, length])
@@ -486,7 +487,7 @@ console.log(str2.endsWith('?'));
 // expected output: false</code></pre>
 
 
-      <p>in the string</p>
+      <p>includes: in the string</p>
       <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng includes()
 var sentence = 'The quick brown fox jumps over the lazy dog.';
 var word = 'fox';
@@ -494,6 +495,28 @@ var word = 'fox';
 //The position is begin searching (defaults to 0).
 console.log(sentence.includes(word));
 // expected output: true</code></pre>
+
+      <p>indexOf: the index of character</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//String indexOf()
+var paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
+
+var searchTerm = 'dog';
+var indexOfFirst = paragraph.indexOf(searchTerm);
+//str.indexOf(searchValue)
+console.log('first "' + searchTerm + '" is ' + indexOfFirst);
+// expected output: "first "dog" is 40"
+//str.indexOf(searchValue, fromIndex)
+console.log('2nd "' + searchTerm + '" is ' + paragraph.indexOf(searchTerm, (indexOfFirst + 1)));
+// expected output: "2nd "dog" is 52"</code></pre>
+
+      <p>lastIndexOf: last index of string</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng lastIndexOf()
+var paragraph = 'dog dog dog';
+var searchTerm = 'dog';
+//str.lastIndexOf(searchValue[, fromIndex])
+console.log(paragraph.lastIndexOf(searchTerm));
+// expected output: 8</code></pre>
+
 
 
     </div>

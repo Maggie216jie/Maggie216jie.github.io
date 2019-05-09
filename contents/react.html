@@ -9,35 +9,8 @@
 <link href="../assets/css/prism.css" rel="stylesheet">
 <link rel="icon" type="image/ico" href="../assets/img/chrome192.png" />
 <script src="../assets/js/prism.js"></script>
-<script type="text/javascript">
+<script src="../assets/js/drag.js"></script>
 
-  function drag_start(event) {
-    var style = window.getComputedStyle(event.target, null);
-    event.dataTransfer.setData("text/plain", (parseInt(style.getPropertyValue("left"), 10) - event.clientX) + ',' + (parseInt(style.getPropertyValue("top"), 10) - event.clientY) + ',' + event.target.getAttribute('data-item'));
-  }
-
-  function drag_over(event) {
-    event.preventDefault();
-    return false;
-
-  }
-
-  function drop(event) {
-    var offset = event.dataTransfer.getData("text/plain").split(',');
-    var dm = document.getElementsByClassName('back_to_top');
-    dm[parseInt(offset[2])].style.left = (event.clientX + parseInt(offset[0], 10)) + 'px';
-    dm[parseInt(offset[2])].style.top = (event.clientY + parseInt(offset[1], 10)) + 'px';
-    event.preventDefault();
-    return false;
-  }
-  var dm = document.getElementsByClassName('back_to_top');
-  for (var i = 0; i < dm.length; i++) {
-    dm[i].addEventListener('dragstart', drag_start, false);
-    document.body.addEventListener('dragover', drag_over, false);
-    document.body.addEventListener('drop', drop, false);
-  }
-
-</script>
 
 <body class="blog" ondragover="drag_over(event)" ondrop="drop(event)">
 
@@ -137,7 +110,7 @@
 
         <div class="contentlevel2">
           <h3></h3>
-          <p></p>
+          <p>write html in js</p>
         </div>
 
  
