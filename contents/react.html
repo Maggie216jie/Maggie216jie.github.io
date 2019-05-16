@@ -27,6 +27,8 @@
   <a href="backend.html" class="w3-bar-item w3-button">Back End</a>
   <a href="Environment.html" class="w3-bar-item w3-button">Environment</a>
   <a href="leetcode.html" class="w3-bar-item w3-button">Leetcode</a>
+  <a href="interview.html" class="w3-bar-item w3-button">Interview</a>
+
 
 
 
@@ -108,9 +110,28 @@
       <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
         <h2>JSX</h2>
 
-        <div class="contentlevel2">
+        <div class="contentlevel2" style="border-bottom: 0px;">
           <h3></h3>
-          <p>write html in js</p>
+          <p>JSX is an XML-like syntax extension to ECMAScript without any defined semantics. It can write html in js.</p>
+
+          <ul>
+            <li>Adding custom styling to an element uses different syntax.</li>
+            <p>HTML</p>
+            <pre class="language-markup"><code><script type="text/plain" class="language-markup"><div style="background-color: red;"></div>
+<div style="border: 1px solid red;"></div>
+<button style="background-color: blue; color: white"></button>
+            </script></code></pre>
+            <p>JSX: remove that dash and then capitalize the next letter.</p>
+            <pre class="language-markup"><code><script type="text/plain" class="language-markup"><div style={{backgroundColor:'red'}}></div>
+<div style={{border:'1px solid red'}}></div> 
+<button style={{backgroundColor: 'blue', color: 'white'}}></button>
+            </script></code></pre>
+            <li>Adding a class to an element uses different syntax.</li>
+            <pre class="language-markup"><code><script type="text/plain" class="language-markup"><label className="label" for="name">Enter name:</label></script></code></pre>
+            <li>JSX can reference JS variables.</li>
+            <p>Using curly braces </p>
+
+          </ul>
         </div>
 
  

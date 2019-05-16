@@ -16,20 +16,16 @@
 
 <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%;">
   <a href="../index.html" class="w3-bar-item w3-button">MW</a>
-
-
   <a href="Practice.html" class="w3-bar-item w3-button">Portfolio</a>
   <a href="htmllearning.html" class="w3-bar-item w3-button">HTML</a>
   <a href="csslearning.html" class="w3-bar-item w3-button">CSS</a>
   <a href="jslearning.html" class="w3-bar-item w3-button">JavaScript</a>
-
   <a href="react.html" class="w3-bar-item w3-button">React</a>
-
   <a href="backend.html" class="w3-bar-item w3-button">Back End</a>
-
-
   <a href="Environment.html" class="w3-bar-item w3-button">Environment</a>
   <a href="leetcode.html" class="w3-bar-item w3-button">Leetcode</a>
+  <a href="interview.html" class="w3-bar-item w3-button">Interview</a>
+
 
   <!--
   <a href="Photoshop.html" class="w3-bar-item w3-button">Photoshop</a>
@@ -75,11 +71,11 @@
           <li><a href="#variables">Variables</a></li>
           <li><a href="#array">Array</a></li>
           <li><a href="#string">String</a></li>
+          <li><a href="#hashmap">HashMap</a></li>
           <li><a href="#linkedlist">Linked List</a></li>
           <li><a href="#stack">Stack</a></li>
           <li><a href="#queue">Queue</a></li>
           <li><a href="#heap">Heap</a></li>
-          <li><a href="#hashmap">HashMap</a></li>
           <li><a href="#tree">Tree</a></li>
         </ul>
       </div>
@@ -517,13 +513,146 @@ var searchTerm = 'dog';
 console.log(paragraph.lastIndexOf(searchTerm));
 // expected output: 8</code></pre>
 
+      <p>padEnd: pads the current string to reach a given length</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng padEnd()
+const str1 = 'Breaded Mushrooms';
+//str.padEnd(targetLength [, padString])
+console.log(str1.padEnd(25, '.'));
+// expected output: "Breaded Mushrooms........"
+
+const str2 = '200';
+console.log(str2.padEnd(5));
+// expected output: "200  "</code></pre>
+
+      <p>padStart: The padding is applied from the start (left) of the current string.</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng padStart()
+const str1 = '5';
+//str.padStart(targetLength [, padString])
+console.log(str1.padStart(2, '0'));
+// expected output: "05"
+
+const fullNumber = '2034399002125581';
+const last4Digits = fullNumber.slice(-4);
+const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
+console.log(maskedNumber);
+// expected output: "************5581"</code></pre>
+
+      <p>repeat: contains the specified number of copies of the string</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng repeat()
+var chorus = 'Because ';
+//str.repeat(count);
+console.log('Chorus: ' + chorus.repeat(3));
+// expected output: "Chorus: Because Because Because"</code></pre>
+
+      <p>slice: extracts a section of a string and returns it as a new string</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng slice()
+var str = 'The quick brown fox jumps over the lazy dog.';
+//str.slice(beginIndex[, endIndex])
+console.log(str.slice(31));
+// expected output: "the lazy dog."
+console.log(str.slice(4, 19));
+// expected output: "quick brown fox"
+console.log(str.slice(-4));
+// expected output: "dog."
+console.log(str.slice(-9, -5));
+// expected output: "lazy"</code></pre>
+
+      <p>split: splits a String object into an array of strings</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng split()
+var myString = 'Hello World. How are you doing?';
+var splits = myString.split(' ', 3);
+//str.split([separator[, limit]])
+console.log(splits);
+// expected output: ["Hello", "World.", "How"]</code></pre>
+
+      <p>startsWith: determines whether a string begins with the characters of a specified string</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Stirng startsWith()
+const str1 = 'Saturday night plans';
+//str.startsWith(searchString[, position])
+console.log(str1.startsWith('Sat'));
+// expected output: true
+
+console.log(str1.startsWith('Sat', 3));
+// expected output: false</code></pre>
+
 
 
     </div>
 
   </div>
 
-  <div id="linkedlist" style="height: 50px"></div>
+  <div id="hashmap" style="height: 50px"></div> 
+  </div>
+
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+      <h2>HashMap</h2>
+      <div class="contentlevel2">
+        <h3>Python</h3>
+        <p></p>
+      </div>
+
+      <div class="contentlevel2">
+        <h3>Java</h3>
+        <p></p>
+      </div>
+
+      <div class="contentlevel2" style="border-bottom: 0px; ">
+        <h3>JavaScript</h3>
+        <p></p>
+      </div>
+    </div>
+    <div id="linkedlist" style="height: 50px"></div>
+  </div>
+
+
+
+
+
+
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+      <h2>Linked List</h2>
+      <div class="contentlevel2">
+        <h3>Python</h3>
+        <p></p>
+      </div>
+
+      <div class="contentlevel2">
+        <h3>Java</h3>
+        <p></p>
+      </div>
+
+      <div class="contentlevel2" style="border-bottom: 0px; ">
+        <h3>JavaScript</h3>
+        <p></p>
+      </div>
+    </div>
+    <div id="stack" style="height: 50px"></div>
+  </div>
+
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+      <h2>Stack</h2>
+      <div class="contentlevel2">
+        <h3>Python</h3>
+        <p></p>
+      </div>
+      
+      <div class="contentlevel2">
+        <h3>Java</h3>
+        <p></p>
+      </div>
+
+      <div class="contentlevel2" style="border-bottom: 0px; ">
+        <h3>JavaScript</h3>
+        <p></p>
+      </div>
+    </div>
+    <div id="queue" style="height: 50px"></div>
   </div>
 
 
@@ -531,111 +660,31 @@ console.log(paragraph.lastIndexOf(searchTerm));
 
 
   <div class="contentlevel0">
-  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+      <h2>Queue</h2>
+      <div class="contentlevel2">
+        <h3>Python</h3>
+        <p></p>
+      </div>
 
-    <h2>Linked List</h2>
+      <div class="contentlevel2">
+        <h3>Java</h3>
+        <p></p>
+      </div>
 
-    <div class="contentlevel2">
-      <h3>Python</h3>
-      <p></p>
+      <div class="contentlevel2" style="border-bottom: 0px; ">
+        <h3>JavaScript</h3>
+        <p></p>
+      </div>
     </div>
-
-    <div class="contentlevel2">
-      <h3>Java</h3>
-      <p></p>
-    </div>
-
-    <div class="contentlevel2" style="border-bottom: 0px; ">
-      <h3>JavaScript</h3>
-      <p></p>
-    </div>
-
-  </div>
-
-  <div id="stack" style="height: 50px"></div>
-  </div>
-
-  <div class="contentlevel0">
-  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
-
-    <h2>Stack</h2>
-
-    <div class="contentlevel2">
-      <h3>Python</h3>
-      <p></p>
-    </div>
-
-    <div class="contentlevel2">
-      <h3>Java</h3>
-      <p></p>
-    </div>
-
-    <div class="contentlevel2" style="border-bottom: 0px; ">
-      <h3>JavaScript</h3>
-      <p></p>
-    </div>
-
-  </div>
-  <div id="queue" style="height: 50px"></div>
+    <div id="heap" style="height: 50px"></div>
   </div>
 
 
   <div class="contentlevel0">
-  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
 
-    <h2>Queue</h2>
-
-    <div class="contentlevel2">
-      <h3>Python</h3>
-      <p></p>
-    </div>
-
-    <div class="contentlevel2">
-      <h3>Java</h3>
-      <p></p>
-    </div>
-
-    <div class="contentlevel2" style="border-bottom: 0px; ">
-      <h3>JavaScript</h3>
-      <p></p>
-    </div>
-
-  </div>
-  <div id="heap" style="height: 50px"></div>
-  </div>
-
-
-  <div class="contentlevel0">
-  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
-
-    <h2>Heap</h2>
-
-    <div class="contentlevel2">
-      <h3>Python</h3>
-      <p></p>
-    </div>
-
-    <div class="contentlevel2">
-      <h3>Java</h3>
-      <p></p>
-    </div>
-
-    <div class="contentlevel2" style="border-bottom: 0px; ">
-      <h3>JavaScript</h3>
-      <p></p>
-    </div>
-
-  </div>
-  <div id="hashmap" style="height: 50px"></div>
-  </div>
-
-
-
-
-  <div class="contentlevel0">
-  <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
-
-    <h2>HashMap</h2>
+<h2>Heap</h2>
 
     <div class="contentlevel2">
       <h3>Python</h3>
@@ -655,6 +704,8 @@ console.log(paragraph.lastIndexOf(searchTerm));
   </div>
   <div id="tree" style="height: 50px"></div>
   </div>
+
+
 
   <div class="contentlevel0">
   <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 30px;">
