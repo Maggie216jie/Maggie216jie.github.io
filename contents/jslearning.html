@@ -30,8 +30,11 @@
 -->
 
 
-   <a href="leetcode.html" class="w3-bar-item w3-button">Leetcode</a>
-   <a href="interview.html" class="w3-bar-item w3-button">Interview</a>
+  <a href="leetcode.html" class="w3-bar-item w3-button">Leetcode</a>
+  <a href="interview.html" class="w3-bar-item w3-button">Interview</a>
+  <a href="jobs.html" class="w3-bar-item w3-button">Jobs</a>
+
+
 
 </div>
 
@@ -81,9 +84,381 @@ console.log(a.age) //21
     </div>
   </div>
 
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h3>Typeof</h3>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">// some examples
+typeof undefined // undefined
+typeof 'abc' //string
+typeof 123 //number
+typeof true //boolean
+typeof {} // object
+typeof [] // object
+typeof null // object
+typeof console.log // function
+typeof NaN                    // Returns "number"
+typeof new Date()             // Returns "object"
+typeof function () {}         // Returns "function"
+typeof myCar                  // Returns "undefined" 
+</code></pre>
+      <h3>type caculation ---- type conversion</h3>
+
+      <p>String concat: numer to string and then concat.</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">// number to string
+var b = 100.66 + '88' // '100.6688'
+</code></pre>
+
+      <p>== operator</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">100 == '100' //true
+0 == '' // true
+null == undefined //true
+1 == '1'; // true
+1 == [1]; // true
+1 == true; // true
+0 == ''; // true
+0 == '0'; // true
+0 == false; // true
+</code></pre>
+
+      <p>logical operator</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">console.log(10 && 0)  // 0
+console.log('' || 'abc')  // 'abc'
+console.log(!window.abc)  // true
+
+// identify true or false of a variable
+var a = 100 
+console.log(!!a)  //true
+</code></pre>
+
+      <p>JSON</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">// JSON is a object in javascript
+// object to string
+JSON.stringify({a:10, b:20})
+// string to object
+JSON.parse('{"a":10, "b":20}')
+</code></pre>
+
+      <p>symbol</p>
+      <p></p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">var s = Symbol()
+typeof s
+//"symbol"
+</code></pre>
+
+      <p>Type Conversion Table</p>
+      <table >
+        <tr>
+          <th>Original Value</th>
+          <th>Converted to Number</th>
+          <th>Converted to String</th>
+          <th>Converted to Boolean</th>
+        </tr>
+        <tr>
+          <td>false</td>
+          <td>0</td> 
+          <td>"false"</td>
+          <td>false</td> 
+        </tr>
+        <tr>
+          <td>true</td>
+          <td>1</td>  
+          <td>"true"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>  
+          <td>"0"</td>
+          <td>false</td> 
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>  
+          <td>"1"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>"0"</td>
+          <td>0</td>  
+          <td>"0"</td>
+          <td style="color: red">true</td> 
+        </tr>
+        <tr>
+          <td>"000"</td>
+          <td>0</td>  
+          <td>"000"</td>
+          <td style="color: red">true</td> 
+        </tr>
+        <tr>
+          <td>"1"</td>
+          <td>1</td>  
+          <td>"1"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>NaN</td>
+          <td>NaN</td>  
+          <td>"NaN"</td>
+          <td>false</td> 
+        </tr>
+        <tr>
+          <td>Infinity</td>
+          <td>Infinity</td>  
+          <td>"Infinity"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>-Infinity</td>
+          <td>-Infinity</td>  
+          <td>"-Infinity"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>""</td>
+          <td style="color: red">0</td>  
+          <td>""</td>
+          <td style="color: red">false</td> 
+        </tr>
+        <tr>
+          <td>"20"</td>
+          <td>20</td>  
+          <td>"20"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>"twenty"</td>
+          <td>NaN</td>  
+          <td>"twenty"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>[]</td>
+          <td style="color: red">0</td>  
+          <td style="color: red">""</td>
+          <td style="color: red">true</td> 
+        </tr>
+        <tr>
+          <td>[20]</td>
+          <td style="color: red">20</td>  
+          <td>"20"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>[10, 20]</td>
+          <td>NaN</td>  
+          <td>"10, 20"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>["twenty"]</td>
+          <td>NaN</td>  
+          <td>"twenty"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>["ten", "twenty"]</td>
+          <td>NaN</td>  
+          <td>"ten, twenty"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>function(){}</td>
+          <td>NaN</td>  
+          <td>"function(){}"</td>
+          <td>true</td> 
+        </tr>
+        <tr>
+          <td>{ }</td>
+          <td style="color: red">NaN</td>  
+          <td style="color: red">"[object Object]"</td>
+          <td style="color: red">true</td> 
+        </tr>
+        <tr>
+          <td>null</td>
+          <td tyle="color: red">0</td>  
+          <td>"null"</td>
+          <td>false</td> 
+        </tr>
+        <tr>
+          <td>undefined</td>
+          <td>NaN</td>  
+          <td>"undefined"</td>
+          <td>false</td> 
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h3>Prototype and Prototype Chain</h3>
+      <p>constructor function</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">function Foo(){
+  this.name = name
+  this.age = age
+  this.class = 'class-1'
+  // return this // default have this line
+}
+
+var f = new Foo('zhangsan', 20)
+</code></pre>
+    <ul>
+      <li>var a = {} is a syntax sugar of var a = new Object()</li>
+      <li>var a = [] is a syntax sugar of var a = new Array()</li>
+      <li>function Foo(){...} is a sytax sugar of var Foo = new Function(...)</li>
+      <li>using instanceof to identify whether a function is functiion.</li>
+      
+    </ul>
+
+    <p>Rules of prototype</p>
+    <ul>
+      <li>All reference type(array, object, function) have the property of object, what is it can be extened.(except null)</li>
+      <li>All reference type(array, object, function) have a __proto__ property, which is a object.</li>
+      <li>All functions have a prototype property, which is a object</li>
+      <li>obj.__proto__ === Object.prototype. </li>
+      <li>will search in __proto__</li>
+    </ul>
+
+    </div>
+  </div>
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h2>Closure</h2>
+      <p>A closure is the combination of a function and the lexical environment within which that function was declared.</p>
+      <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+// this is a window
+var name = "The Window";
+var object = {
+  name : "My Object",
+  getNameFunc : function(){
+    return function(){
+      return this.name;
+    };
+  }
+};
+alert(object.getNameFunc()());
+// how to fix
+var name = "The Window";
+var object = {
+  name : "My Object",
+  getNameFunc : function(){
+    var that = this;
+    return function(){
+      return that.name;
+    };
+  }
+};
+
+alert(object.getNameFunc()());
+</code></pre>
 
 
 
+    </div>
+  </div>
+  
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h2>Asynchronous</h2>
+
+    </div>
+  </div>
+
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h2>DOM</h2>
+
+    </div>
+  </div>
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h2>Event</h2>
+
+    </div>
+  </div>
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h2>Ajax</h2>
+      
+
+      <div class="contentlevel2">
+        <h4>Write Ajax without third-party libaries</h4>
+      </div>
+
+      <div class="contentlevel2" style="border-bottom: 0px;">
+        <h3>Ajax cross domain</h3>
+
+        <h4>Same-origin policy</h4>
+        <p>This is a security policy who defines the rules of how a web page can access an external resource (e.g. fonts, AJAX requests). Under the same-origin policy, web browsers do not permit a web page to access resources who origin differ than that of the current page. The origin is considered to be different when the scheme, hostname or port of the resource do not match that of the page. Overcoming the limitations of same-origin security policy is possible using a technique called Cross-origin resource sharing or simply CORS.</p>
+
+        <h4>Situations of cross domain</h4>
+        <p>Same-origin policy permits scripts running on pages originating from the same site to access each other's data with no specific restrictions, but prevents scripts access to data that is stored on a different domain.</p>
+
+        <p>Different in Protocol, domain and port</p>
+
+        <h4>How to resolve it?</h4>
+        <ul>
+          <li>Implement CORS (Cross-Origin Resource Sharing)</li>
+          <li>Use JSONP (JSON Padding)</li>
+          <li>Use postMessage method</li>
+          <li>Setting up a local proxy</li>
+
+        </ul>
+
+
+        <h4>Solutions in detail</h4>
+
+        <a href="http://www.ajax-cross-origin.com/how.html" style="color: blue">How to use it outside domain</a>
+
+        <h4>Three tags which can load data cross domain</h4>
+        <ul>
+          <li>img</li>
+          <li>link</li>
+          <li>script</li>
+
+        </ul>
+
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h2>Storage</h2>
+
+    </div>
+  </div>
+
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h2>Promise</h2>
+
+    </div>
+  </div>
+
+
+
+  b  
 
 
 
