@@ -453,6 +453,109 @@ alert(object.getNameFunc()());
   <div class="contentlevel0">
     <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
       <h2>Promise</h2>
+      <div class="contentlevel2" style="border-bottom: 0px;">
+        <h4>Basic syntax of promise</h4>
+        <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Basic syntax of promise
+function loadImg(src) {
+  const promise = new Promise(function(resolve, reject) {
+    var img = document.createElement('img')
+    img.onload = function () {
+      resolve(img)
+    }
+    img.onerror = function () {
+      reject()
+    }
+    img.src = src
+  })
+  return promise
+}
+
+var src = 'https://www.imooc.com/static/img/index/logo.png'
+var result = loadImg(src)
+result.then(function(img){
+  console.log(img.width)
+}, function () {
+  console.log('failed')
+}).then(function(img){
+  console.log(img.height)
+
+})
+        </code></pre>
+
+        <h4>Exception catch</h4>
+        <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Exception catch
+result.then(function (img) {
+  console.log(1, img.width)
+  return img
+}).then(
+  console.log(2, img.heigth)
+).catch(function() {
+  console.log(ex)
+})
+        </code></pre>
+
+        <h4>Use promise in sequence</h4>
+        <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Use promise in sequence
+var src1 = 'https://www.imooc.com/static/img/index/logo.png'
+var result1 = loadImg(src1)
+var src2 = 'https://img2.mukewang.com/5a9fc8070001a82402060220-160-160.jpg'
+var result2 = loadImg(src2)
+
+result1.then(function () {
+  console.log('Finished the first image')
+  return result2
+}).then(function () {
+  console.log('Finished the second image')  
+}).catch(function (ex) {
+  console.log(ex)
+})
+        </code></pre>
+
+
+        <h4>Promise.all & Promise.race</h4>
+        <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Promise.all & Promise.race
+// Promise.all finish all and then return success
+Promise.all([result1, result2]).then(datas => {
+    console.log(datas[0])
+    console.log(datas[1])
+})
+
+//Promise.race finish one and return success
+Promise.race([result1, result2]).then(data => {
+    console.log(data)
+})     </code></pre>
+
+
+      <a target="_blank" href="https://www.kancloud.cn/kancloud/promises-book/44258" style="color: #6666FF">More Promise explain</a>
+
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h2>Async/Await</h2>
+      <div class="contentlevel2" style="border-bottom: 0px;">
+        <h4>Write similar to sync  </h4>
+        <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">//Async/Sync
+const load = async function () {
+  cosnt result1 = await loadImg(src1)
+  console.log(result1)
+  const result2 = await loadImg(src2)
+  console.log(result2)
+}
+load()  </code></pre>
+
+        <ul>
+          <li>If you want to await, function must be identified by async</li>
+          <li>Await is followed by a Promise</li>
+          <li>Need babel-polyfill</li>  
+        </ul>
+      </div>
+
+
 
     </div>
   </div>
