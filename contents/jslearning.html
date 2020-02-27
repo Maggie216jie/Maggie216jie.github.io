@@ -755,7 +755,7 @@ init();   </code></pre>
           </p>
         </div>
 
-        <button class="accordion">16. How to create an object without a prototype?</button>
+        <button class="accordion">16. What is prototype chain?</button>
         <div class="panel">
           <p>
             When an event triggers on a DOM element, 
@@ -1209,7 +1209,10 @@ init();   </code></pre>
         <button class="accordion">69. What is Combinator in css?</button>
         <div class="panel">
           <p>
-            When an event triggers on a DOM element, 
+            1. space descendant selector<br>
+            2. > child selector<br>
+            3. + adjacent sibling selector<br>
+            4. ~ general sibling selector<br>
           </p>
 
         </div>
@@ -1278,7 +1281,15 @@ box-sizing: border-box;
         <button class="accordion">74. What is CSS Specificity.</button>
         <div class="panel">
           <p>
-            When an event triggers on a DOM element, 
+            Specificity means a browser decides which property values are the most relevant to an element and gets to be applied. CSS styles follow an order of specificity. It specifies when styles override another or take precedence. <br>
+           
+            1. Inline css is higher than style tag
+            2. style tag is higher than css introduced by the tag
+            3. Id selector is higher than class and then higher than tag name
+            4. Tow color properties in the same curly brakets, the later one will override the previous one.
+            5. You can use "!important" statement to make the highest priority specificity.
+            6. Inherited css has the lowest priority.(Inherited property uses the property value from its parent property)<br>
+            Inline style > id > class == Attribute == pseudo class > simple element
           </p>
 
         </div>
@@ -1286,7 +1297,9 @@ box-sizing: border-box;
         <button class="accordion">75. What is grid?</button>
         <div class="panel">
           <p>
-            When an event triggers on a DOM element, 
+             wapper: grid-template-rows, grid-template-columns
+             item: grid-column-start, end grid-row-start, end
+
           </p>
 
         </div>
@@ -1294,15 +1307,40 @@ box-sizing: border-box;
         <button class="accordion">76. What is CSS naming convention?</button>
         <div class="panel">
           <p>
-            When an event triggers on a DOM element, 
+            Generally, there are 3 problems that CSS naming conventions try to solve:
+            1. To know what a selector does, just by looking at its name
+    2. To have an idea of where a selector can be used, just by looking at it
+3. To know the relationships between class names, just by looking at them<br>
+
+What's BEM?
+    1. BEM is short for block element modifier, B is 'block', E is 'element', M is 'modifer'.<br>
+    
+    2. BEM is a front end methodology, it have several benefits ,like, BEM is open to change, simple for teams to follow., and it can create efficient and organised CSS. you can transfer blocks between projects<br>
+    
+3. for example, if you got a list, the whole list can be treated as block, and each of list can be element, if you want put different style on the each element, you can write the modifer style css selector to achieve it. which have shows the clear relationship between element and block.<br>
           </p>
 
         </div>
 
         <button class="accordion">77. What is Sass ?</button>
         <div class="panel">
-          <p>
-            When an event triggers on a DOM element, 
+            1. What's Sass?
+    ○ Sass is short for "Syntactically Awesome Style Sheets".
+    ○ Sass is an extension of CSS that allow you to use things like variables, nested rules, inline imports and more. it also helps to keep things organised and allows you to create style sheets faster.
+    
+  
+  2. core feature of Saas?
+    ○ Variables
+    ○ Nesting
+    ○ Import
+    ○ Partials
+    ○ Mixins:
+      § mixin is like CSS functions.
+      § I use mixins to define a block, inside that block, I can wirte any re-suable style.  which it can make my sass code more short and clean.
+      § This will provide more reusability.
+    ○ Operators
+    ○ Extend/Inheritance
+
           </p>
 
         </div>
