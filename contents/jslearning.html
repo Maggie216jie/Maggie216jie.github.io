@@ -564,6 +564,754 @@ load()  </code></pre>
   </div>
 
 
+    <div class="contentlevel0">
+    <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 20px;">
+      <h2>88 Interview Questions ( js, html, css ) </h2>
+
+      <button class="accordion">1. What is DOM?</button>
+        <div class="panel">
+          <p>
+            1. The Document Object Model (DOM) is an application programming interface (API) for HTML and XML documents.<br>
+            2. It defines the logical structure of documents and the way a document is accessed and manipulated. <br> 
+            3. The DOM represents the document as nodes and objects. programs can change the document structure, style, and content.
+            <br>
+            4. That way, programming languages can connect to the page.<br>
+          </p>
+
+        </div>
+
+
+
+
+        <button class="accordion">2. Describe event propagation.</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, that event does not only occur on that just one element. It has event propagation.
+            There are two ways of event propagation --- event bubbling and event caputering. 
+          </p>
+
+        </div>
+
+        <button class="accordion">3. Describe event bubbling.</button>
+        <div class="panel">
+          <p>
+            When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors.Until to the Windows
+          </p>
+
+        </div>
+
+        <button class="accordion">4. Describe event caputering.</button>
+        <div class="panel">
+          <p>
+            In Capturing Phase, the event starts from the window all the way down to the element that triggered the event.then it reaches the target and triggers there (target phase), and then it goes up (bubbling phase), calling handlers on its way. capturing phase is rarely used. Normally it is invisible to us.
+          </p>
+                    <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">// true as tired parameter
+ addEvent(child, 'click', function (e) {
+    console.log('child');
+  }, true);   </code></pre>
+
+        </div>
+
+
+        <button class="accordion">5. Describe event delegation</button>
+        <div class="panel">
+          <p>
+            1. if we have a lot of elements handled in a similar way, then instead of assigning a handler to each of them – we put a single handler on their common ancestor.<br>
+            2. In the handler we get event.target, see where the event actually happened and handle it.
+  <pre class="language-markup codeedit"><code><script type="text/plain" class="language-markup">
+<ul id="parent-list">
+  <li id="post-1">Item 1</li>
+  <li id="post-2">Item 2</li>
+  <li id="post-3">Item 3</li>
+  <li id="post-4">Item 4</li>
+  <li id="post-5">Item 5</li>
+  <li id="post-6">Item 6</li>
+</ul>
+</script>
+</code></pre>
+
+
+                             <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">// Get the element, add a click listener...
+document.getElementById("parent-list").addEventListener("click", function(e) {
+  // e.target is the clicked element!
+  // If it was a list item
+  if(e.target && e.target.nodeName == "LI") {
+    // List item found!  Output the ID!
+    console.log("List item ", e.target.id.replace("post-", ""), " was clicked!");
+  }
+});     </code></pre>
+
+          </p>
+
+        </div>
+
+
+        <button class="accordion">6. difference between event.preventDefault() and event.stopPropagation() methods?</button>
+        <div class="panel">
+          <p>
+
+            1. e.preventDefault() prevents the default action the browser makes on that event. If used in a form element it prevents it from submitting. If used in an anchor element it prevents it from navigating.<br>
+            2. e.stopPropagation() stops the propogation of an event or it stops the event from occurring in the bubbling or capturing phase.
+
+          </p>
+
+        </div>
+
+
+        <button class="accordion">7. How to know if the event.preventDefault() method was used in an element?</button>
+        <div class="panel">
+          <p>
+            We can use the event.defaultPrevented property in the event object. It returns a boolean indicating if the event.preventDefault() was called in a particular element.
+          </p>
+          <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">// if statement
+if (event.defaultPrevented) {
+      log.innerText = 'Sorry, but you cannot visit this link!\n' + log.innerText;
+}    </code></pre>
+
+
+        </div>
+
+
+        <button class="accordion">8. What is event.target ?</button>
+        <div class="panel">
+          <p>
+            The target property of the Event interface is a reference to element that event is trigered. It is different from Event.currentTarget when the event handler is called during the bubbling or capturing phase of the event.
+          </p>
+
+        </div>
+
+        <button class="accordion">9. What is event.currentTarget?</button>
+        <div class="panel">
+          <p>
+            The currentTarget read-only property of the Event interface identifies the current target for the event, as the event traverses the DOM. It always refers to the element to which the event handler has been attached, as opposed to Event.target, which identifies the element on which the event occurred and which may be its descendant. whole 'ul'
+          </p>
+
+        </div>
+
+
+        <button class="accordion">10. What is hoisting?</button>
+        <div class="panel">
+          <p>
+            Hoisting is a javascript mechanism where variables and function declarations are moved to the top of their scope before code excution
+          </p>
+
+
+        </div>
+
+        <button class="accordion">11. What is scope/ scope chain?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, it will attempt to handle the event if there is a listener attached, then the event is bubbled up to its parent and the same thing happens. This bubbling occurs up the element's ancestors all the way to the document. Event bubbling is the mechanism behind event delegation.
+          </p>
+
+        </div>
+
+        <button class="accordion">12. What is closures?</button>
+        <div class="panel">
+          <p>
+            1. A closure is an inner function that has access to the outer function's variables.<br>
+            2. The closure has three scope chains: it has access to its own scope , it has access to the outer function's variables, and it has access to the global variables.
+          </p>
+          <pre class="codeedit" style="padding-bottom: 0px" ><code class="language-javascript">// name can be alert
+function init() {
+  var name = 'Mozilla'; // name is a local variable created by init
+  function displayName() { // displayName() is the inner function, a closure
+    alert(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();   </code></pre>
+
+        </div>
+
+        <button class="accordion">13. What does "use strict" do?</button>
+        <div class="panel">
+          <p>
+            1. 'Strict mode' means more strict than Javascript normal mode,and you can insert 'use strict ' statement on the top of your script.<br>
+  
+            2. 'strict mode' can gives you benefit. for example:<br>
+                a. without strict mode, a reference to this value of null or undefined is automatically is bind to global. which could cause some hidden bug there.  but if you use strict mode, the reference to this value will throw an error if you are trying to do like null or undefined. <br>
+                b. 'strict mode' don’t allow to use a variable without declaring it.<br>
+                c. you can not use the 'with' statement in strict mode.<br>
+                d. Duplicating a parameter name is not allowed. <br>
+                e. Deleting an undeletable property is not allowed. <br>
+                f. Assigning a value to a read-only or non-writable global variable;<br>
+          </p>
+
+        </div>
+
+        <button class="accordion">14. What's the value of this in JavaScript?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">15. What is the prototype of an object?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+        </div>
+
+        <button class="accordion">16. How to create an object without a prototype?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+        </div>
+
+        <button class="accordion">17. What is an IIFE, what is the use of it?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">18. What is an anonymous function?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+
+        <button class="accordion">19. What is the use Function.prototype.apply method?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">20. What is the use Function.prototype.call method?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">21. What is the usage of Function.prototype.bind?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">22. differences between Function.prototype.apply and Function.prototype.call?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">23. What are Arrow functions?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">24. What is a Callback function?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">25. What are Promises?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">26. What is async/await and How does it work?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">27. What is event loop?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">28. What are Higher Order Functions?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">29. What is the arguments object?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">30. What is Ajax?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <!--
+
+
+         <button class="accordion">31. What are the new features in ES6 or ECMAScript 2015?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+
+        <button class="accordion">32. What are Classes?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">33. What are Template Literals?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">34. What is Object Destructuring?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">35. What are ES6 Modules?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">36. What's the difference between Spread operator and Rest operator?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">37. What is the Set object and how does it work?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">38. What are Wrapper Objects?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+         <button class="accordion">39. What are Generators?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">40. Map/Set && WeakMap/WeakSet?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">41. What's the difference between undefined and null?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">42. What is NaN? and How to check if a value is NaN?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+                <button class="accordion">43. How to check if a value is an Array?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">44. How to check if a value is Object?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">45. What are the ways of making objects in JavaScript?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">46. How to check if a certain property exists in an object?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">47. difference between the in operator and the hasOwnProperty method in objects?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">48. difference between Object.seal and Object.freeze methods?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">49. What does the new keyword do?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">50. Why does typeof null return object? How to check if a value is null?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">51. difference between a function expression and function declaration?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">52. How many ways can a function be invoked?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">53. What is memoization and what's the use it?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">54. Implement a memoization helper function?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+         <button class="accordion">55.  What does the && operator do?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">56.  What does the || operator do?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+         <button class="accordion">57. What's the difference between == and ===?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">58. What does the !! operator do?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">59. Why does it return false when comparing two similar objects in JavaScript?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">60. JSON, JSONP</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+      -->
+
+
+        <button class="accordion">61. Cookie, Localstorage and Sessionstorage.</button>
+        <div class="panel">
+          <p>
+            1. LocalStorage is local storage for your browsers, it can save up to 10MB.·   it will exist for long time until you delete it<br>
+            2. SessionStorage is session based and will be deleted after closing your tab, also can save less than LocalStorage, like up to 5MB<br>
+            3. Cookies are very tiny data storing in your browser, that can save up 4KB.  server & browser can both use cookie.<br>
+          </p>
+
+        </div>
+
+        <button class="accordion">62. What's HTML?</button>
+        <div class="panel">
+          <p>
+            1. HTML is short for Hypertext Markup Language.<br>
+            2. HTML is used to tell your browser how to structure the web page.<br>
+            3. HTML consists of a series of elements, which are the building block of the html pages.<br>
+          </p>
+
+        </div>
+
+        <button class="accordion">63. What's the new features of HTML5?</button>
+        <div class="panel">
+          <p>
+            1. Add new semantic elements,  it good for SEO and web accessibility. Such as nav article<br>
+            2. Add new form input type, such as color number email <br>
+            3. Add Muli-Media elements such as video audio canvas <br>
+            4. support web storage such as session storage local storage <br>
+          </p>
+
+        </div>
+
+        <button class="accordion">64. Block element vs Inline element?</button>
+        <div class="panel">
+          <p>
+            1. an inline element: 1. never adds a new line after it. 2. ignores margin-top and margin-bottom settings. 3. ignores width and height properties. 4. is subject to vertical-align properties<br>
+
+            2. a block-level element: 1. starts and ends on a new line. 2. takes up the full width of its parent element. 3. is subject to margin, padding, height, width, etc. 4. can take up more than one line 5. ignores vertical-align property
+          </p>
+
+        </div>
+
+        <button class="accordion">65. HTML accessibility?</button>
+        <div class="panel">
+          <p>
+            1. Use correct semantic tag. like <'main'> <'article'> <'header'>
+            2. make sure all the images have "alt" text.
+            3. building keyboard accessiblity, like using "tabindex" attribute on tags which defines the navigation order for focusable elements within a page. It can also be used to define whether elements should be focusable or not.
+            4. In a table, using 'th' and 'caption>'tags.
+            5. use <'button'> tag instead of<'div'> tag if you need. because <'button'> tag have built-in keyboard accessibility.
+            6. ARIA(Assistive Rich Internet Applications) can improve accessibility of web pages and applications by providing extra information to screen readers via HTML attributes
+
+          </p>
+
+        </div>
+
+        <button class="accordion">66. diiference between svg and canvas</button>
+        <div class="panel">
+          <p>
+            SVG stands for Scalable Vector Graphics
+            SVG is used to define graphics for the Web
+            SVG is a W3C recommendation
+            SVG is a document format for scalable vector graphics.<br>
+            Canvas is a javascript API for drawing vector graphics to a bitmap of a specific size.<br>
+            To elaborate a bit, on format versus API:<br>
+            With svg you can view, save and edit the file in many different tools. With canvas you just draw, and nothing is retained about what you just did apart from the resulting image on the screen. You can animate both, SVG handles the redrawing for you by just looking at the elements and attributes specified, while with canvas you have to redraw each frame yourself using the API. You can scale both, but SVG does it automatically, while with canvas again, you have to re-issue the drawing commands for the given size.
+
+          </p>
+
+        </div>
+
+        <button class="accordion">67.  What is Pseudo-classes in css?</button>
+        <div class="panel">
+          <p>
+             pseudo-class describe a special state. it allow to style element dynamically. The most popular one is :hover. 
+          </p>
+
+        </div>
+
+        <button class="accordion">68. What is Pseudo-elements in css?</button>
+        <div class="panel">
+          <p>pseudo-element match virtual elements. it used to style specified parts of  an element.  we often use like " ::after ::before  ::first-line".
+          </p>
+
+        </div>
+
+        <button class="accordion">69. What is Combinator in css?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">70. What is Box model in css?</button>
+        <div class="panel">
+          <p>
+            css box model is a box that wraps around every html element, box model includes the content, padding, border and margin. so it have 2 types of box model which are content-box and border-box, we can use "box-sizing" this property to define which box model you will use.<br>
+
+            使用margin的情况：<br>
+            1. 需要在border外侧添加空白时。<br>
+            2. 空白处不需要背景（色）时。<br>
+            3. 上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白。<br>
+
+            使用padding的情况：<br>
+            1. 需要在border内测添加空白时。<br>
+            2. 空白处需要背景（色）时。<br>
+            3. 上下相连的两个盒子之间的空白，希望等于两者之和时。如15px + 20px的padding，将得到35px的空白。<br>
+          </p>
+          <pre class="language-css"><code><script type="text/plain" class="language-css">
+box-sizing: content-box;  //default
+box-sizing: border-box;  
+
+</script></code></pre>
+
+
+        </div>
+
+        <button class="accordion">71. What is flex box in css?</button>
+        <div class="panel">
+          <p>
+            1. First, I often define flex container and flex aitems.<br>
+            2. then use "display: flex" on that flex container.<br>
+            3. use "justify-content" to define the horizontal alignment of items.  "justify-content" have values:  flex-start, flex-end, start, center,end, space-between, space-around, space-evenly;<br>
+            4. use"align-items" to define the vertical alignment of items.<br>
+            5. If my main-axis is vertical , I can set "flex-direction: column" .<br>
+            6. for children item, I can use "order", "flex-grow", "flex-basis", "align-self" to adjust content.
+          </p>
+
+        </div>
+
+        <button class="accordion">72. How would you use float in css?</button>
+        <div class="panel">
+          <p>
+            1. float is a CSS positioning property.  float value have: none, left, right, initial.<br>
+            2. float pushes an element to the sides of a page with text wrapped around it.<br>
+            3. we can create entire page or a smaller area by using float. if size of a floated element changes, text around it will re-flow to accommodate the changes.<br>
+            4. if we set, 'float: left;' for an image, it will move to the left until the margin, padding or border of another block-level element is reached. The normal flow will wrap around on the right side.<br>
+          </p>
+
+        </div>
+
+        <button class="accordion">73. Explain position in css.</button>
+        <div class="panel">
+          <p>
+            1. fixed: relative to browser, which means it always stays in the same place even if the page is scrolled. <br>
+            2. relative: relative to it's original(normal) position<br>
+            3. absolute: relative to its non-static parent, if can't find, it will relative to the browser. It will find the most closed parents element that is non-static. Absolute positioned elements are removed from the normal flow, which means it can be overlapped by other elements.<br>
+            4. static: default value. Elements render in order, as they appear in the document flow. Not affected by the top, bottom, left, right and z-index properties. Other content will not be adjusted to fit into any gap left by the element.<br>
+            5. sticky: An element with position: sticky; is positioned based on the user's scroll position. A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).<br>
+
+          </p>
+
+        </div>
+
+        <button class="accordion">74. What is CSS Specificity.</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">75. What is grid?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">76. What is CSS naming convention?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+        <button class="accordion">77. What is Sass ?</button>
+        <div class="panel">
+          <p>
+            When an event triggers on a DOM element, 
+          </p>
+
+        </div>
+
+
+    </div>
+  </div>
+
+
 
   
 
@@ -599,6 +1347,24 @@ function myDropFunc() {
     x.previousElementSibling.className =
     x.previousElementSibling.className.replace(" w3-green", "");
   }
+}
+</script>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
 }
 </script>
 

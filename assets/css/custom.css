@@ -1,161 +1,127 @@
 
 
-.subheader{ position: fixed; top: 0px; width:100%; background-color: black; color:white; height:50px; box-shadow: 0 2px 5px rgba(0,0,0,.26); }
+.subheader{ 
+	position: fixed; 
+	top: 0px; width:100%; 
+	background-color: black; 
+	color:white; height:50px; 
+	box-shadow: 0 2px 5px rgba(0,0,0,.26); 
+}
 .blog .w3-green, .w3-hover-green:hover{ background-color: #f1f1f1 !important; color:black !important; }
 .blog .w3-container{ padding: 0; z-index: -1; }
 .blog .w3-card{ box-shadow: 0 0 0 0 white; }
 .blog .w3-light-grey{ background-color: white !important; border: 1px solid rgba(0,0,0,.12);}
 .blog .w3-hide .w3-bar-item.w3-button{ padding-left: 40px; }
-.contentlevel1{
-
-	margin-left: auto;
-	margin-right: auto;
+.contentlevel1{ 
+	margin-left: auto; 
+	margin-right: auto; 
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border-bottom: 1px solid rgba(0,0,0,.12);
 	width: 88%;
 	max-width: 766px;
-
 }
 
 .contentlevel2{
-
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	border-bottom: 1px solid rgba(0,0,0,.12);
 	width: auto;
-
 }
 
 p{
 	width: auto;
 	word-wrap: break-word;
-  word-break: break-all;
-  overflow: hidden;
+	word-break: break-all;
+	overflow: hidden;
 }
 
-.contentlevel0{
+.contentlevel0{ border-bottom: 1px solid rgba(0,0,0,.12); }
 
-	border-bottom: 1px solid rgba(0,0,0,.12);
-}
+#demoAcc2{ display: none; }
 
-#demoAcc2{
-	display: none;
-}
-
-
-table {
-  border-collapse: collapse;
-  width: 80%;
-  
-}
+table { border-collapse: collapse; width: 80%; }
 
 th, td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
 }
 
-tr:hover {background-color:#f5f5f5;}
+tr:hover { background-color:#f5f5f5; }
 
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
     background: white;
 }
 
-.codeedit{
+.codeedit{ width: 80%; }
 
-	 width: 80%;
-	
-}
-
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 .columnimage {
-  float: left;
-  width: 24%;
-  padding: 5px;
+	float: left;
+	width: 24%;
+	padding: 5px;
 }
 
 /* Clearfix (clear floats) */
 .rowimage::after {
-  content: "";
-  clear: both;
-  display: table;
+	content: "";
+	clear: both;
+	display: table;
 }
 
 .itemlabel{
-
-   
 	border: 1px solid darkred; 
 	border-radius: 10px; 
 	padding: 2px;
 	background-color: white;
 	margin:2px;
-	
 }
 
-.segemngtlabels{
-
-	padding-bottom: 16px;
-
-}
-
+.segemngtlabels{ padding-bottom: 16px; }
 
 .accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: 0.4s;
 }
 
-.active, .accordion:hover {
-  background-color: #ccc;
-}
+.active, .accordion:hover { background-color: #ccc; }
 
 .accordion:after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
+	content: '\002B';
+	color: #777;
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
 }
 
-.active:after {
-  content: "\2212";
-}
+.active:after { content: "\2212"; }
 
 .panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  border-bottom: 1px solid white;
+	padding: 0 18px;
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	border-bottom: 1px solid white;
 }
 
-.practicetitle{
-
-	position: relative;
-	padding-top: 40px;
-}
-
+.practicetitle{ position: relative; padding-top: 40px; }
 
 .section_title{
-
-
 	border-bottom: 1px solid rgba(0,0,0,.12);
 	text-align: center;
-
 	margin-left: 1vw;
 	margin-right: 1vw; 
 }
@@ -170,14 +136,10 @@ tr:hover {background-color:#f5f5f5;}
 	border-radius: 50%;
 	bottom: 0;
 	transform: translateY(50%);
-
-
-
 }
 
 
 .practicegallery{
-
 	display: flex;
     justify-content: space-around;
 	flex-wrap: wrap;
@@ -188,40 +150,22 @@ tr:hover {background-color:#f5f5f5;}
 
 
 .pratices{
-
 	position: relative;
-
-
 	width: 300px;
 	height: 300px;
-
-	
 	margin: 5vw 2px;
 	box-shadow: 0 3px 7px rgba(0,0,0,.26);
-	 
-
-
 }
 
-.praticeshover{
-
-	display: none;
-}
-
-
+.praticeshover{ display: none; }
 
 .pratices:hover .praticeshover{
-
 	display: flex;
 	position: absolute;
-
-
 	top:50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-
 	opacity: 0.9;
-
 	background-color: white;
 	width: 100%;
 	height: 100%;
@@ -229,40 +173,25 @@ tr:hover {background-color:#f5f5f5;}
 }
 
 .practicelink{
-
 	position: absolute;
-
 	top:50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-
 	text-decoration: none;
-
-
-
 }
 
 
 .hovercontent{
-
 	position: absolute;
-
 	top:50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-
 	text-decoration: none;
-
 	display: flex;
 	justify-content: center;
-
-
-
 }
 
 .lingxing{
-
-
 	display: inline-block;
     width:5vw;
     height:5vw;
@@ -270,14 +199,8 @@ tr:hover {background-color:#f5f5f5;}
     transform: rotate(45deg);
     padding-top: 1vw;
     padding-left: 0.4vw;
-
-
     color: grey; 
     font-size: 3vw;
-   
-
-
-
 }
 
 .interviewcontent{
@@ -293,65 +216,26 @@ tr:hover {background-color:#f5f5f5;}
  
 }
 
-
-
-
 @media screen and (max-width: 500px) {
-	h2 {
-		
-		font-size: 22px;
-	}
+	h2 { font-size: 22px; }
 
-	h3 {
-		
-		font-size: 18px;
-	}
+	h3 { font-size: 18px; }
 
-	h4 {
-		
-		font-size: 14px;
+	h4 { font-size: 14px; }
 
-	}
+	p, a, button,label,table { font-size: 10px; }
 
-	p, a, button,label,table {
-		
-		font-size: 10px;
+	.blog .w3-hide .w3-bar-item.w3-button{ padding-left: 25px; }
 
-	}
+	.demoAcc a { font-size: 10px; }
 
-	.blog .w3-hide .w3-bar-item.w3-button{
+	.demoAcc1 a { font-size: 10px; }
 
-		padding-left: 25px;
-	
-	}
+	code span{ font-size: 10px; }
 
-	.demoAcc a {
-		font-size: 10px;
+	html body{ font-size: 10px; }
 
-	}
-	.demoAcc1 a {
-
-		font-size: 10px;
-	}
-
-	code span{
-
-		font-size: 10px;
-	}
-
-	html body{
-
-		font-size: 10px;
-	}
-
-	.codeedit{
-
-	 width: 95%;
-	
-}
-
-	
-
+	.codeedit{ width: 95%; }
 }
 
 
@@ -372,13 +256,7 @@ tr:hover {background-color:#f5f5f5;}
     text-align: center;
 }
 
-a{
-
-	text-decoration: none;
-
-
-}
-
+a{ text-decoration: none; }
 
 .w3-card-2{
 	width: 245px;
@@ -388,24 +266,14 @@ a{
 	font-size: 15px;
 	margin-left: 2px;
 	margin-right: 2px;
-
 	margin-top: 30px;
-
 }
 
-.menupart.h4{
+.menupart.h4{ margin-bottom: 0px; }
 
-	margin-bottom: 0px;
-	
-}
-
-.menupart.ul{
-
-	margin-top: 0px;
-}
+.menupart.ul{ margin-top: 0px; }
 
 .menudisplay{
-
 	width: 100%; 
 	display: flex; 
 	justify-content: space-around; 

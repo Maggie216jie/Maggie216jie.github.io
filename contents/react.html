@@ -16,32 +16,29 @@
 
    <a href="react.html#topidreact" data-item="0" class="back_to_top" draggable="true" ondragstart="drag_start(event)">MENU</a>
 
-<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%;">
-  <a href="../index.html" class="w3-bar-item w3-button">MW</a>
+   <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:20%;">
+    <a href="../index.html" class="w3-bar-item w3-button">MW</a>
+    <a href="Practice.html" class="w3-bar-item w3-button">Portfolio</a>
+    <a href="htmllearning.html" class="w3-bar-item w3-button">HTML</a>
+    <a href="csslearning.html" class="w3-bar-item w3-button">CSS</a>
+    <a href="jslearning.html" class="w3-bar-item w3-button">JavaScript</a>
+    <a href="react.html" class="w3-bar-item w3-button">React</a>
+    <a href="java.html" class="w3-bar-item w3-button">Java</a>
+    <a href="leetcode.html" class="w3-bar-item w3-button">Leetcode</a>
+    <a href="jobs.html" class="w3-bar-item w3-button">Jobs</a>
+  </div>
 
-  <a href="Practice.html" class="w3-bar-item w3-button">Portfolio</a>
-  <a href="htmllearning.html" class="w3-bar-item w3-button">HTML</a>
-  <a href="csslearning.html" class="w3-bar-item w3-button">CSS</a>
-  <a href="jslearning.html" class="w3-bar-item w3-button">JavaScript</a>
-  <a href="react.html" class="w3-bar-item w3-button">React</a>
-  <a href="java.html" class="w3-bar-item w3-button">Java</a>
-  <a href="leetcode.html" class="w3-bar-item w3-button">Leetcode</a>
-  <a href="jobs.html" class="w3-bar-item w3-button">Jobs</a>
-
-
-</div>
-
-<div class="subheader" style="margin-left:20%;padding: 10px;">React</div>
-
-<div class="w3-container" id="topidreact" style="margin-left:20%;top:50px; position: absolute;border-bottom: 1px solid rgba(0,0,0,.12); width:80%;">
+  <div class="subheader" style="margin-left:20%;padding: 10px;">React</div>
+  <div class="w3-container" id="topidreact" style="margin-left:20%;top:50px; position: absolute;border-bottom: 1px solid rgba(0,0,0,.12); width:80%;">
 
     <div class="contentlevel0">
       <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 10px;">
         <h2>Goal</h2>
         <p>Learn, Practice and prepare for the react interview.</p>
-
       </div>
 
+
+      <!--
       <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 40px; ">
         <h2>Menu</h2>
         <div  class="menudisplay" >
@@ -93,14 +90,47 @@
               <li><a href="#twopointers">withRouter</a></li>
             </ul>
           </div>
+        </div>
+      </div>
+      -->
 
+      <div id="jsx" style="height: 50px"></div>
+
+    </div>
+
+
+
+    <div class="contentlevel0">
+      <div class="contentlevel1" style="border-bottom: 0px; padding-bottom: 10px;">
+        <h2>Interview questions ( React )</h2>
+
+        <button class="accordion">1. What is DOM?</button>
+        <div class="panel">
+          <p>
+            When an event occurs on a DOM element, that event does not only occur on that just one element. It has event propagation.
+            There are two ways of event propagation --- event bubbling and event caputering. 
+          </p>
 
         </div>
+
+        <button class="accordion">1. What is DOM?</button>
+        <div class="panel">
+          <p>
+            When an event occurs on a DOM element, that event does not only occur on that just one element. It has event propagation.
+            There are two ways of event propagation --- event bubbling and event caputering. 
+          </p>
+
+        </div>
+
+
+
+       
       </div>
 
       <div id="jsx" style="height: 50px"></div>
 
     </div>
+
 
 
     <div class="contentlevel0">
@@ -130,6 +160,8 @@
 
           </ul>
         </div>
+
+
       </div>
 
       <div class="interviewcontent">
@@ -576,6 +608,24 @@ function myDropFunc() {
     x.previousElementSibling.className =
     x.previousElementSibling.className.replace(" w3-green", "");
   }
+}
+</script>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
 }
 </script>
 
