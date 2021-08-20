@@ -367,7 +367,7 @@ a{ text-decoration: none; }
 }
 
 	.project-gallery-description{
-		margin-top: 5vw;
+		margin-top: calc(5vw + 10px);
 		margin-left: 30px;
 
 	}
